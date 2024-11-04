@@ -10,7 +10,7 @@ import (
 	"net/http"
 )
 
-func httpListenandservetlsCompliant(certFile string, keyFile string) {
+func httpListenAndServeTLSCompliant(certFile string, keyFile string) {
 	handler := func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/plain")
 		w.Write([]byte("Hello!"))

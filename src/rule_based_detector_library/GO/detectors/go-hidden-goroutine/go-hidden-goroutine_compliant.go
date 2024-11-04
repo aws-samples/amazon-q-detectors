@@ -16,13 +16,13 @@ func hiddenGoroutineCompliant() {
 		fmt.Println(num, "is negative")
 	}
 	go func() {
-		if 5%2 == 0 {
+		if 5 % 2 == 0 {
 			fmt.Println("5 is even")
 		} else {
 			fmt.Println("5 is odd")
 		}
 	}()
-	if 8%2 == 0 {
+	if 8 % 2 == 0 {
 		fmt.Println("8 is even")
 	}
 }

@@ -13,7 +13,7 @@ import (
 func hiddenGoroutineNoncompliant() {
 	// Noncompliant: Hidden goroutines inside functions.
 	go func() {
-		if 5%2 == 0 {
+		if 5 % 2 == 0 {
 			fmt.Println("5 is even")
 		} else {
 			fmt.Println("5 is odd")
