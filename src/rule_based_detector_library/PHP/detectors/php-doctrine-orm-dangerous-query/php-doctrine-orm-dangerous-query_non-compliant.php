@@ -6,7 +6,7 @@
 
 // {fact rule=php-doctrine-orm-dangerous-query@v1.0 defects=1}
 // Noncompliant: Direct concatenation of user input in query, vulnerable to SQL injection.
-function executeUnsafeQuery($unsafeInput) 
+function nonCompliant($unsafeInput) 
 {
     $dbQueryBuilder = $dbConnection->createQueryBuilder();
     $dbQueryBuilder

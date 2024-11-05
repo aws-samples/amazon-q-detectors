@@ -6,7 +6,7 @@
 
 // {fact rule=php-doctrine-orm-dangerous-query@v1.0 defects=0}
 // Compliant: Uses parameterized query to prevent SQL injection.
-function executeCompliantQuery($userInput)
+function compliant($userInput)
 {
     $queryBuilder = $dbConnection->createQueryBuilder(); 
     $queryBuilder

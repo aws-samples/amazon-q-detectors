@@ -5,12 +5,12 @@
 */
 
 //{fact rule=php-laravel-dangerous-model-construction@v1.0 defects=0}
-// Compliant: Uses `$guarded` to explicitly specify attributes that should not be mass-assignable, enhancing security against mass assignment vulnerabilities.
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 class FlightDetails extends Model
 {
     protected $key = 'flight_id';
+    // Compliant: Uses `$guarded` to explicitly specify attributes that should not be mass-assignable, enhancing security against mass assignment vulnerabilities.
     protected $guarded = ['name', 'email'];
 
 }

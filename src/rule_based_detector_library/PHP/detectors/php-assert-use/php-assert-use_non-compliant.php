@@ -5,7 +5,7 @@
 */
 
 // {fact rule=php-assert-use@v1.0 defects=1}
-// NonCompliant: The `userInput` is not sanitized.
+// Noncompliant: The `userInput` is not sanitized.
     $unsanitizedInput = $_GET['userInput'];
     assert($unsanitizedInput);
 // {/fact}
