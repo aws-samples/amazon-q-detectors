@@ -1,7 +1,5 @@
-/*
-*  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*  SPDX-License-Identifier: Apache-2.0
-*/
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
 
 // {fact rule=kotlin-groovy-injection@v1.0 defects=0}
 import groovy.lang.GroovyShell

@@ -1,7 +1,5 @@
-/*
-*  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*  SPDX-License-Identifier: Apache-2.0
-*/
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
 
 // {fact rule=kotlin-webview-debug-feature@v1.0 defects=1}
 import android.webkit.WebView
