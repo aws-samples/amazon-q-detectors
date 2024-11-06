@@ -10,7 +10,7 @@ class CdkStarterself(cdk.self):
     def __init__(self, scope: cdk.App, id: str):
         super(scope, id)
      
-        # Noncompliant: `automated_snapshot_retention_period` is not set.
+        # Noncompliant: `automated_snapshot_retention_period` is set to 0
         CfnCluster(Stack, 'rRedshiftCluster', 
             master_username= 'use_a_secret_here',
             master_user_password= 'use_a_secret_here',

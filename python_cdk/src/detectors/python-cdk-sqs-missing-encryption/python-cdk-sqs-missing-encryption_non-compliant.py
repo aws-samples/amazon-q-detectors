@@ -9,6 +9,6 @@ from aws_cdk import aws_sqs as sqs
 class Stack(cdk.Stack):
 
     def missing_encryption_noncompliant(self):
-        # Noncompliant: missing encryption.
+        # Noncompliant: Missing encryption.
         unencrypted_queue = sqs.Queue(self, 'unencrypted_queue')
 # {/fact}

@@ -8,11 +8,11 @@ from aws_cdk import Stack
 
 
 class CdkStarterStack(cdk.Stack):
-        def __init__(self, scope: cdk.App, id: str):
-                super(scope, id)        
-                
-                # Compliant: `enable_key_rotation` is set.
-                Key(Stack, 'rSymmetricKey', enable_key_rotation= True )
-                #{/fact}
+     def __init__(self, scope: cdk.App, id: str):
+        super(scope, id)        
+        
+        # Compliant: `enable_key_rotation` is set.
+        Key(Stack, 'rSymmetricKey', enable_key_rotation= True )
+        #{/fact}
 
                
