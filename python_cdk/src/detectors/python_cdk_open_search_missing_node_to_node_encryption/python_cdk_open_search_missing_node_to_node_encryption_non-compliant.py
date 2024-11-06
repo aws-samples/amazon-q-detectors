@@ -9,8 +9,9 @@ from aws_cdk import Stack
 
 class CdkStarterStack(aws_cdk.Stack):
     def __init__(self):
-        # Noncompliant: The LegacyCfnDomain instantiation does not set the `encryption_at_rest_options` property, potentially leaving data unencrypted at rest.
-        # Noncompliant: The LegacyCfnDomain instantiation does not set the `node_to_node_encryption_options` property, potentially leaving data unencrypted at rest.
+        
+        # Noncompliant: The LegacyCfnDomain instantiation does not set the `node_to_node_encryption_options` is not set.
+        LegacyCfnDomain(Stack, 'Domain')
 
        
 # {/fact}
