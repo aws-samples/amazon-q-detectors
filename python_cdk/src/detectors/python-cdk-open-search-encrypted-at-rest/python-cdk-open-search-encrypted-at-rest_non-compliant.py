@@ -9,6 +9,6 @@ class CdkStarterStack(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
       super(scope, id)
 
-      # Noncompliant: `encryption_at_rest_options` is not set.
+      # Noncompliant: The LegacyCfnDomain instantiation does not set the `encryption_at_rest_options` property, potentially leaving data unencrypted at rest.
       LegacyCfnDomain(self, 'Domain')
       # {/fact}

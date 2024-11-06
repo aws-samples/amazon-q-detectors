@@ -10,7 +10,7 @@ from aws_cdk import aws_elasticloadbalancing as elb
 class CdkStarterself(cdk.self):
   def __init__(self, scope: cdk.App, id: str):
     super(scope, id)
-    # Compliant: `LoadBalancingProtocol` is set.
+    # Compliant: The LoadBalancingProtocol is set to ssl for the both the protocol.
     LoadBalancer(self, 'rELB1', 
         vpc= Vpc(self, 'rVPC'),
     ).add_listener(

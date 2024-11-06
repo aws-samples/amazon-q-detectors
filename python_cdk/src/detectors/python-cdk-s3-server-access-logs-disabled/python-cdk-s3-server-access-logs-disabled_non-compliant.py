@@ -10,6 +10,6 @@ class CdkStarterself(cdk.self):
   def __init__(self, scope: cdk.App, id: str):
     super(scope, id)
 
-    # Noncompliant: `server_access_logs_bucket` is not set.
+    # Noncompliant: The Bucket instantiation does not set the `server_access_logs_bucket` property, disabling server access logging.
     Bucket(self, "Bucket") 
     # {/fact}

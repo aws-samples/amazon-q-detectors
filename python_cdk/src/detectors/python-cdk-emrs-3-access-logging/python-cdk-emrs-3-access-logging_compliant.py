@@ -10,7 +10,7 @@ from aws_cdk import aws_emr as emr
 class CdkStarterself(cdk.self):
     def __init__(self, scope: cdk.App, id: str):
       super(scope, id)
-      # Compliant: `log_uri` is set.
+      # Compliant: The CfnCluster instantiation sets the `log_uri` property.
       CfnCluster(self, 'rEmrCluster', job_flow_role = ' EMR_EC2_DefaultRole', name = 'foo', service_role = 'bar', log_uri= 'baz')
       
 # {/fact}

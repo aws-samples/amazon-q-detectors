@@ -10,7 +10,7 @@ class CdkStarterself(cdk.self):
     def __init__(self, scope: cdk.App, id: str):
         super(scope, id)
         
-        # Compliant: `automated_snapshot_retention_period` is set.
+        # Compliant: The CfnCluster instantiation sets the automated_snapshot_retention_period property to 15 days, enabling automated snapshots retention.
         redshift.CfnCluster(Stack, 'rRedshiftCluster', 
             master_username= 'use_a_secret_here',
             master_user_password= 'use_a_secret_here',

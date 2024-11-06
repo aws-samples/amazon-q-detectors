@@ -11,7 +11,7 @@ class CdkStarterStack(cdk.Stack):
      def __init__(self, scope: cdk.App, id: str):
         super(scope, id)        
         
-        # Compliant: `enable_key_rotation` is set.
+       # Compliant: The Key instantiation sets the `enable_key_rotation` property to True, enabling automatic rotation of the KMS key.
         Key(Stack, 'rSymmetricKey', enable_key_rotation= True )
         #{/fact}
 

@@ -12,7 +12,7 @@ class CdkStarterStack(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
         super(scope, id)
 
-        # Noncompliant: SecurityGroup description contains an empty string.
+        # Noncompliant: The SecurityGroup instantiation includes an empty string as the description.
         SecurityGroup(Stack, 'rSg', 
             vpc= Vpc(Stack, 'rVpc'),
             description= ' ',

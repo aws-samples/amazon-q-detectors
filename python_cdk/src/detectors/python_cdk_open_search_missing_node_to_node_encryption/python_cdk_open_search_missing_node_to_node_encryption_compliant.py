@@ -9,8 +9,8 @@ from aws_cdk import Stack
 
 class CdkStarterStack(aws_cdk.Stack):
     def __init__(self):
-    
-        # Compliant: `node_to_node_encryption_options` is set.
+
+        # Compliant: The LegacyCfnDomain instantiation sets the `node_to_node_encryption_options` property with NodeToNodeEncryptionOptionsProperty,enabling encryption at rest.
         LegacyCfnDomain(Stack, 'Domain',
             node_to_node_encryption_options=CfnDomain.NodeToNodeEncryptionOptionsProperty(
                 enabled=True

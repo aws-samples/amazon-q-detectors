@@ -11,8 +11,7 @@ class CdkStarterself(cdk.self):
     def __init__(self, scope: cdk.App, id: str):
       super(scope, id)
 
-      # Noncompliant: `log_uri` is not set.
+      # Noncompliant: The CfnCluster instantiation does not set the log_uri property.
       CfnCluster(self, 'rEmrCluster', job_flow_role="jobFlowRole", name ='foo', service_role= 'bar')  
-      CfnCluster(self, 'rEmrCluster', job_flow_role="jobFlowRole", name ='foo',service_role= 'bar')
       
 # {/fact}

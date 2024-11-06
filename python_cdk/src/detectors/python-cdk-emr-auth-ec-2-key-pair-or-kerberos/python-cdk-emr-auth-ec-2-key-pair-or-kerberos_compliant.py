@@ -12,7 +12,7 @@ class CdkStarterStack(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
       super(scope, id)   
         
-    # Compliant: `kerberos_attributes` is set.
+    # Compliant: The CfnCluster instantiation sets the kerberos_attributes property with KerberosAttributesProperty, including kdc_admin_password and realm.
     CfnCluster(self, 'rEmrCluster', 
         instances= InstanceGroupConfigProperty(),
         job_flow_role= ' EMR_EC2_DefaultRole',

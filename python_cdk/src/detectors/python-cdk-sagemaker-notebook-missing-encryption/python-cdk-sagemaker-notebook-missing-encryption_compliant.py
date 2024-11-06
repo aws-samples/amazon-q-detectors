@@ -10,7 +10,7 @@ class CdkStarterself(cdk.self):
   def __init__(self, scope: cdk.App, id: str):
     super(scope, id)
 
-    # Compliant: `kms_key_id` is set.
+    # Compliant: The CfnNotebookInstance instantiation sets the `kms_key_id` property, enabling encryption with the specified KMS key.
     CfnNotebookInstance(self, "rNotebook",
         instance_type="ml.t3.xlarge",
         role_arn=Role(self, "rNotebookRole",

@@ -9,7 +9,7 @@ class CdkStarterself(cdk.self):
   def __init__(self, scope: cdk.App, id: str):
     super(scope, id)
 
-    # Compliant: `server_access_logs_bucket` is set.
+    # Compliant: The Bucket instantiation sets the server_access_logs_bucket property, enabling server access logging to the specified bucket.
     Bucket(self, "LogsBucket", bucket_name="bar")
     Bucket(self, "Bucket", 
         server_access_logs_bucket=Bucket.from_bucket_name(

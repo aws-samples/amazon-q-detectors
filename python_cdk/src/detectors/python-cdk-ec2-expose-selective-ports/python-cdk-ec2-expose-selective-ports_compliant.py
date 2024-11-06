@@ -9,7 +9,7 @@ from aws_cdk.aws_ec2 import CfnSecurityGroupIngress
 class SelectivePorts(cdk.Stack):
 
     def exposure_of_sensitive_information_compliant(self):
-        # Compliant: 0.0.0.0/0 range is not used.
+        # Compliant: The CfnSecurityGroupIngress instantiation does not use the 0.0.0.0/0 range.
         CfnSecurityGroupIngress(cdk.Stack, 'rIngress',
                                 ip_protocol='tcp',
                                 cidr_ip='1.2.3.4/32')

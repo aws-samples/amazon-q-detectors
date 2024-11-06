@@ -9,7 +9,7 @@ from aws_cdk.aws_neptune import CfnDBInstance
 class CdkStarterStack(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
       super(scope, id)    
-    # Noncompliant: `auto_minor_version_upgrade` is not set.
+    # Noncompliant: The CfnDBInstance instantiation does not set the `auto_minor_version_upgrade` property.
     CfnDBInstance(Stack, 'rDatabaseInstance', 
         db_instance_class= 'db.r4.2xlarge',
     )

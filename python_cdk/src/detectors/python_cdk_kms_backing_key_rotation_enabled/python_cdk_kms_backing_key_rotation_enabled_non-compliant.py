@@ -9,7 +9,7 @@ from aws_cdk import Stack
 class CdkStarterStack(cdk.Stack):
      def __init__(self, scope: cdk.App, id: str):
         super(scope, id)        
-        # Noncompliant: `enable_key_rotation` is not set.
+       # Noncompliant: The Key instantiation does not set the `enable_key_rotation` property, disabling automatic rotation of the KMS key.
         Key(Stack, 'rSymmetricKey')
         #{/fact}
                 

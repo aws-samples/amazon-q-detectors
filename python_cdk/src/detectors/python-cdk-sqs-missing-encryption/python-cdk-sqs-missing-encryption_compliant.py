@@ -9,7 +9,7 @@ from aws_cdk import aws_sqs as sqs
 class Stack(cdk.Stack):
 
     def missing_encryption_compliant(self):
-        # Compliant: Encryption present.
+        # Compliant: Enabling encryption using an AWS-managed KMS key.
         encrypted_queue = sqs.Queue(self, 'encrypted_queue',
                                     encryption=sqs.QueueEncryption.KMS_MANAGED)
 # {/fact}

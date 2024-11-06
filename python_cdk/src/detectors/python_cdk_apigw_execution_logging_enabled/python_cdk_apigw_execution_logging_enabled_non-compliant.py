@@ -10,6 +10,6 @@ class CdkStarterStack(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
         super(scope, id)
 
-        # Noncompliant: `logging_level` is not present.
+        # Noncompliant: The RestApi instantiation does not set the `logging_level` property, disabling logging for the API.
         RestApi(Stack, 'rRestApi').root.add_method('ANY')
     # {/fact}

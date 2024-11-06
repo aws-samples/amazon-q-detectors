@@ -7,7 +7,7 @@ from aws_cdk import Stack
 
 class AthenaIncompleteEncryption:    
     def __init__(self):
-        # Compliant: `work_group_configuration` is set. 
+       # Compliant: The CfnWorkGroup instantiation sets the `work_group_configuration` property, including encryption configuration for results using SSE-S3.
         CfnWorkGroup(Stack, 'rWorkgroup', name='foo',
             work_group_configuration=CfnWorkGroup.WorkGroupConfigurationProperty(
                 enforce_work_group_configuration=True,

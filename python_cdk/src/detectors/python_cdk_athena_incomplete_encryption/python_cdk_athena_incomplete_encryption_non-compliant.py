@@ -9,6 +9,6 @@ import aws_cdk
 class AthenaIncompleteEncryption:    
     def __init__(self):
 
-        # Noncompliant: `work_group_configuration` is not set. 
+        # Noncompliant: The CfnWorkGroup instantiation does not set the `work_group_configuration` property, potentially leaving results unencrypted.
         CfnWorkGroup(Stack, 'rWorkgroup', name='foo')
 # {/fact}

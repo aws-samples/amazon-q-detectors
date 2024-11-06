@@ -11,6 +11,6 @@ class CdkStarterStack(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
       super(scope, id)
 
-      # Compliant: `encryption_at_rest_options` is set.
+      # Compliant: The LegacyCfnDomain instantiation sets the encryption_at_rest_options property with EncryptionAtRestOptionsProperty, enabling encryption at rest.
       LegacyCfnDomain(self, 'Domain',encryption_at_rest_options= EncryptionAtRestOptionsProperty(enabled=True))
       # {/fact}

@@ -10,7 +10,7 @@ from aws_cdk.aws_neptune import CfnDBCluster
 class CdkStarterStack(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
         super(scope, id)
-        # Noncompliant: `iam_auth_enabled` is not set.
+        # Noncompliant: The CfnDBCluster instantiation does not sets the `iam_auth_enabled` property.
         CfnDBCluster(Stack, "rDatabaseCluster")
 
 

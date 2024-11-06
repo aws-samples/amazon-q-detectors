@@ -9,7 +9,7 @@ from aws_cdk import aws_apigatewayv2
 class APILoggingDisabled(cdk.Stack):
 
     def api_logging_disabled_compliant(self):
-        # Compliant: logging present.
+        # Compliant: logging enabled.
         aws_apigatewayv2.CfnStage(self, 'rStage',
                                   access_log_settings=aws_apigatewayv2
                                   .CfnStage.access_log_settingsProperty(

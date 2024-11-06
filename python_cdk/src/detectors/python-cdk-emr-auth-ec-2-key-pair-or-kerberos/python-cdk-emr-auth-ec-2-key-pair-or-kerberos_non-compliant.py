@@ -12,7 +12,7 @@ class CdkStarterStack(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
       super(scope, id)   
         
-    # Noncompliant: `kerberos_attributes` is not set.
+    # Noncompliant: The CfnCluster instantiation does not set the kerberos_attributes property.
     CfnCluster(self, 'rEmrCluster',
         instances = InstanceGroupConfigProperty() ,
         job_flow_role= ' EMR_EC2_DefaultRole',

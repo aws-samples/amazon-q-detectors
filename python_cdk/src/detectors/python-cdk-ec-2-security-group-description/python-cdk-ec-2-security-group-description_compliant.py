@@ -11,7 +11,7 @@ class CdkStarterStack(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
         super(scope, id)
 
-        # Compliant: SecurityGroup description is set.
+        # Compliant: Description set for the SecurityGroup.
         SecurityGroup(Stack, 'rSg', 
             vpc= Vpc(Stack, 'rVpc'),
             description= 'lorem ipsum dolor sit amet',

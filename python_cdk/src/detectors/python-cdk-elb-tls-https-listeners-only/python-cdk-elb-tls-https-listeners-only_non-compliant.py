@@ -10,7 +10,7 @@ from aws_cdk import aws_elasticloadbalancing as elb
 class CdkStarterself(cdk.self):
   def __init__(self, scope: cdk.App, id: str):
     super(scope, id)
-    # Noncompliant: `LoadBalancingProtocol` is not set.
+    # Noncompliant: The LoadBalancingProtocol is set to tcp for the internal protocol.
     LoadBalancer(self, 'rELB',
         vpc= Vpc(self, 'rVPC'),
     ).add_listener(
