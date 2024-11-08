@@ -9,6 +9,6 @@ Resources:
       ImageId: !Ref LatestAmiId
       InstanceType: !Ref pInstanceType
       IamInstanceProfile: !Ref rInstanceProfile
-      # Compliant: `Monitoring` is enabled for your EC2 instances.
+      # Compliant: `Monitoring` is enabled for EC2 instances.
       Monitoring: true
 # {/fact}
