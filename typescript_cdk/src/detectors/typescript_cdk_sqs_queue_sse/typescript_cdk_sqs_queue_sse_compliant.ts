@@ -9,14 +9,13 @@ import * as cdk from 'aws-cdk-lib';
 import { Key } from 'aws-cdk-lib/aws-kms';
 
 export class CdkStarterStack extends cdk.Stack {
-	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-		super(scope, id, props);      
-    
-    // Compliant: SQS Queue has server-side encryption enabled.
-    new Queue(Stack, 'rQueue', {
-        encryptionMasterKey: new Key(Stack, 'rQueueKey'),
-    });
-    
-	}
+    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+        super(scope, id, props);      
+
+        // Compliant: SQS Queue has server-side encryption enabled.
+        new Queue(Stack, 'rQueue', {
+            encryptionMasterKey: new Key(Stack, 'rQueueKey'),
+        });
+    }
 }
 // {/fact}

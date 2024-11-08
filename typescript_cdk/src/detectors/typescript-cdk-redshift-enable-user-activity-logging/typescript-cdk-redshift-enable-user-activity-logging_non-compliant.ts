@@ -12,11 +12,11 @@ export class CdkStarterStack extends cdk.Stack {
 
     // Noncompliant: Activity logging is disabled by setting `enable_user_activity_logging` to `false`.
     new CfnCluster(Stack, 'rRedshiftCluster', {
-        masterUsername: 'use_a_secret_here',
-        masterUserPassword: 'use_a_secret_here',
-        clusterType: 'single-node',
-        dbName: 'bar',
-        nodeType: 'ds2.xlarge',
+      masterUsername: 'use_a_secret_here',
+      masterUserPassword: 'use_a_secret_here',
+      clusterType: 'single-node',
+      dbName: 'bar',
+      nodeType: 'ds2.xlarge',
     });
   }
 }

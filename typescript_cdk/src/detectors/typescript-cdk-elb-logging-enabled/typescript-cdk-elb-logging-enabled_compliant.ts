@@ -18,7 +18,6 @@ export class CdkStarterStack extends cdk.Stack {
     const alb = new ApplicationLoadBalancer(Stack, 'rALB', {
         vpc: new Vpc(Stack, 'rVPC'),
       });
-      alb.logAccessLogs(new Bucket(Stack, 'rLogsBucket'));
-    
+    alb.logAccessLogs(new Bucket(Stack, 'rLogsBucket'));
 	}
 }// {/fact}

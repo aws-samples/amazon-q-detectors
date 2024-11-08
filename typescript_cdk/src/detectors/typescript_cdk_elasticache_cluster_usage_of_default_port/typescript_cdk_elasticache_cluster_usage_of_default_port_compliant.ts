@@ -21,7 +21,6 @@ export class CdkStarterStack extends cdk.Stack {
       numCacheNodes: 42,
       port: 42,
     });
-
   }
 }
 // {/fact}

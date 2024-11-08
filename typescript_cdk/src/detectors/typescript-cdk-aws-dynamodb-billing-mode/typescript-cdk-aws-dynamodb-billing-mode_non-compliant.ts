@@ -7,6 +7,6 @@ import { Stack } from 'aws-cdk-lib/core';
 
 // Noncompliant: `billingMode` is not set.
 new Table(Stack, 'rTable', {
-    partitionKey: { name: 'foo', type: AttributeType.STRING },
+  partitionKey: { name: 'foo', type: AttributeType.STRING },
 });
   // {/fact}

@@ -7,17 +7,17 @@ import { Stack } from 'aws-cdk-lib/core';
 import * as cdk from 'aws-cdk-lib';
 
 export class CdkStarterStack extends cdk.Stack {
-    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-      super(scope, id, props);
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
 
-      // Noncompliant: The CfnCluster instantiation does not have a custom port value, using the default port instead.
-      new CfnCluster(Stack, 'rRedshiftCluster', {
-        masterUsername: 'use_a_secret_here',
-        masterUserPassword: 'use_a_secret_here',
-        clusterType: 'single-node',
-        dbName: 'bar',
-        nodeType: 'ds2.xlarge',
-      });
+    // Noncompliant: The CfnCluster instantiation does not have a custom port value, using the default port instead.
+    new CfnCluster(Stack, 'rRedshiftCluster', {
+      masterUsername: 'use_a_secret_here',
+      masterUserPassword: 'use_a_secret_here',
+      clusterType: 'single-node',
+      dbName: 'bar',
+      nodeType: 'ds2.xlarge',
+    });
       
   }
 }

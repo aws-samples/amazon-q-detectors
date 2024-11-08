@@ -15,13 +15,13 @@ export class CdkStarterStack extends cdk.Stack {
 
         // Compliant: `ALL` events logs is used.
         new StateMachine(Stack, 'rStateMachine',{
-                            definition: new Wait(Stack, 'rWait30', {
-                                time: WaitTime.duration(Duration.seconds(30))
-                            }),
-                            logs: {
-                                level: LogLevel.ALL,
-                                destination: new LogGroup(Stack, 'rSfnLog')
-                            }
+            definition: new Wait(Stack, 'rWait30', {
+                time: WaitTime.duration(Duration.seconds(30))
+            }),
+            logs: {
+                level: LogLevel.ALL,
+                destination: new LogGroup(Stack, 'rSfnLog')
+            }
         });
     }
 }

@@ -14,7 +14,7 @@ export class CdkStarterStack extends cdk.Stack {
         new CfnSecurityGroupIngress(Stack, 'rIngress', {
             ipProtocol: 'tcp',
             cidrIp: '1.2.3.4/32',
-            })
+        })
     }
 }
 // {/fact}

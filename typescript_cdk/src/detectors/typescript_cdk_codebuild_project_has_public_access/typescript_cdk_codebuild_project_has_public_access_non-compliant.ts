@@ -9,13 +9,13 @@ import * as codebuild from 'aws-cdk-lib/aws-codebuild'
 
 
 export class CdkStarterStack extends cdk.Stack {
-    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-      super(scope, id, props);
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
 
-      // Noncompliant: Project instantiation sets `badge` to `true`, making private resources publicly accessible.
-      const publicProject1 = new codebuild.Project(this, 'publicProject', {
-          badge: true
-      })
+    // Noncompliant: Project instantiation sets `badge` to `true`, making private resources publicly accessible.
+    const publicProject1 = new codebuild.Project(this, 'publicProject', {
+      badge: true
+    })
   }
 }
 // {/fact}

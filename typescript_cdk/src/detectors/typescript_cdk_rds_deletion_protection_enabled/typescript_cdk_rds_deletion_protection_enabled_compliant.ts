@@ -17,7 +17,6 @@ export class CdkStarterStack extends cdk.Stack {
     super(scope, id, props);
     const shouldEnableDeletionProtection = false;
 
-    
     // Compliant: The DatabaseCluster instantiation sets `deletionProtection` to `true`.
     new DatabaseCluster(Stack, "rDbCluster", {
       engine: DatabaseClusterEngine.auroraMysql({
@@ -26,7 +25,6 @@ export class CdkStarterStack extends cdk.Stack {
       instanceProps: { vpc: new Vpc(Stack, "rnew Vpc") },
       deletionProtection: true,
     });
-
   }
 }
 // {/fact}

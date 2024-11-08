@@ -14,7 +14,6 @@ export class CdkStarterStack extends cdk.Stack {
     // Compliant: SNS topics is encrypted via `masterKey`.
     new Topic(Stack, "rTopic", { masterKey: new Key(Stack, "rKey") });
 
-
   }
 }
 // {/fact}

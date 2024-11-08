@@ -7,15 +7,14 @@ import {  CfnDomain as LegacyCfnDomain } from 'aws-cdk-lib/aws-elasticsearch';
  import { Stack } from "aws-cdk-lib/core";
  	 
  export class CdkStarterStack extends cdk.Stack {
- constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-     super(scope, id, props);
+    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+        super(scope, id, props);
  
-    // Compliant: The LegacyCfnDomain instantiation sets `subnetIds`.
-    new LegacyCfnDomain(Stack, 'Domain', {
-        vpcOptions: {
-        subnetIds: ['mycoolsubnet'],
-        },
-    });
-      
- }
- }// {/fact}
+        // Compliant: The LegacyCfnDomain instantiation sets `subnetIds`.
+        new LegacyCfnDomain(Stack, 'Domain', {
+            vpcOptions: {
+            subnetIds: ['mycoolsubnet'],
+            },
+        });
+    }
+}// {/fact}

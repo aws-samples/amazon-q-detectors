@@ -12,9 +12,9 @@ export class CdkStarterStack extends cdk.Stack {
 
         // Noncompliant: `ALL` events logs is not used.
         new StateMachine(Stack, 'rStateMachine', {
-                            definition: new Wait(Stack, 'rWait30', {
-                                time: WaitTime.duration(Duration.seconds(30))
-                            })
+            definition: new Wait(Stack, 'rWait30', {
+                time: WaitTime.duration(Duration.seconds(30))
+            })
         })
     }
 }

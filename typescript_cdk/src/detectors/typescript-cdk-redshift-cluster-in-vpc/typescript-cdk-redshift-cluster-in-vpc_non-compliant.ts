@@ -20,6 +20,6 @@ export class CdkStarterStack extends cdk.Stack {
             encrypted: true,
             port:42,
         });
-        }
+    }
 }
 // {/fact}

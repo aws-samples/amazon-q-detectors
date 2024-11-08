@@ -15,11 +15,10 @@ export class CdkStarterStack extends cdk.Stack {
 
     // Compliant: The LegacyCfnDomain instantiation sets the `nodeToNodeEncryptionOptions` property with NodeToNodeEncryptionOptionsProperty, enabling encryption at rest.
     new LegacyCfnDomain(Stack, 'Domain', {
-        nodeToNodeEncryptionOptions: {
-          enabled: true,
-        },
-      });
-    
+      nodeToNodeEncryptionOptions: {
+        enabled: true,
+      },
+    });
   }
 }
 // {/fact}

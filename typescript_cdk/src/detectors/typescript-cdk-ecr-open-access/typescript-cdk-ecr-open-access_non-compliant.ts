@@ -9,19 +9,19 @@ import { Stack } from 'aws-cdk-lib/core'
 
 
 export class CdkStarterStack extends cdk.Stack {
-    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props)
 
     const repo = new Repository(Stack, 'rRepo')
 
     // Noncompliant: '*' principals in an ECR Repository is used.
     repo.addToResourcePolicy(
-        new PolicyStatement({
-          effect: Effect.ALLOW,
-          actions: ['*'],
-          principals: [new AccountPrincipal('*'), new AccountRootPrincipal()],
-        })
+      new PolicyStatement({
+        effect: Effect.ALLOW,
+        actions: ['*'],
+        principals: [new AccountPrincipal('*'), new AccountRootPrincipal()],
+      })
     )
-}
+  }
 }
 // {/fact}

@@ -10,20 +10,17 @@ import * as cdk from 'aws-cdk-lib';
 import * as codebuild from 'aws-cdk-lib/aws-codebuild'
 
 export class CdkStarterStack extends cdk.Stack {
-    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-      super(scope, id, props);
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
 
-      
-      const bucket = new s3.Bucket()
-      // Compliant: Project instantiation does not set `badge` to `true`, making private resources publicly accessible.
-      const privateProject1 = codebuild.Project(this, 'privateProject1', {
-        source: codebuild.Source.s3({
-            bucket: bucket,
-            path: 'path/to/file.zip',
-          }),
-      })
-
-    
+    const bucket = new s3.Bucket()
+    // Compliant: Project instantiation does not set `badge` to `true`, making private resources publicly accessible.
+    const privateProject1 = codebuild.Project(this, 'privateProject1', {
+      source: codebuild.Source.s3({
+        bucket: bucket,
+        path: 'path/to/file.zip',
+      }),
+    })
   }
 }
 // {/fact}

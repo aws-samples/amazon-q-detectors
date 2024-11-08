@@ -10,20 +10,20 @@ export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-        // Compliant: Activity logging is enabled by setting `enable_user_activity_logging` to `true`.
-        const compliantParamGroup2 = new CfnClusterParameterGroup(
-        Stack,
-        'rCfnParameterGroup',
+    // Compliant: Activity logging is enabled by setting `enable_user_activity_logging` to `true`.
+    const compliantParamGroup2 = new CfnClusterParameterGroup(
+    Stack,
+    'rCfnParameterGroup',
+    {
+      description: 'foo',
+      parameterGroupFamily: 'redshift-1.0',
+      parameters: [
         {
-          description: 'foo',
-          parameterGroupFamily: 'redshift-1.0',
-          parameters: [
-            {
-              parameterName: 'enable_user_activity_logging',
-              parameterValue: 'true',
-            },
-          ],
-        }
+          parameterName: 'enable_user_activity_logging',
+          parameterValue: 'true',
+        },
+      ],
+    }
     );
     
   }

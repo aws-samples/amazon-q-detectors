@@ -11,12 +11,12 @@ export class Stack extends cdk.Stack {
 
     // Compliant: The CfnCluster instantiation sets `sseSpecification` property, enabling `sseEnabled` to `true`.
     new CfnCluster(stack, 'rDax', {
-        iamRoleArn: new Role(stack, 'rDAXRole', {
-          assumedBy: new ServicePrincipal('dax.amazonaws.com'),
-        }).roleArn,
-        nodeType: 't3.small',
-        replicationFactor: 7,
-        sseSpecification: { sseEnabled: true },
+      iamRoleArn: new Role(stack, 'rDAXRole', {
+        assumedBy: new ServicePrincipal('dax.amazonaws.com'),
+      }).roleArn,
+      nodeType: 't3.small',
+      replicationFactor: 7,
+      sseSpecification: { sseEnabled: true },
     });
   }
 }// {/fact}

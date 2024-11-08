@@ -9,13 +9,12 @@ import {
   import { Stack } from 'aws-cdk-lib/core';
   import * as cdk from 'aws-cdk-lib';
   
-  export class CdkStarterStack extends cdk.Stack {
-    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-      super(scope, id, props);      
-      // Compliant: RestApi instantiation sets the `authorizationType` to CUSTOM, enabling authorization.
-      new RestApi(Stack, 'rRestApi', {
-        defaultMethodOptions: { authorizationType: AuthorizationType.CUSTOM },
-      }).root.addMethod('ANY');
-      
-   }
- } // {/fact}
+export class CdkStarterStack extends cdk.Stack {
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);      
+    // Compliant: RestApi instantiation sets the `authorizationType` to CUSTOM, enabling authorization.
+    new RestApi(Stack, 'rRestApi', {
+      defaultMethodOptions: { authorizationType: AuthorizationType.CUSTOM },
+    }).root.addMethod('ANY');
+  }
+} // {/fact}

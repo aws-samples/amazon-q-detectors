@@ -12,18 +12,18 @@ export class CdkStarterStack extends cdk.Stack {
     constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
         super(scope, id, props);
 
-            // Compliant: The Project instantiation sets KMS key encryption configuration.
-            new Project(Stack, "rBuildProject", {
-                                buildSpec: BuildSpec.fromObjectToYaml(
-                                    {
-                                      version: 0.2,
-                                      phases: {
-                                          build: { commands: ['echo "foo"'] }
-                                      }
-                                    }),
-                                encryptionKey: new Key(Stack, "rBuildKey")
+        // Compliant: The Project instantiation sets KMS key encryption configuration.
+        new Project(Stack, "rBuildProject", {
+            buildSpec: BuildSpec.fromObjectToYaml(
+                {
+                    version: 0.2,
+                    phases: {
+                        build: { commands: ['echo "foo"'] }
+                    }
+                }),
+            encryptionKey: new Key(Stack, "rBuildKey")
 
-            });
+        });
     }
 }
 // {/fact}

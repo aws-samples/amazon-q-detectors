@@ -11,15 +11,14 @@ export class CdkStarterStack extends cdk.Stack {
     super(scope, id, props);
     
    // Compliant: Encryption at rest is enabled.
-   new CfnCluster(Stack, 'rRedshiftCluster', {
-        masterUsername: 'use_a_secret_here',
-        masterUserPassword: 'use_a_secret_here',
-        clusterType: 'single-node',
-        dbName: 'bar',
-        nodeType: 'ds2.xlarge',
-        encrypted: true,
-      });
-    
+    new CfnCluster(Stack, 'rRedshiftCluster', {
+      masterUsername: 'use_a_secret_here',
+      masterUserPassword: 'use_a_secret_here',
+      clusterType: 'single-node',
+      dbName: 'bar',
+      nodeType: 'ds2.xlarge',
+      encrypted: true,
+    });
   }
 }
 // {/fact}

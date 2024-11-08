@@ -12,8 +12,8 @@ import {
 } from 'aws-cdk-lib/aws-rds';
 
 export class CdkStarterStack extends cdk.Stack {
-    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-      super(scope, id, props);
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
     // Compliant: The DatabaseCluster instantiation sets a custom port value of 42, overriding the default port.
     const vpc = new Vpc(Stack, 'rVpc');
     new DatabaseCluster(Stack, 'rDbCluster', {
@@ -23,7 +23,6 @@ export class CdkStarterStack extends cdk.Stack {
       instanceProps: { vpc: vpc },
       port: 42,
     });
-    
- }
+  }
 }
 // {/fact}

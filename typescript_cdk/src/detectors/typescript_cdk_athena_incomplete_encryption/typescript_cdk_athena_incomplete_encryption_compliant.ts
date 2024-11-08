@@ -4,11 +4,10 @@
 // {fact rule=typescript-cdk-athena-incomplete-encryption@v1.0 defects=0}
 import { CfnWorkGroup } from 'aws-cdk-lib/aws-athena';
 import * as cdk from 'aws-cdk-lib';
-private encryptionConfigurationProperty: CfnWorkGroup.EncryptionConfigurationProperty;
 
 export class CdkStarterStack extends cdk.Stack {
-    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-      super(scope, id, props);
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
 
     // Compliant: The CfnWorkGroup instantiation sets the `workGroupConfiguration` to encrypt the query result.
     new CfnWorkGroup(this, `${this.roleName}CfnWorkGroup`, {

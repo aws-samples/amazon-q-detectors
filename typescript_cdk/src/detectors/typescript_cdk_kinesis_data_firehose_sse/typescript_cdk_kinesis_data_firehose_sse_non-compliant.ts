@@ -23,6 +23,5 @@ export class CdkStarterStack extends cdk.Stack {
         }).roleArn,
       },
     });
-    
   }
 }// {/fact}

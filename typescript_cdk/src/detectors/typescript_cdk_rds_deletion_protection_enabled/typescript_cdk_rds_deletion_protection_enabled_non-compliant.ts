@@ -24,7 +24,6 @@ export class CdkStarterStack extends cdk.Stack {
       }),
       instanceProps: { vpc:new Vpc(Stack, "rnew Vpc") },
     });
-
   }
 }
 // {/fact}

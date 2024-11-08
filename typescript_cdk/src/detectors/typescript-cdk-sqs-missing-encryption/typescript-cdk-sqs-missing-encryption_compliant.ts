@@ -11,9 +11,8 @@ export class Stack extends cdk.Stack {
     super(scope, id, props);
     // Compliant: Queue is encrypted using `QueueEncryption.KMS_MANAGED`.
     const encryptedQueue = new sqs.Queue(this, 'encryptedQueue', {
-        encryption: sqs.QueueEncryption.KMS_MANAGED
+      encryption: sqs.QueueEncryption.KMS_MANAGED
     })
-   
   }
 }
 // {/fact}

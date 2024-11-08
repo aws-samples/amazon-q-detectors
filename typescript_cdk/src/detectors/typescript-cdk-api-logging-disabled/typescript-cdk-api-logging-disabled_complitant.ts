@@ -7,20 +7,18 @@ import { CfnStage as CfnV2Stage } from "aws-cdk-lib/aws-apigatewayv2"
 import { Stack } from "aws-cdk-lib/core"
 
 export class CdkStarterStack extends cdk.Stack {
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
 
-    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-        super(scope, id, props);
-
-        // Compliant: Logging enabled.
-        new CfnV2Stage(Stack, "rStage", {
-            accessLogSettings: {
-              destinationArn: "foo",
-              format: "$context.requestId"
-            },
-            apiId: "bar",
-            stageName: "baz"
-          })
-
-    }
+    // Compliant: Logging enabled.
+    new CfnV2Stage(Stack, "rStage", {
+      accessLogSettings: {
+        destinationArn: "foo",
+        format: "$context.requestId"
+      },
+      apiId: "bar",
+      stageName: "baz"
+    })
+  }
 }
 // {/fact}

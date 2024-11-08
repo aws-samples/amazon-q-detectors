@@ -5,15 +5,14 @@
 import { CfnWorkGroup } from 'aws-cdk-lib/aws-athena';
 import {Stack} from 'aws-cdk-lib/core';
 import * as cdk from 'aws-cdk-lib';
-private encryptionConfigurationProperty: CfnWorkGroup.EncryptionConfigurationProperty;
 
 export class CdkStarterStack extends cdk.Stack {
-    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-      super(scope, id, props);
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
     
     // Noncompliant: The CfnWorkGroup instantiation does not set the `workGroupConfiguration` to encrypt the query result.
     new CfnWorkGroup(Stack, 'rWorkgroup', {
-        name: 'foo',
+      name: 'foo',
     });
 
   }

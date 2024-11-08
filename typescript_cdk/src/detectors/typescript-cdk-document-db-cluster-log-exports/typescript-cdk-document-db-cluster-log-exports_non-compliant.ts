@@ -15,16 +15,15 @@ import * as cdk from 'aws-cdk-lib';
 export class CdkStarterStack extends cdk.Stack {
 	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
 		super(scope, id, props);      
-        
-        // Noncompliant: The DatabaseCluster instantiation does not set `enableCloudwatchLogsExports`.
-        new DatabaseCluster(Stack, 'rDatabaseCluster', {
-        instanceType: InstanceType.of(InstanceClass.R5, InstanceSize.LARGE),
-        vpc: new Vpc(Stack, 'rVpc'),
-        masterUser: {
-          username: SecretValue.secretsManager('foo').toString(),
-          password: SecretValue.secretsManager('bar'),
-        },
-      });
     
+    // Noncompliant: The DatabaseCluster instantiation does not set `enableCloudwatchLogsExports`.
+    new DatabaseCluster(Stack, 'rDatabaseCluster', {
+      instanceType: InstanceType.of(InstanceClass.R5, InstanceSize.LARGE),
+      vpc: new Vpc(Stack, 'rVpc'),
+      masterUser: {
+        username: SecretValue.secretsManager('foo').toString(),
+        password: SecretValue.secretsManager('bar'),
+      },
+    });
 	}
 }// {/fact}

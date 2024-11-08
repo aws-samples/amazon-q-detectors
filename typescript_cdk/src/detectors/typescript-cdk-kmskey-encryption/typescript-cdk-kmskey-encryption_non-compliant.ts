@@ -11,16 +11,16 @@ export class CdkStarterStack extends cdk.Stack {
     constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
         super(scope, id, props);
 
-            // Noncompliant: The Project instantiation does not set KMS key encryption configuration.
-            new Project(Stack, "rBuildProject", {
-                                buildSpec: BuildSpec.fromObjectToYaml(
-                                    {
-                                      version: 0.2,
-                                      phases: {
-                                        build: { commands: ['echo "foo"'], } }
-                                    }
-                                )
-            });
+        // Noncompliant: The Project instantiation does not set KMS key encryption configuration.
+        new Project(Stack, "rBuildProject", {
+            buildSpec: BuildSpec.fromObjectToYaml(
+                {
+                    version: 0.2,
+                    phases: {
+                    build: { commands: ['echo "foo"'], } }
+                }
+            )
+        });
     }
 }
 // {/fact}
