@@ -18,7 +18,7 @@ Resources:
       Subnets:
         - subnet-6782e71e
         - subnet-e7e761ac
-      # Noncompliant: `SourceSecurityGroups` is not mentioned.
+      # Noncompliant: No SourceSecurityGroups configured.
       RemoteAccess:
         Ec2SshKey: SshKeyString
 # {/fact}

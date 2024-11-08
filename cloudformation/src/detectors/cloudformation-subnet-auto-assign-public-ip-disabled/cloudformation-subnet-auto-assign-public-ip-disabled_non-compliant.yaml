@@ -10,6 +10,6 @@ Resources:
         Ref: myVPC
       CidrBlock: 10.0.0.0/24
       AvailabilityZone: "us-east-1a"
-      # Noncompliant: `MapPublicIpOnLaunch` is assigned to a public IP addres.
+      # Noncompliant: `MapPublicIpOnLaunch` is assigned to a public IP address.
       MapPublicIpOnLaunch: true
 # {/fact}

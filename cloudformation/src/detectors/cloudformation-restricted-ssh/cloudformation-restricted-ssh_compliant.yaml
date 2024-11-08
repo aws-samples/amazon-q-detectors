@@ -12,7 +12,7 @@ Resources:
         IpProtocol: tcp
         FromPort: 22
         ToPort: 22
-      # Compliant: `CidrIp` is more restricted.
+      # Compliant: `CidrIp` is more restricted to 203.0.113.42/0.
         CidrIp: "203.0.113.42/0"
       - Description: Allow HTTP access from anywhere
         IpProtocol: tcp

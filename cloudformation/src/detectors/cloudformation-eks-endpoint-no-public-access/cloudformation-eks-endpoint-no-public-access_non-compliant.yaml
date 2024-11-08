@@ -8,7 +8,7 @@ Resources:
     Properties:
       ResourcesVpcConfig:
         SubnetIds: !Ref SubnetIds
-        # Noncompliant: `EndpointPublicAccess` is `PubliclyAccessible`.
+        # Noncompliant: `EndpointPublicAccess` for EKS endpoint is not publicly accessible.
         EndpointPublicAccess: true
       RoleArn: !Ref RoleArn
       EncryptionConfig:

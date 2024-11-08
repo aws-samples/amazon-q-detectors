@@ -13,6 +13,6 @@ Resources:
         ViewerCertificate:
           AcmCertificateArn: "cert-test"
           MinimumProtocolVersion: TLSv1.2_2021
-          # Noncompliant: The value of `SslSupportMethod` is not `sni-only`.
+          # Noncompliant: `SslSupportMethod` is set to vip.
           SslSupportMethod: vip
 # {/fact}

@@ -13,6 +13,6 @@ Resources:
         ViewerCertificate:
           AcmCertificateArn: "cert-test"
           MinimumProtocolVersion: TLSv1.2_2021
-          # Compliant: The value of `SslSupportMethod` is `sni-only`.
+          # Compliant: `SslSupportMethod` is set to `sni-only`.
           SslSupportMethod: sni-only
 # {/fact}

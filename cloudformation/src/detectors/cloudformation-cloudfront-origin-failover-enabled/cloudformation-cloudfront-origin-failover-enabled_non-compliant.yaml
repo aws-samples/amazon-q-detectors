@@ -16,7 +16,7 @@ Resources:
           Bucket: myawslogbucket.s3.amazonaws.com
         OriginGroups:
           Quantity: 1
-          # Noncompliant: Origin Group does not contain two Origin Group Members.
+          # Noncompliant: Origin Group is missing the required members.
           Items:
             - Members:
                 Quantity: 0

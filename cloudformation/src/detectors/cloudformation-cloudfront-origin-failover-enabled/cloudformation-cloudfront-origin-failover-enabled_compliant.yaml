@@ -16,7 +16,7 @@ Resources:
           Bucket: myawslogbucket.s3.amazonaws.com
         OriginGroups:
           Quantity: 1
-          # Compliant: Origin Group contains two Origin Group Members.
+          # Compliant: Origin Group includes two members.
           Items:
             - Members:
                 Quantity: 2

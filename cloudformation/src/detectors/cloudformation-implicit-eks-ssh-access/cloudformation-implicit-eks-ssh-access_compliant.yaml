@@ -20,7 +20,7 @@ Resources:
         - subnet-e7e761ac
       RemoteAccess:
         Ec2SshKey: SshKeyString
-        # Compliant: `SourceSecurityGroups` is mentioned here.
+        # Compliant: `SourceSecurityGroups` configured as sg-0.
         SourceSecurityGroups:
           - sg-0
 # {/fact}
