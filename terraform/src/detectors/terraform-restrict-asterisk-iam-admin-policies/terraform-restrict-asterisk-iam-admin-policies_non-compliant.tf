@@ -5,7 +5,7 @@
 data "aws_iam_policy_document" "policy" {
   version = "2012-10-17"
 
-  # Noncompliant: IAM policy grants full administrative privileges (:).
+  # Noncompliant: IAM policy grants full administrative privileges.
   statement {
     actions = ["*"]
     effect  = "Allow"
