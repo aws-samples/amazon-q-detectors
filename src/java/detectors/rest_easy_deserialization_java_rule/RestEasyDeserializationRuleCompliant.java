@@ -9,7 +9,7 @@ import javax.ws.rs.core.*;
 @Path("/")
 public class RestEasyDeserializationRuleCompliant {
 
-    // Compliant: `@Consumes` annotation set to specific `MediaType.APPLICATION_JSON`, ensuring safe deserialization of JSON content only.
+    // Compliant: @Consumes annotation set to specific MediaType.APPLICATION_JSON, ensuring safe deserialization of JSON content only.
     @POST
     @Path("/count")
     @Produces(MediaType.APPLICATION_JSON)

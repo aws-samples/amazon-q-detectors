@@ -5,7 +5,7 @@
 import com.amazonaws.services.simplesystemsmanagement.model.PutParameterRequest;
 public class MandatoryMethodsCompliant {
 
-    // Compliant: `PutParameterRequest` created with mandatory method `setDescription()`.
+    // Compliant: PutParameterRequest created with mandatory method setDescription().
     public void compliant() {
         PutParameterRequest putParameterRequest = new PutParameterRequest();
         putParameterRequest.setDescription("Description");

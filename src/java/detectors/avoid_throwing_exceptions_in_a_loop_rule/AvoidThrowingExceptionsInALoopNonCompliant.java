@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AvoidThrowingExceptionsInALoopNonCompliant {
 
-    // NonCompliant: Exception thrown and caught inside a loop, potentially impacting performance.
+    // Noncompliant: Exception thrown and caught inside a loop, potentially impacting performance.
     public void nonCompliant(int LIMIT) {
         for (int i = 0; i < LIMIT; i++) {
             try {

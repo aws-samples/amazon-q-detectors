@@ -10,7 +10,7 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 public class DetectPBEKeySpecHardcodedPasswordCompliant{
     private static final String algorithm="SHA256";
 
-    // Compliant: `PBEKeySpec` initialized with masterKey parameter.
+    // Compliant: PBEKeySpec initialized with masterKey parameter.
     public byte[] compliant(String masterKey, byte[] salt,int iterations, int keyLen) throws
             Exception{
         String algorithm = "SHA256";

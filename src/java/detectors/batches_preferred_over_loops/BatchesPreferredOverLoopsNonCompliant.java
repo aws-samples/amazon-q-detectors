@@ -12,7 +12,7 @@ import java.util.List;
 @Slf4j
 public class BatchesPreferredOverLoopsNonCompliant {
 
-    // NonCompliant: Inefficient use of individual `deleteObject()` method calls in a loop instead of batch deletion.
+    // Noncompliant: Inefficient use of individual deleteObject() method calls in a loop instead of batch deletion.
     public void nonCompliant(AmazonS3 s3Client, List<DeleteObjectsRequest.KeyVersion> keys,
                                           String bucketName) throws SdkClientException {
         for (final DeleteObjectsRequest.KeyVersion key : keys) {

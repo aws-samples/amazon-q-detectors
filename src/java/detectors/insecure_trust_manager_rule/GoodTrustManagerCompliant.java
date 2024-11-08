@@ -16,7 +16,7 @@ import java.security.KeyStoreException;
 
 public abstract class GoodTrustManagerCompliant implements X509TrustManager {
 
-    // Compliant: Proper implementation of `X509TrustManager` using `KeyStore` and `TrustManagerFactory`.
+    // Compliant: Proper implementation of X509TrustManager using KeyStore and TrustManagerFactory.
     @Override
     public void compliant(X509Certificate[] x509Certificates, String s) throws CertificateException  {
         try {

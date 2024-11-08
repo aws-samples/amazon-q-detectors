@@ -11,7 +11,7 @@ import com.amazonaws.util.IOUtils;
 
 public class S3ObjectMetadataContentLengthCheckCompliant {
 
-    // Compliant: S3 putObject called with `FileInputStream` with content length in `ObjectMetadata`.
+    // Compliant: S3 putObject called with FileInputStream with content length in ObjectMetadata.
     public void compliant(AmazonS3 s3Client, File inputFile) throws FileNotFoundException {
         String s3Bucket = "sample-bucket";
         FileInputStream inputStream = null;

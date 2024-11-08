@@ -5,7 +5,7 @@
 
 public class AvoidInvokingStringComparisonMethodWithNullStringNonCompliant {
 
-    // NonCompliant: Potential NullPointerException when invoking equals() on null String x.
+    // Noncompliant: Potential NullPointerException when invoking equals() on null String x.
     boolean nonCompliant() {
         String x = null;
         final String y = "some";

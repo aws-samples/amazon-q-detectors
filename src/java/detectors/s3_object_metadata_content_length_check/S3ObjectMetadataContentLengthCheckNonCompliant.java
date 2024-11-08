@@ -11,7 +11,7 @@ import com.amazonaws.util.IOUtils;
 
 public class S3ObjectMetadataContentLengthCheckNonCompliant {
 
-    // NonCompliant: S3 `putObject` called with `FileInputStream` without setting content length in `ObjectMetadata`, potentially causing performance issues or incomplete uploads.
+    // Noncompliant: S3 putObject called with FileInputStream without setting content length in ObjectMetadata, potentially causing performance issues or incomplete uploads.
     public void nonCompliant(AmazonS3 s3Client, File inputFile) throws FileNotFoundException {
         String s3Bucket = "sample-bucket";
         FileInputStream inputStream = null;

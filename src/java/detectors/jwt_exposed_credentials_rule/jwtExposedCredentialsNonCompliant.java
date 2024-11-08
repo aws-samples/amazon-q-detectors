@@ -7,7 +7,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 
 public class jwtExposedCredentialsNonCompliant {
 
-    // NonCompliant: JWT token created with sensitive information (username and password) exposed in claims, compromising security.
+    // Noncompliant: JWT token created with sensitive information (username and password) exposed in claims, compromising security.
     private static void nonCompliant(){
         String secret = "123@abc";
         Algorithm algorithm = Algorithm.HMAC512(secret);

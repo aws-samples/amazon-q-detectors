@@ -14,7 +14,7 @@ public class ImproperInstantiationOfBouncyCastleNonCompliant {
         this.algorithm = DEFAULT_ALGORITHM;
     }
 
-    // NonCompliant: `BouncyCastleProvider` instantiated but not properly registered as a security provider.
+    // Noncompliant: BouncyCastleProvider instantiated but not properly registered as a security provider.
     public void nonCompliant() throws Exception{
         BouncyCastleProvider BOUNCY_CASTLE_PROVIDER = new BouncyCastleProvider();
         Signature sig = Signature.getInstance(algorithm, BOUNCY_CASTLE_PROVIDER);

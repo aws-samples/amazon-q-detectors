@@ -13,7 +13,7 @@ public class FinalizeOnSuperClassNoncompliant {
 
     protected abstract class ETLFeedParser extends FeedParser {
         private BufferedReader feedReader;
-        // NonCompliant: Overridden finalize method doesn't call `super.finalize()`, potentially leaving superclass resources uncleaned.
+        // Noncompliant: Overridden finalize method doesn't call super.finalize(), potentially leaving superclass resources uncleaned.
         @Override
         protected void nonCompliant() throws IOException {
             feedReader.close();

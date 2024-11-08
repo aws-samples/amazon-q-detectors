@@ -8,7 +8,7 @@ import java.util.List;
 
 public class AwsBatchWriteOutputIgnoredNonCompliant {
 
-    // NonCompliant: Batch write result not checked for errors, potentially ignoring failed operations.
+    // Noncompliant: Batch write result not checked for errors, potentially ignoring failed operations.
     public void nonCompliant(final SqsClient amazonSqs,
                                   final String sqsEndPoint,
                                   final List<SendMessageBatchRequestEntry> batch)

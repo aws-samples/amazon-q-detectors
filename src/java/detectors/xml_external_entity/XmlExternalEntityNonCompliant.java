@@ -8,7 +8,7 @@ import java.io.InputStream;
 
 public class XmlExternalEntityNonCompliant {
 
-    // NonCompliant: DocumentBuilder created without disabling external entity processing, potentially allowing XXE attacks.
+    // Noncompliant: DocumentBuilder created without disabling external entity processing, potentially allowing XXE attacks.
     public DocumentBuilder nonCompliant(InputStream inputStream) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setValidating(true);

@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class NullCheckCacheResponseMetadataCompliant {
 
-    // Compliant: `getCachedResponseMetadata` result null-checked before use, preventing NullPointerException.
+    // Compliant: getCachedResponseMetadata result null-checked before use, preventing NullPointerException.
     public void compliant(AmazonWebServiceRequest request, AmazonS3 amazonS3Client) {
         S3ResponseMetadata responseMetadata = amazonS3Client.getCachedResponseMetadata(request);
         if (responseMetadata != null) {

@@ -6,7 +6,7 @@ import com.amazonaws.services.kinesis.AmazonKinesisClient;
 
 public class ClientConstructorDeprecatedRuleNonCompliant {
 
-    // NonCompliant: Deprecated `AmazonKinesisClient` constructor used instead of recommended builder pattern.
+    // Noncompliant: Deprecated AmazonKinesisClient constructor used instead of recommended builder pattern.
     public void nonCompliant(){
         AmazonKinesisClient producerKinesisClient = new AmazonKinesisClient();
     }

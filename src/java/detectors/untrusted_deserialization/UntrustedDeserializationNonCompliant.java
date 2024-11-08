@@ -8,7 +8,7 @@ import java.util.List;
 
 public class UntrustedDeserializationNonCompliant {
 
-    // NonCompliant: ObjectMapper's default typing enabled, potentially allowing unsafe deserialization and remote code execution vulnerabilities.
+    // Noncompliant: ObjectMapper's default typing enabled, potentially allowing unsafe deserialization and remote code execution vulnerabilities.
     public List nonCompliant(final File input) throws Exception {
         final ObjectMapper mapper = new ObjectMapper();
         mapper.enableDefaultTyping();

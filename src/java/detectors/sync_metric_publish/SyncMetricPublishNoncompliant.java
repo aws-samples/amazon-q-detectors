@@ -19,7 +19,7 @@ public class SyncMetricPublishNoncompliant  implements RequestHandler<ScheduledE
         cloudwatch = AmazonCloudWatchClientBuilder.standard().withRegion(Regions.US_WEST_2.toString()).build();
     }
 
-    // NonCompliant: Synchronous CloudWatch metric publishing within Lambda function, potentially increasing execution time and costs.
+    // Noncompliant: Synchronous CloudWatch metric publishing within Lambda function, potentially increasing execution time and costs.
     @Override
     public Void nonCompliant(ScheduledEvent scheduledEvent, Context context) {
         final long startTime = System.currentTimeMillis();

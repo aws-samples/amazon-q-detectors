@@ -6,7 +6,7 @@ import com.amazonaws.services.s3.AmazonS3;
 
 public class ObjectPresenceCompliant {
 
-    // Compliant: S3 object existence check performed using the efficient built-in `doesObjectExist` method.
+    // Compliant: S3 object existence check performed using the efficient built-in doesObjectExist method.
     public boolean compliant(AmazonS3 s3Client, String bucketName, String key) {
         try {
             return s3Client.doesObjectExist(bucketName, key);

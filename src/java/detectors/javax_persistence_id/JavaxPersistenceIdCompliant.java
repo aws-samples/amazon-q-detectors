@@ -21,7 +21,7 @@ import javax.persistence.Table;
 @Table(name = "role_sla_type")
 public class JavaxPersistenceIdCompliant {
 
-    // Compliant: `@Id annotation used on a Long field, avoiding potential overflow issues associated with 32-bit integer IDs.
+    // Compliant: @Id annotation used on a Long field, avoiding potential overflow issues associated with 32-bit integer IDs.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_sla_id", nullable = false)

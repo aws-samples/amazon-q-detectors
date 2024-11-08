@@ -12,7 +12,7 @@ import java.util.List;
 @Slf4j
 public class BatchesPreferredOverLoopsCompliant {
 
-    // Compliant: Efficient use of batch deletion with `deleteObjects()` method to delete upto 1,000 S3 objects.
+    // Compliant: Efficient use of batch deletion with deleteObjects() method to delete upto 1,000 S3 objects.
     public void compliant(AmazonS3 s3Client, List<DeleteObjectsRequest.KeyVersion> keys,
                                        String bucketName) throws SdkClientException {
         if(keys.size() <= 1000) {

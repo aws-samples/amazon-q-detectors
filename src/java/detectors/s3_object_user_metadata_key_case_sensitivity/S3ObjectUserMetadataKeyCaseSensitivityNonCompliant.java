@@ -6,7 +6,7 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 
 public class S3ObjectUserMetadataKeyCaseSensitivityNonCompliant {
 
-    // NonCompliant: S3 object user metadata key contains uppercase letters, which may lead to unexpected behavior due to case-sensitivity issues.
+    // Noncompliant: S3 object user metadata key contains uppercase letters, which may lead to unexpected behavior due to case-sensitivity issues.
     public void nonCompliant(ObjectMetadata objectMetadata) {
         objectMetadata.getUserMetaDataOf("Key");
     }

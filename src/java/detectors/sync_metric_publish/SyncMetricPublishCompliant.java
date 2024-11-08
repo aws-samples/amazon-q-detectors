@@ -24,7 +24,7 @@ public class SyncMetricPublishCompliant implements RequestHandler<ScheduledEvent
         cloudWatchAsync = AmazonCloudWatchAsyncClientBuilder.defaultClient();
     }
 
-    // Compliant: Metrics logged asynchronously for post-processing with `putMetricDataAsync()` method, avoiding synchronous CloudWatch calls that could impact Lambda execution time.
+    // Compliant: Metrics logged asynchronously for post-processing with putMetricDataAsync() method, avoiding synchronous CloudWatch calls that could impact Lambda execution time.
     @Override
     public Void compliant(ScheduledEvent scheduledEvent, Context context) {
         LambdaLogger logger = context.getLogger();

@@ -7,7 +7,7 @@ import com.amazonaws.services.kinesis.AmazonKinesisClientBuilder;
 
 public class ClientConstructorDeprecatedRuleCompliant {
 
-    // Compliant: `AmazonKinesisClientBuilder` used to create client.
+    // Compliant: AmazonKinesisClientBuilder used to create client.
     public void compliant(String region) {
         AmazonKinesis kinesis = AmazonKinesisClientBuilder.standard().withRegion(region).build();
     }

@@ -11,7 +11,7 @@ import java.io.InputStream;
 @Slf4j
 public class AvoidResetExceptionRuleNonCompliant {
 
-    // NonCompliant: `PutObjectRequest` created without setting read limit, risking `ResetException`.
+    // Noncompliant: PutObjectRequest created without setting read limit, risking ResetException.
     public void nonCompliant(String bucket, String key, InputStream content,
                                         ObjectMetadata metadata, AmazonS3 s3Client, String owner) {
         log.info("Putting content into bucket {} and key {}", bucket, key);

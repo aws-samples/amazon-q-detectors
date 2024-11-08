@@ -4,7 +4,7 @@
 // {fact rule=java-throw-exception-with-stack-trace@v1.0 defects=1}
 public class ThrowExceptionWithTraceNonCompliant {
 
-    // NonCompliant: Exception rethrown with only the message, losing original stack trace and potentially valuable debugging information.
+    // Noncompliant: Exception rethrown with only the message, losing original stack trace and potentially valuable debugging information.
     public void nonCompliant() throws Exception {
         try {
             doSomething();

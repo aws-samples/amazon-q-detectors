@@ -9,7 +9,7 @@ import com.amazonaws.services.identitymanagement.model.CreateRoleRequest;
 
 public class AwsIamErrorPronePolicyNonCompliant {
 
-    // NonCompliant: IAM policy is manually crafted as a string, risking errors and security vulnerabilities.
+    // Noncompliant: IAM policy is manually crafted as a string, risking errors and security vulnerabilities.
     public void nonCompliant(final String roleName, String userArn) {
         final AmazonIdentityManagement iamClient = AmazonIdentityManagementClientBuilder.standard().withRegion(Regions.US_EAST_1).build();
         String policyDocument = "{\n" +

@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 
 class InsecureHashingForChecksumNonCompliant {
 
-    // NonCompliant: SHA-1 used for hashing, which is considered insecure for cryptographic purposes due to collision vulnerabilities.
+    // Noncompliant: SHA-1 used for hashing, which is considered insecure for cryptographic purposes due to collision vulnerabilities.
     public void nonCompliant() throws IOException, NoSuchAlgorithmException {
         byte[] b = Files.readAllBytes(Paths.get("/path/to/file"));
         byte[] hash = MessageDigest.getInstance("SHA1").digest(b);

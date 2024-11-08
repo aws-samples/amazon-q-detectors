@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 
 public class HardcodedCredentialsNonCompliant {
 
-    // NonCompliant: Database password is hardcoded in the connection string, posing a security risk.
+    // Noncompliant: Database password is hardcoded in the connection string, posing a security risk.
     public void nonCompliant() throws Exception {
         final Connection connection = DriverManager.getConnection("some url",
                 "username", "password");

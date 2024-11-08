@@ -17,7 +17,7 @@ public class FinalizeOnSuperClassCompliant {
     protected abstract class ETLFeedParserCompliant extends FeedParser {
         private BufferedReader feedReader;
         @Override
-        // Compliant: Overridden finalize method calls `super.finalize()`, ensuring proper cleanup of superclass resources.
+        // Compliant: Overridden finalize method calls super.finalize(), ensuring proper cleanup of superclass resources.
         protected void compliant() throws IOException {
             try {
                 feedReader.close();

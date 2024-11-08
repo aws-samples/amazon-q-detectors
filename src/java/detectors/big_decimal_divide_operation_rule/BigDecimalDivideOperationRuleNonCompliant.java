@@ -9,7 +9,7 @@ public class BigDecimalDivideOperationRuleNonCompliant {
 
     private static final BigDecimal ONE_KILOBYTE = new BigDecimal(1024);
 
-    // NonCompliant: `BigDecimal` divide operation used without specifying scale and rounding mode.
+    // Noncompliant: BigDecimal divide operation used without specifying scale and rounding mode.
     public static void nonCompliant(long fileSizeBytes) {
         final BigDecimal fileSizeKB = new BigDecimal(fileSizeBytes)
                 .divide(ONE_KILOBYTE);

@@ -15,7 +15,7 @@ public class CryptoInsecureIVJavaRuleTestCasesNonCompliant {
 
     private static final Random RANDOM = new Random();
 
-    // NonCompliant: Static, hardcoded IV used for encryption, compromising security by making the cipher predictable.
+    // Noncompliant: Static, hardcoded IV used for encryption, compromising security by making the cipher predictable.
     public void nonCompliant(SecretKeySpec secretKeySpec, byte[] dataToEncrypt) throws UnsupportedEncodingException {
         byte[] bytesIV = "f618f5679ce969da".getBytes("UTF-8");
         IvParameterSpec iv = new IvParameterSpec(bytesIV);

@@ -6,7 +6,7 @@ import java.security.*;
 
 public class SecureAlgorithmsForDigitalSignatureJavaNonCompliant {
 
-    // NonCompliant: Weak algorithm "SHA1withDSA" used for digital signature.
+    // Noncompliant: Weak algorithm "SHA1withDSA" used for digital signature.
     public void nonCompliant(final PrivateKey privateKey) throws GeneralSecurityException {
         Signature signature = Signature.getInstance("SHA1withDSA");
         signature.initSign(privateKey);

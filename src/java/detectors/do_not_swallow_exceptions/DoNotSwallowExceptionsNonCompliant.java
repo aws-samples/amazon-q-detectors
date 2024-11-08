@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DoNotSwallowExceptionsNonCompliant {
 
-    // NonCompliant: Exception caught but neither logged nor re-thrown, potentially hiding important error information.
+    // Noncompliant: Exception caught but neither logged nor re-thrown, potentially hiding important error information.
     public void nonCompliant() {
         try {
             example();

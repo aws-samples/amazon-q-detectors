@@ -6,7 +6,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.PutParameterRequest;
 
 public class MandatoryMethodsNonCompliant {
 
-    // NonCompliant: `PutParameterRequest` created without calling mandatory method `setDescription()`.
+    // Noncompliant: PutParameterRequest created without calling mandatory method setDescription().
     public void nonCompliant() {
         PutParameterRequest putParameterRequest = new PutParameterRequest();
         putParameterRequest.setName("parameterName");

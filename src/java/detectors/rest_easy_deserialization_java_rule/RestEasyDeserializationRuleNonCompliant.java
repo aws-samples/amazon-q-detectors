@@ -11,7 +11,7 @@ import org.springframework.data.util.Pair;
 @Path("/")
 public class RestEasyDeserializationRuleNonCompliant {
 
-    // NonCompliant: `@Consumes` annotation set to wildcard "/", potentially allowing unsafe deserialization of any content type.
+    // Noncompliant: @Consumes annotation set to wildcard "/", potentially allowing unsafe deserialization of any content type.
     @POST
     @Path("/concat")
     @Produces(MediaType.APPLICATION_JSON)

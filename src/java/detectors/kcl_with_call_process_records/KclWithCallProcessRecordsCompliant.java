@@ -16,7 +16,7 @@ public class KclWithCallProcessRecordsCompliant {
     private long idleTimeBetweenReadsInMillis;
     private long leaseFailOverTimeInMillis;
 
-    // Compliant: `KinesisClientLibConfiguration` initialized with `withCallProcessRecordsEvenForEmptyRecordList` set to true.
+    // Compliant: KinesisClientLibConfiguration initialized with withCallProcessRecordsEvenForEmptyRecordList set to true.
     public KinesisClientLibConfiguration compliant() {
         KinesisClientLibConfiguration kclConfig = new KinesisClientLibConfiguration(applicationName,
                 streamARN, ddbStreamCredentials, workerID)

@@ -8,7 +8,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class DetectPBEKeySpecHardcodedPasswordNonCompliant {
 
-    // NonCompliant: `PBEKeySpec` initialized with hardcoded password array, compromising security and making the key predictable.
+    // Noncompliant: PBEKeySpec initialized with hardcoded password array, compromising security and making the key predictable.
     void nonCompliant() throws NoSuchAlgorithmException {
         final byte[] salt = new byte[32];
         SecureRandom.getInstanceStrong().nextBytes(salt);

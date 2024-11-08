@@ -7,7 +7,7 @@ import java.security.SecureRandom;
 
 public class InsecureHexValueNonCompliant{
 
-    // NonCompliant: Integer.toHexString used, potentially leading to predictable hex representations.
+    // Noncompliant: Integer.toHexString used, potentially leading to predictable hex representations.
     public void nonCompliant() {
         String basic = getClass().getName();
         basic = basic.substring(basic.lastIndexOf('.')+1);

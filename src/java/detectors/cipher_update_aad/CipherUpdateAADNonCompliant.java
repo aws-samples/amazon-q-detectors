@@ -10,7 +10,7 @@ import java.security.GeneralSecurityException;
 
 public class CipherUpdateAADNonCompliant {
 
-    // NonCompliant: Cipher initialized without using Additional Authenticated Data.
+    // Noncompliant: Cipher initialized without using Additional Authenticated Data.
     public byte[] nonCompliant(byte[] key, int tagLength, byte[] ivSource, byte[] salt, byte[] data)
             throws GeneralSecurityException {
         SecretKey secretKeySpec = new SecretKeySpec(key, "AES");

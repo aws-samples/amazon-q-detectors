@@ -6,7 +6,7 @@ import com.amazonaws.services.s3.AmazonS3;
 
 public class ObjectPresenceNonCompliant {
 
-    // NonCompliant: Custom S3 object existence check implemented using `getObjectMetadata`, less efficient than built-in `doesObjectExist` method.
+    // Noncompliant: Custom S3 object existence check implemented using getObjectMetadata, less efficient than built-in doesObjectExist method.
     public boolean nonCompliant(AmazonS3 s3Client, String bucketName, String key) {
         try {
             s3Client.getObjectMetadata(bucketName, key);

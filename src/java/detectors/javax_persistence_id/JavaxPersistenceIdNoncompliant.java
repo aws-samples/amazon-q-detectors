@@ -19,7 +19,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 public class JavaxPersistenceIdNoncompliant {
 
-    // NonCompliant: `@Id` annotation used with @GeneratedValue on a 32-bit Integer field.
+    // Noncompliant: @Id annotation used with @GeneratedValue on a 32-bit Integer field.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_sla_id", nullable = false)

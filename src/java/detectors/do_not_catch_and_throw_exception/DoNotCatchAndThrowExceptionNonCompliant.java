@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 @Slf4j
 public class DoNotCatchAndThrowExceptionNonCompliant {
 
-    // NonCompliant: Exception caught and rethrown in catch block, potentially losing stack trace information.
+    // Noncompliant: Exception caught and rethrown in catch block, potentially losing stack trace information.
     public void nonCompliant() {
         try {
             foo();

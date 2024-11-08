@@ -7,7 +7,7 @@ import java.security.*;
 
 public class ProperInstantiationOfBouncyCastleCompliant {
 
-    // Compliant: `BouncyCastleProvider` properly instantiated and registered as a security provider using `Security.addProvider`.
+    // Compliant: BouncyCastleProvider properly instantiated and registered as a security provider using Security.addProvider.
     public void compliant() {
         BouncyCastleProvider BC_PROVIDER = new BouncyCastleProvider();
         Security.addProvider(BC_PROVIDER);
