@@ -7,7 +7,7 @@ resource "aws_sqs_queue_policy" "allow_email_notification_events" {
 
   queue_url = aws_sqs_queue.email_events[0].id
 
-  # Noncompliant: SQS policy have ALL (*) actions.
+  # Noncompliant: The SQS policy grants * (all) actions.
   policy = <<-EOP
   {
       "Version": "2012-10-17",

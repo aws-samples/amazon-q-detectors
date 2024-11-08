@@ -11,7 +11,7 @@ resource "aws_iam_policy" "LambdaDynamoDBPolicy" {
       {
         Sid    = "AllowDynamodbReadWrite"
         Effect = "Allow"
-        # Compliant: IAM policy actions are specified.
+        # Compliant: IAM policy actions are specifically defined for DynamoDB operations.
         Action = [
           "dynamodb:PutItem",
           "dynamodb:GetItem",

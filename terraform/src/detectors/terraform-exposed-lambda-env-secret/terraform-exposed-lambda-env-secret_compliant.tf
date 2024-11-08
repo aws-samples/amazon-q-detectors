@@ -7,7 +7,7 @@ resource "aws_lambda_function" "IdempotencyFunction" {
   role          = aws_iam_role.IdempotencyFunctionRole.arn
   runtime       = "python3.11"
   handler       = "app.lambda_handler"
-  # Compliant: Hard-coded secrets does not exist in lambda environment.
+  # Compliant: No hardcoded secrets in lambda environment.
   filename      = "lambda.zip"
   environment {}
   kms_key_arn = aws_kms_key.anyoldguff.arn

@@ -5,7 +5,7 @@
 resource "aws_iam_role" "over-privilege-role2" {
   name = "over-privilege-role"
 
-  # Compliant: Specific assume role policy principal is mentioned.
+  # Compliant: A specific assume role policy principal has been configured.
   assume_role_policy = <<EOF
       {
         "Version": "2012-10-17",

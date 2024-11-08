@@ -5,7 +5,7 @@
 resource "aws_iam_role" "over-privilege-role1" {
   name = "over-privilege-role"
 
-  # Noncompliant: Specific assume role policy principal is not mentioned.
+  # Noncompliant: No specific assume role policy principal has been configured.
   assume_role_policy = <<EOF
       {
         "Version": "2012-10-17",

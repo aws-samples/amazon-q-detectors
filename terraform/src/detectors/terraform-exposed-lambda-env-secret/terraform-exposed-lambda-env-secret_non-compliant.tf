@@ -8,7 +8,7 @@ resource "aws_lambda_function" "LambdaFunction" {
   runtime       = "python3.11"
   handler       = "app.lambda_handler"
   filename      = "lambda.zip"
-  # Noncompliant: Hard-coded secrets exist in lambda environment.
+  # Noncompliant: Hard-coded secrets in lambda environment.
   environment {
     variables = {
       AWS_ACCESS_KEY_ID     = "AKIAIOSFODNN7EXAMPLE",

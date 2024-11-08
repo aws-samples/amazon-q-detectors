@@ -8,7 +8,7 @@ resource "aws_eks_node_group" "private-node-group-1-tf" {
   node_role_arn  = aws_iam_role.workernodes.arn
   subnet_ids =  [for i in aws_subnet.eks-internal: i.id]
   instance_types = ["t3.small"]
-  # Noncompliant: `source_security_group_ids` is not mentioned.
+  # Noncompliant: No `source_security_group_ids` has been configured.
   remote_access {
     ec2_ssh_key = "some-key"
   }

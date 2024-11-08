@@ -8,7 +8,7 @@ resource "aws_iam_policy" "ec2_pricing" {
   path        = "/"
   policy = jsonencode({
     Version = "2012-10-17"
-    # Compliant: IAM policies that allow full "*-*" administrative privileges is not created.
+    # Compliant: No full administrative privileges (-) are granted in the IAM policy.
     Statement = [
       {
         Effect = "Allow"

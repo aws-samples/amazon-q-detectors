@@ -7,7 +7,7 @@ resource "aws_eks_cluster" "test" {
   role_arn = aws_iam_role.eksrole.arn
   vpc_config {
     subnet_ids = [aws_subnet.subnet1.id]
-    # Noncompliant: `endpoint_public_access` not disbled to avoid traffic.
+    # Noncompliant: `endpoint_public_access` is enabled, which allows public traffic.
     endpoint_public_access = True
   }
 }

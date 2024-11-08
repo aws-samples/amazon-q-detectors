@@ -5,7 +5,7 @@
 data "aws_iam_policy_document" "policy" {
   version = "2012-10-17"
 
-  # Compliant: This IAM policy restricts administrative privileges.
+  # Compliant: IAM policy correctly restricts administrative privileges.
   statement {
     actions = ["S3:*"]
     effect  = "Allow"

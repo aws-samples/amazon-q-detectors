@@ -7,7 +7,7 @@ resource "aws_sqs_queue_policy" "allow_email_notification_events" {
 
   queue_url = aws_sqs_queue.email_events[0].id
 
-  # Compliant: SQS policy have specific action.
+  # Compliant: The SQS policy specifies a particular action (SQS:SendMessage).
   policy = <<-EOP
   {
       "Version": "2012-10-17",
