@@ -1,0 +1,22 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-restricted-common-ports@v1.0 defects=1}
+Resources:
+  ExampleSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: "Allow port 20 inbound and outbound traffic"
+      # Noncompliant: Security groups in use is allowing unrestricted incoming TCP traffic to the specified ports.
+      SecurityGroupIngress:
+        - Description: 'HTTPS Ingress'
+          IpProtocol: tcp
+          FromPort: 20
+          ToPort: 20
+          CidrIp: 192.168.0.0/16
+        - Description: 'HTTPS Ingress'
+          IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 192.168.0.0/16
+# {/fact}

@@ -1,0 +1,21 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-restricted-ssh@v1.0 defects=0}
+Resources:
+  InstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable SSH access and HTTP from the load balancer only
+      SecurityGroupIngress:
+      - Description: Allow SSH access from trusted IP
+        IpProtocol: tcp
+        FromPort: 22
+        ToPort: 22
+      # Compliant: `CidrIp` is more restricted to 203.0.113.42/0.
+        CidrIp: "203.0.113.42/0"
+      - Description: Allow HTTP access from anywhere
+        IpProtocol: tcp
+        FromPort: 80
+        ToPort: 80
+# {/fact}

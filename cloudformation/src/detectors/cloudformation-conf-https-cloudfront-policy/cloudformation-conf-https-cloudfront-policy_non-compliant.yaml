@@ -1,0 +1,25 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-conf-https-cloudfront-policy@v1.0 defects=1}
+Resources:
+  Resource:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Comment: CDN for S3-backed website
+        Enabled: 'true'
+        Logging:
+          Bucket: myawslogbucket.s3.amazonaws.com
+        WebACLId: arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/12345
+        ViewerCertificate:
+          AcmCertificateArn: "cert-test"
+          MinimumProtocolVersion: TLSv1.2_2018
+          SslSupportMethod: sni-only
+        DefaultCacheBehavior:
+          ForwardedValues:
+            QueryString: 'true'
+          TargetOriginId: only-origin
+          # Noncompliant: HTTPS is not configured in the `ViewerProtocolPolicy`.
+          ViewerProtocolPolicy: allow-all
+# {/fact}

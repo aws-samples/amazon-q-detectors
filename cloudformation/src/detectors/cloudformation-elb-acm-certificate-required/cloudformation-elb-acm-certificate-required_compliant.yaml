@@ -1,0 +1,17 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-elb-acm-certificate-required@v1.0 defects=0}
+Resources:
+  Elb:
+    Type: AWS::ElasticLoadBalancing::LoadBalancer
+    Properties:
+      AccessLoggingPolicy:
+        Enabled: true
+      # Compliant: Load Balancer uses HTTPS/SSL certificates provided by AWS Certificate Manager (ACM).
+      Listeners:
+        - Protocol: HTTPS
+          SSLCertificateId: arn:aws:acm:us-west-2:123456789012:certificate/12345678-12ab-34cd-56ef-12345678
+        - Protocol: SSL
+          SSLCertificateId: arn:aws:acm:us-west-2:123456789012:certificate/12345678-12ab-34cd-56ef-12345678
+# {/fact}

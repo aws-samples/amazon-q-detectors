@@ -1,0 +1,23 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-cloudfront-origin-failover-enabled@v1.0 defects=0}
+Resources:
+  CloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        ViewerCertificate:
+          AcmCertificateArn: "cert-test"
+          MinimumProtocolVersion: TLSv1.2_2021
+          SslSupportMethod: sni-only
+        WebACLId: arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/12345
+        Logging:
+          Bucket: myawslogbucket.s3.amazonaws.com
+        OriginGroups:
+          Quantity: 1
+          # Compliant: Origin Group includes two members.
+          Items:
+            - Members:
+                Quantity: 2
+# {/fact}

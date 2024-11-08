@@ -1,0 +1,18 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-cloudfront-sni-enabled@v1.0 defects=1}
+Resources:
+  CloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Logging:
+          Bucket: myawslogbucket.s3.amazonaws.com
+        WebACLId: arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/12345
+        ViewerCertificate:
+          AcmCertificateArn: "cert-test"
+          MinimumProtocolVersion: TLSv1.2_2021
+          # Noncompliant: `SslSupportMethod` is set to vip.
+          SslSupportMethod: vip
+# {/fact}

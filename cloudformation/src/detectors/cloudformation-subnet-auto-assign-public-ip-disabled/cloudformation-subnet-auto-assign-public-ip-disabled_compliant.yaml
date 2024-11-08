@@ -1,0 +1,15 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-subnet-auto-assign-public-ip-disabled@v1.0 defects=0}
+Resources:
+  ExampleSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: myVPC
+      CidrBlock: 10.0.0.0/24
+      AvailabilityZone: "us-east-1a"
+      # Compliant: `MapPublicIpOnLaunch` is not assigned to public IP address.
+      MapPublicIpOnLaunch: false
+# {/fact}

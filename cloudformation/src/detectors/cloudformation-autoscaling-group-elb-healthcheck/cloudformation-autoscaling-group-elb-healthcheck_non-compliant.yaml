@@ -1,0 +1,12 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-autoscaling-group-elb-healthcheck@v1.0 defects=1}
+Resources:
+  AutoScalingGroup:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    Properties:
+      # Noncompliant: Auto Scaling group associated with a load balancer is not using Elastic Load Balancing health checks.
+      LoadBalancerNames:
+        - TestELB
+# {/fact}

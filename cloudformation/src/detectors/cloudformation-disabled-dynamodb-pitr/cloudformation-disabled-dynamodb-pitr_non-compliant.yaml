@@ -1,0 +1,22 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-disabled-dynamodb-pitr@v1.0 defects=1}
+Resources:
+  Resource:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      # Noncompliant: Dynamodb point in time recovery is not enabled.
+      AttributeDefinitions:
+          - AttributeName: !Ref 'HashKeyElementName'
+            AttributeType: !Ref 'HashKeyElementType'
+      KeySchema:
+        - AttributeName: !Ref 'HashKeyElementName'
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: !Ref 'ReadCapacityUnits'
+        WriteCapacityUnits: !Ref 'WriteCapacityUnits'
+      SSESpecification:
+        KMSMasterKeyId: "alias/key"
+        SSEEnabled: true
+  # {/fact}

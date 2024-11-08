@@ -1,0 +1,17 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-eks-endpoint-no-public-access@v1.0 defects=0}
+Resources:
+  ExampleEKSCluster:
+    Type: "AWS::EKS::Cluster"
+    Properties:
+      ResourcesVpcConfig:
+        SubnetIds: !Ref SubnetIds
+        # Compliant: `EndpointPublicAccess` for EKS endpoint is not publicly accessible.
+        EndpointPublicAccess: false
+      RoleArn: !Ref RoleArn
+      EncryptionConfig:
+        - Resources:
+            - secrets
+# {/fact}

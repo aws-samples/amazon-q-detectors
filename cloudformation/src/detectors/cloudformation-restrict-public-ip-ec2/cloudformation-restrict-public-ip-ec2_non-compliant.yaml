@@ -1,0 +1,27 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-restrict-public-ip-ec2@v1.0 defects=1}
+Resources:
+  Resource:
+    Type: AWS::EC2::Instance
+    Properties:
+      DisableApiTermination: false
+      InstanceInitiatedShutdownBehavior: stop
+      ImageId: !FindInMap
+        - AmazonLinuxNatAMI
+        - !Ref 'AWS::Region'
+        - hvm
+      InstanceType: t2.micro
+      KeyName: !Ref KeyPair
+      Monitoring: false
+      NetworkInterfaces:
+        - DeleteOnTermination: true
+          Description: Primary network interface
+          DeviceIndex: '0'
+          SubnetId: !Ref VPCPubSn1
+          GroupSet:
+            - !Ref SGAllTrafficFromVPC
+          # Noncompliant: EC2 instance have public IP.
+          AssociatePublicIpAddress: true
+# {/fact}
