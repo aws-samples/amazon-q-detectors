@@ -1,0 +1,16 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-restrict-public-access-dms@v1.0 defects=0}
+Resources:
+  Resource:
+    Type: AWS::DMS::ReplicationInstance
+    DependsOn:
+      - rDMSVPCRole
+      - rDMSCloudWatchLogsRole
+    Properties:
+      ReplicationInstanceIdentifier: !Sub ${pOrg}-${pApp}-${pEnvironment}-${pTeamName}-dms-cdc-replication-instance
+      ReplicationInstanceClass: dms.c4.xlarge
+      # Compliant: DMS replication instance is not publicly accessible.
+      PubliclyAccessible: False
+# {/fact}

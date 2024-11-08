@@ -1,0 +1,18 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-unsecure-encrypt-dax@v1.0 defects=1}
+Resources:
+  Resource:
+    Type: AWS::DAX::Cluster
+    Properties:
+      # Noncompliant: DAX is not encrypted at rest.
+      ClusterName: getUrl-sample
+      Description: Cluster for GetUrl Sample
+      IAMRoleARN: !GetAtt getUrlRole.Arn
+      NodeType: dax.t2.small
+      ReplicationFactor: 1
+      SecurityGroupIds:
+        - !GetAtt getUrlSecurityGroup.GroupId
+      SubnetGroupName: !Ref getUrlSubnetGroup
+# {/fact}

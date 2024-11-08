@@ -1,0 +1,17 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-unsecure-encrypt-efs@v1.0 defects=1}
+Resources:
+  Resource:
+    Type: AWS::ECS::TaskDefinition
+    DependsOn:
+      - MountA
+      - MountB
+    Properties:
+      Volumes:
+        - Name: factorio
+          # Noncompliant: Encryption in transit is not enabled.
+          EFSVolumeConfiguration:
+            FilesystemId: !Ref Efs
+# {/fact}

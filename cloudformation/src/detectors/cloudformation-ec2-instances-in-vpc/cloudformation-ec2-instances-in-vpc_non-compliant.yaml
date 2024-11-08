@@ -1,0 +1,13 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-ec2-instances-in-vpc@v1.0 defects=1}
+Resources:
+  ExampleEC2:
+    Type: AWS::EC2::Instance
+    Properties:
+      # Noncompliant: This EC2 instance does not belong to a virtual private cloud (VPC).
+      ImageId: !Ref LatestAmiId
+      InstanceType: !Ref pInstanceType
+      IamInstanceProfile: !Ref rInstanceProfile
+# {/fact}

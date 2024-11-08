@@ -1,0 +1,26 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-restrict-iam-permissive-role@v1.0 defects=1}
+Resources:
+  Resource:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            # Noncompliant: IAM policy allows assume role permission across all services.
+            Principal:
+              AWS:
+                - arn:aws:iam::123456789101:root
+      Path: /
+      Policies:
+        - PolicyName: root
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action: [ 'logs:*' ]
+                Resource: 'arn:aws:logs:*:*:*'
+# {/fact}

@@ -1,0 +1,26 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-implicit-eks-ssh-access@v1.0 defects=0}
+Resources:
+  Resource:
+    Type: 'AWS::EKS::Nodegroup'
+    Properties:
+      ClusterName: test
+      NodeRole: 'arn:aws:iam::012345678910:role/eksInstanceRole'
+      ScalingConfig:
+        MinSize: 3
+        DesiredSize: 5
+        MaxSize: 7
+      Labels:
+        Key1: Value1
+        Key2: Value2
+      Subnets:
+        - subnet-6782e71e
+        - subnet-e7e761ac
+      RemoteAccess:
+        Ec2SshKey: SshKeyString
+        # Compliant: `SourceSecurityGroups` is mentioned here.
+        SourceSecurityGroups:
+          - sg-0
+# {/fact}

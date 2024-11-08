@@ -1,0 +1,15 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-aurora-mysql-backtracking-enabled@v1.0 defects=1}
+Resources:
+  ExampleRDS:
+    Type: "AWS::RDS::DBCluster"
+    Properties:
+      StorageEncrypted: true
+      EnableIAMDatabaseAuthentication: true
+      # Noncompliant: Amazon Aurora MySQL cluster has backtracking disabled.
+      BacktrackWindow: 0
+      DatabaseName: MyCluster
+      Engine: 'aurora-mysql'
+# {/fact}

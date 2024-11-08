@@ -1,0 +1,23 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-disabled-aurora-encryption@v1.0 defects=0}
+Resources:
+  Resource:
+    Type: AWS::RDS::DBCluster
+    Properties:
+      Engine: aurora
+      EngineMode: serverless
+      EngineVersion: !Ref EngineVersion
+      DatabaseName: !Ref DatabaseName
+      MasterUsername: !Ref MasterUsername
+      MasterUserPassword: !Ref MasterUserPassword
+      DBClusterIdentifier: !Ref AWS::StackName
+      BackupRetentionPeriod: 35
+      DeletionProtection: true
+      EnableIAMDatabaseAuthentication: true
+      # Compliant: `StorageEncrypted` is enabled for all data in Aurora at rest.
+      StorageEncrypted: true
+      VpcSecurityGroupIds:
+        - !Ref VpcSecurityGroupId
+# {/fact}

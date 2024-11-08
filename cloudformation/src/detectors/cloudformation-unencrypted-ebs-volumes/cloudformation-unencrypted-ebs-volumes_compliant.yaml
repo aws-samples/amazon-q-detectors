@@ -1,0 +1,24 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-unencrypted-ebs-volumes@v1.0 defects=0}
+Resources:
+  Resource:
+    Type: AWS::AutoScaling::LaunchConfiguration
+    Properties:
+      KeyName: !Ref KeyName
+      InstanceType: !Ref InstanceType
+      ImageId: !Ref ImageId
+      IamInstanceProfile: !Ref IamInstanceProfile
+      AssociatePublicIpAddress: true
+      SecurityGroups:
+        - !Ref MasterSecurityGroup
+        - !Ref ClusterSecurityGroup
+        - !Ref VPCDefaultSecurityGroupId
+      BlockDeviceMappings:
+        - DeviceName: /dev/sda1
+          Ebs:
+            VolumeSize: !If [ VolumeSizeAuto, !Ref 'AWS::NoValue', !Ref VolumeSize ]
+            # Compliant: The Launch configuration EBS is securely encrypted.
+            Encrypted: true
+# {/fact}

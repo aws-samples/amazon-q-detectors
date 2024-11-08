@@ -1,0 +1,14 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-efs-resources-protected-by-backup-plan@v1.0 defects=0}
+Resources:
+  ExampleEfs:
+    Type: AWS::EFS::FileSystem
+    Properties:
+      PerformanceMode: generalPurpose
+      Encrypted: true
+      # Compliant: `BackupPolicy` status is `ENABLED`.
+      BackupPolicy:
+        Status: 'ENABLED'
+# {/fact}

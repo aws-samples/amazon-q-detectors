@@ -1,0 +1,18 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-disabled-glue-cat-encrypt@v1.0 defects=1}
+Resources:
+  Resource:
+    Type: 'AWS::Glue::DataCatalogEncryptionSettings'
+    Properties:
+      CatalogId: "CatalogId"
+      DataCatalogEncryptionSettings:
+        ConnectionPasswordEncryption:
+          KmsKeyId: "KmsKeyId"
+          ReturnConnectionPasswordEncrypted: True
+        EncryptionAtRest:
+          # Noncompliant: Glue Data Catalog Encryption is disabled.
+          CatalogEncryptionMode: "Disabled"
+          SseAwsKmsKeyId: "SseAwsKmsKeyId"
+# {/fact}

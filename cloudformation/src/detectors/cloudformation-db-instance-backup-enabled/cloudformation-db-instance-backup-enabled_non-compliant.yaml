@@ -1,0 +1,16 @@
+
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-db-instance-backup-enabled@v1.0 defects=1}
+Resources:
+  MyDB:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      # NonCompliant: 'BackupRetentionPeriod' is equals to 0.
+      BackupRetentionPeriod : 0
+      DBName: MyDatabase
+      MultiAZ: true
+      StorageEncrypted: true
+      MonitoringInterval: 5
+# {/fact}

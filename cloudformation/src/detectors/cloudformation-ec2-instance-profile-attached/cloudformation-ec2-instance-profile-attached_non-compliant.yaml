@@ -1,0 +1,13 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-ec2-instance-profile-attached@v1.0 defects=1}
+Resources:
+  ExampleEC2:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref LatestAmiId
+      InstanceType: !Ref pInstanceType
+      # Noncompliant: No IAM profile attached with the instance.
+      Monitoring: true
+# {/fact}

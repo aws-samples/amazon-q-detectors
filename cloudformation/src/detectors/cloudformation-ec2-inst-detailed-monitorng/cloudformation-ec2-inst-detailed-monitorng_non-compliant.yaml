@@ -1,0 +1,14 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-ec2-inst-detailed-monitorng@v1.0 defects=1}
+Resources:
+  ExampleEC2:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref LatestAmiId
+      InstanceType: !Ref pInstanceType
+      IamInstanceProfile: !Ref rInstanceProfile
+      # Noncompliant: `Monitoring` is not enabled for your EC2 instances.
+      Monitoring: false
+# {/fact}

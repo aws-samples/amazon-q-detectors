@@ -1,0 +1,22 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-disabled-s3-versioning@v1.0 defects=0}
+Resources:
+  Resource:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${AWS::StackName}-bucket"
+      # Compliant:  AWS S3 object versioning is enabled.
+      VersioningConfiguration:
+        Status: Enabled
+      AccessControl: Private
+      LoggingConfiguration:
+        DestinationBucketName: String
+        LogFilePrefix: String
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+# {/fact}

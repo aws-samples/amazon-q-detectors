@@ -1,0 +1,25 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-disabled-neptune-logging@v1.0 defects=1}
+Resources:
+  Resource:
+    Type: AWS::Neptune::DBCluster
+    DependsOn: NeptuneDBSG
+    Properties:
+      # Noncompliant: Neptune logging is not enabled.
+      BackupRetentionPeriod: !Ref BackupRetentionPeriod
+      DBClusterIdentifier: !Ref DBClusterIdentifier
+      DBClusterParameterGroupName: !Ref NeptuneDBClusterParameterGroup
+      DBSubnetGroupName: !Ref NeptuneDBSubnetGroup
+      IamAuthEnabled: !Ref IAMAuthEnabled
+      Port: !Ref Port
+      PreferredBackupWindow: !Ref NeptuneDBClusterPreferredBackupWindow
+      PreferredMaintenanceWindow: !Ref NeptuneDBClusterPreferredMaintenanceWindow
+      StorageEncrypted: true
+      VpcSecurityGroupIds:
+        - !Ref 'NeptuneDBSG'
+      Tags:
+        - Key: Name
+          Value: !Sub '${Env}-${AppName}-Cluster'
+# {/fact}

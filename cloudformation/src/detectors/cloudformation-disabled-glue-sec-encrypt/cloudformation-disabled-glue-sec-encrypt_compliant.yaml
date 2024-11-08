@@ -1,0 +1,21 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-disabled-glue-sec-encrypt@v1.0 defects=0}
+Resources:
+  Resource:
+    Type: AWS::Glue::SecurityConfiguration
+    Properties:
+      Name: !Sub sdlf-${pTeamName}-glue-security-config
+      # Compliant: Glue Security Configuration Encryption is enabled.
+      EncryptionConfiguration:
+        CloudWatchEncryption:
+          CloudWatchEncryptionMode: SSE-KMS
+          KmsKeyArn: !GetAtt rKMSInfraKey.Arn
+        JobBookmarksEncryption:
+          JobBookmarksEncryptionMode: CSE-KMS
+          KmsKeyArn: !GetAtt rKMSInfraKey.Arn
+        S3Encryptions:
+          - S3EncryptionMode: SSE-KMS
+            KmsKeyArn: !GetAtt rKMSDataKey.Arn
+# {/fact}

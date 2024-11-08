@@ -1,0 +1,37 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-restrict-log4j2-msg-lookup@v1.0 defects=0}
+Resources:
+  Resource:
+    Type: AWS::WAFv2::WebACL
+    Properties:
+      Name: ${self:custom.environment.WAF_NAME}
+      Description: Selfie2Anime Rate Limits
+      DefaultAction:
+        Allow: { }
+      VisibilityConfig:
+        SampledRequestsEnabled: true
+        CloudWatchMetricsEnabled: true
+        MetricName: rate-limits
+      Scope: "REGIONAL"
+      Rules:
+        - Name: rate-limiter
+          Priority: 0
+          Action:
+            Block: { }
+          Statement:
+            RateBasedStatement:
+              Limit: 100
+              AggregateKeyType: IP
+            # Compliant: WAF enabled message lookup in Log4j2
+            ManagedRuleGroupStatement:
+              VendorName: AWS
+              Name: AWSManagedRulesKnownBadInputsRuleSet
+          VisibilityConfig:
+            SampledRequestsEnabled: true
+            CloudWatchMetricsEnabled: true
+            MetricName: rate-limiter
+          OverrideAction:
+            None: { }
+# {/fact}
