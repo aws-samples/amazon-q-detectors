@@ -17,6 +17,5 @@ export class Stack extends cdk.Stack {
       nodeType: 't3.small',
       replicationFactor: 3,
     });
-    
   }
 }// {/fact}

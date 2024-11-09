@@ -19,7 +19,6 @@ export class CdkStarterStack extends cdk.Stack {
       version: KubernetesVersion.V1_14,
       endpointAccess: EndpointAccess.PUBLIC,
     });
-   
   }
 }
 // {/fact}

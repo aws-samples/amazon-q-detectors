@@ -9,4 +9,4 @@ import { Stack } from 'aws-cdk-lib/core';
 new Table(Stack, 'rTable', {
   partitionKey: { name: 'foo', type: AttributeType.STRING },
 });
-  // {/fact}
+// {/fact}

@@ -14,10 +14,10 @@ export class CdkStarterStack extends cdk.Stack {
 	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
 		super(scope, id, props);
 
-        // Compliant: Enabled access logging by setting `accessLoggingPolicy` to `true` for Classic Load Balancers.
-        const alb = new ApplicationLoadBalancer(Stack, 'rALB', {
-            vpc: new Vpc(Stack, 'rVPC'),
-          });
-        alb.logAccessLogs(new Bucket(Stack, 'rLogsBucket'));
+    // Compliant: Enabled access logging by setting `accessLoggingPolicy` to `true` for Classic Load Balancers.
+    const alb = new ApplicationLoadBalancer(Stack, 'rALB', {
+        vpc: new Vpc(Stack, 'rVPC'),
+      });
+    alb.logAccessLogs(new Bucket(Stack, 'rLogsBucket'));
 	}
 }// {/fact}

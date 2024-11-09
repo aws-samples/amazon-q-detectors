@@ -18,7 +18,6 @@ export class CdkStarterStack extends cdk.Stack {
       dbName: 'bar',
       nodeType: 'ds2.xlarge',
     });
-      
   }
 }
 // {/fact}
