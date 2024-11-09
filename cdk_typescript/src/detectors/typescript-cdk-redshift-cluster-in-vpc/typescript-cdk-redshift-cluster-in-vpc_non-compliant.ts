@@ -10,16 +10,16 @@ export class CdkStarterStack extends cdk.Stack {
 	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
 		super(scope, id, props);    
        
-        // Noncompliant: The CfnCluster instantiation does not set `clusterSubnetGroupName`. 
-        new CfnCluster(Stack, 'rRedshiftCluster', {
-            masterUsername: 'use_a_secret_here',
-            masterUserPassword: os.environ.get('PASSWORD'),
-            clusterType: 'single-node',
-            dbName: 'bar',
-            nodeType: 'ds2.xlarge',
-            encrypted: true,
-            port:42,
-        });
-    }
+		// Noncompliant: The CfnCluster instantiation does not set `clusterSubnetGroupName`. 
+		new CfnCluster(Stack, 'rRedshiftCluster', {
+			masterUsername: 'use_a_secret_here',
+			masterUserPassword: os.environ.get('PASSWORD'),
+			clusterType: 'single-node',
+			dbName: 'bar',
+			nodeType: 'ds2.xlarge',
+			encrypted: true,
+			port:42,
+		});
+	}
 }
 // {/fact}

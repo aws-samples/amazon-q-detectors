@@ -10,11 +10,11 @@ import * as cdk from 'aws-cdk-lib';
 export class CdkStarterStack extends cdk.Stack {
 	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
 		super(scope, id, props);      
-   
-        // Noncompliant: SQS Queue has server-side encryption disabled.
-        new Queue(Stack, 'rQueue', {
-            encryption: QueueEncryption.UNENCRYPTED,
-        });
+
+		// Noncompliant: SQS Queue has server-side encryption disabled.
+		new Queue(Stack, 'rQueue', {
+			encryption: QueueEncryption.UNENCRYPTED,
+		});
 	}
 }
 // {/fact}
