@@ -12,6 +12,6 @@ export class CdkStarterStack extends cdk.Stack {
     super(scope, id, props);
     // Compliant: The Stream instantiation sets `encryption` to KMS.
     new Stream(stack, 'rKds', { encryption: StreamEncryption.KMS });
- }
+  }
 }
 // {/fact}

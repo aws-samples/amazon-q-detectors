@@ -15,13 +15,13 @@ export class CdkStarterStack extends cdk.Stack {
 	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
 		super(scope, id, props);    
         
-    // Compliant: The DatabaseCluster sets `backtrackWindow` to a suitable value.
-    new DatabaseCluster(Stack, 'rDbCluster', {
-      engine: DatabaseClusterEngine.auroraMysql({
-      version: AuroraMysqlEngineVersion.VER_5_7_12,
-      }),
-      backtrackWindow: 30,
-      instanceProps: { vpc: new Vpc(Stack, 'rVpc') },
-    });    
-	}
+        // Compliant: The DatabaseCluster sets `backtrackWindow` to a suitable value.
+        new DatabaseCluster(Stack, 'rDbCluster', {
+          engine: DatabaseClusterEngine.auroraMysql({
+          version: AuroraMysqlEngineVersion.VER_5_7_12,
+          }),
+          backtrackWindow: 30,
+          instanceProps: { vpc: new Vpc(Stack, 'rVpc') },
+        });
+    }
 }// {/fact}

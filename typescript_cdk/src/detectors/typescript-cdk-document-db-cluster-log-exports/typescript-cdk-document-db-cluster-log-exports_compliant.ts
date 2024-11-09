@@ -10,15 +10,15 @@ export class CdkStarterStack extends cdk.Stack {
 	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
 		super(scope, id, props);      
     
-    // Compliant: The CfnDBCluster instantiation sets `enableCloudwatchLogsExports`, enabling authenticate, createIndex, and dropCollection Log Exports.
-    new CfnDBCluster(Stack, 'rDatabaseCluster', {
-      masterUsername: SecretValue.secretsManager('foo').toString(),
-      masterUserPassword: SecretValue.secretsManager('bar').toString(),
-      enableCloudwatchLogsExports: [
-        'authenticate',
-        'createIndex',
-        'dropCollection',
-      ],
-    });
+        // Compliant: The CfnDBCluster instantiation sets `enableCloudwatchLogsExports`, enabling authenticate, createIndex, and dropCollection Log Exports.
+        new CfnDBCluster(Stack, 'rDatabaseCluster', {
+          masterUsername: SecretValue.secretsManager('foo').toString(),
+          masterUserPassword: SecretValue.secretsManager('bar').toString(),
+          enableCloudwatchLogsExports: [
+            'authenticate',
+            'createIndex',
+            'dropCollection',
+          ],
+        });
 	}
 }// {/fact}

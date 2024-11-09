@@ -11,15 +11,15 @@ import * as cdk from 'aws-cdk-lib';
 import { Stack } from "aws-cdk-lib/core";
 
 export class CdkStarterStack extends cdk.Stack {
-constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
-  
-    const compliantVpc = new Vpc(Stack, 'rVpc1');
-    // Compliant: The FlowLog instantiation sets `resourceType` to `compliantVpc`.
-    new FlowLog(Stack, 'rFlowFlog1', {
-        resourceType: FlowLogResourceType.fromVpc(compliantVpc),
-    });
+    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+        super(scope, id, props);
+
+        const compliantVpc = new Vpc(Stack, 'rVpc1');
+        // Compliant: The FlowLog instantiation sets `resourceType` to `compliantVpc`.
+        new FlowLog(Stack, 'rFlowFlog1', {
+            resourceType: FlowLogResourceType.fromVpc(compliantVpc),
+        });
     
-  }
+    }
 }
 // {/fact}

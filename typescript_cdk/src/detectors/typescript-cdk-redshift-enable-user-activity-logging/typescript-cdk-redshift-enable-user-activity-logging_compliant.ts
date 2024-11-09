@@ -23,9 +23,7 @@ export class CdkStarterStack extends cdk.Stack {
           parameterValue: 'true',
         },
       ],
-    }
-    );
-    
+    });
   }
 }
 // {/fact}

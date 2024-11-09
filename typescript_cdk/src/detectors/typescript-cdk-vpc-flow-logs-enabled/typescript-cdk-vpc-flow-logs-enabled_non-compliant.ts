@@ -10,13 +10,13 @@ import * as cdk from 'aws-cdk-lib';
 import { Stack } from "aws-cdk-lib/core";
 
 export class CdkStarterStack extends cdk.Stack {
-constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
-  
-    new Vpc(Stack, 'rVpc');
-    // Noncompliant: `resourceType` is not set for FlowLog.
-    new FlowLog(Stack, 'rFlowLog');
-   
-  }
+    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+        super(scope, id, props);
+
+        new Vpc(Stack, 'rVpc');
+        // Noncompliant: `resourceType` is not set for FlowLog.
+        new FlowLog(Stack, 'rFlowLog');
+
+    }
 }
 // {/fact}
