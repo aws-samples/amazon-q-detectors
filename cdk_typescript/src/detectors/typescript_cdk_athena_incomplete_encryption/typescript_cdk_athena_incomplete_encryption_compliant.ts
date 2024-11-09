@@ -23,8 +23,8 @@ export class CdkStarterStack extends cdk.Stack {
 				outputLocation: `s3://${this.athenaResultBucket.bucketName}/${roleName}/`,
 				},
 			},
-    	});
-  
-  	}
+		});
+
+	}
 }
 // {/fact}

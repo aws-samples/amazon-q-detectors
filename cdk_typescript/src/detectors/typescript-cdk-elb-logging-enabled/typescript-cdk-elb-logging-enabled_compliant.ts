@@ -15,7 +15,7 @@ export class CdkStarterStack extends cdk.Stack {
 		super(scope, id, props);
 
         // Compliant: Enabled access logging by setting `accessLoggingPolicy` to `true` for Classic Load Balancers.
-        const alb = new ApplicationLoadBalancer(Stack, 'rALB', {
+    	const alb = new ApplicationLoadBalancer(Stack, 'rALB', {
             vpc: new Vpc(Stack, 'rVPC'),
         });
         alb.logAccessLogs(new Bucket(Stack, 'rLogsBucket'));
