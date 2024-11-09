@@ -9,15 +9,15 @@ import { Stack } from "aws-cdk-lib/core"
 
 
 export class CdkStarterStack extends cdk.Stack {
-    constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-        super(scope, id, props)
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+		super(scope, id, props)
 
-        // Noncompliant: Logging disabled.
-        new CfnV2Stage(Stack, "rHttpApiDefaultStage", {
-            apiId: "foo",
-            stageName: "baz"
-        })
+		// Noncompliant: Logging disabled.
+		new CfnV2Stage(Stack, "rHttpApiDefaultStage", {
+			apiId: "foo",
+			stageName: "baz"
+		})
 
-    }
+	}
 }
 // {/fact}
