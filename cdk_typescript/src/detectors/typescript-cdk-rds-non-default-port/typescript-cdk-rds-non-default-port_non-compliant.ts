@@ -13,16 +13,16 @@ import {
 
 
 export class CdkStarterStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
 
-    // Noncompliant: The DatabaseCluster instantiation does not set a custom port value, using the default port instead.
-    new DatabaseCluster(Stack, 'rDbCluster', {
-      engine: DatabaseClusterEngine.auroraMysql({
-        version: AuroraMysqlEngineVersion.VER_5_7_12,
-      }),
-      instanceProps: { vpc: new Vpc(Stack, 'rVpc') },
-    });
-  }
+		// Noncompliant: The DatabaseCluster instantiation does not set a custom port value, using the default port instead.
+		new DatabaseCluster(Stack, 'rDbCluster', {
+			engine: DatabaseClusterEngine.auroraMysql({
+				version: AuroraMysqlEngineVersion.VER_5_7_12,
+			}),
+			instanceProps: { vpc: new Vpc(Stack, 'rVpc') },
+		});
+	}
 }
 // {/fact}

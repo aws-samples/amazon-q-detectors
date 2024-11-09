@@ -8,12 +8,12 @@ import { Stack } from "aws-cdk-lib/core";
 import * as cdk from 'aws-cdk-lib';
 
 export class CdkStarterStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
 
-    // Compliant: SNS topics is encrypted via `masterKey`.
-    new Topic(Stack, "rTopic", { masterKey: new Key(Stack, "rKey") });
+		// Compliant: SNS topics is encrypted via `masterKey`.
+		new Topic(Stack, "rTopic", { masterKey: new Key(Stack, "rKey") });
 
-  }
+	}
 }
 // {/fact}

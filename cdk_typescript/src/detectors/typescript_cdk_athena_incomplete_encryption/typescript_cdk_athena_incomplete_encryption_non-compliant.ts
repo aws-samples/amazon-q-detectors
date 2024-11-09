@@ -7,14 +7,14 @@ import {Stack} from 'aws-cdk-lib/core';
 import * as cdk from 'aws-cdk-lib';
 
 export class CdkStarterStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
-    
-    // Noncompliant: The CfnWorkGroup instantiation does not set the `workGroupConfiguration` to encrypt the query result.
-    new CfnWorkGroup(Stack, 'rWorkgroup', {
-      name: 'foo',
-    });
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
+		
+		// Noncompliant: The CfnWorkGroup instantiation does not set the `workGroupConfiguration` to encrypt the query result.
+		new CfnWorkGroup(Stack, 'rWorkgroup', {
+			name: 'foo',
+		});
 
-  }
+	}
 }
 // {/fact}

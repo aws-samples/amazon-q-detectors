@@ -9,12 +9,12 @@ import {
 import { Stack } from 'aws-cdk-lib/core';
 
 export class CdkStarterStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+	constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
 
-    // Noncompliant: The LegacyCfnDomain instantiation does not set the `nodeToNodeEncryptionOptions`.
-    new LegacyCfnDomain(Stack, 'Domain', {});
-    
-  }
+		// Noncompliant: The LegacyCfnDomain instantiation does not set the `nodeToNodeEncryptionOptions`.
+		new LegacyCfnDomain(Stack, 'Domain', {});
+		
+	}
 }
 // {/fact}

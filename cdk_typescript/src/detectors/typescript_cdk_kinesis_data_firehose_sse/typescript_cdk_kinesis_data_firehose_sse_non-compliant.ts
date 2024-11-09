@@ -11,17 +11,17 @@ import * as cdk from 'aws-cdk-lib';
 
 
 export class CdkStarterStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
 
-    // Noncompliant: The CfnDeliveryStream does not set `deliveryStreamEncFryptionConfigurationInput`
-    new CfnDeliveryStream(Stack, 'rKdf', {
-      s3DestinationConfiguration: {
-        bucketArn: new Bucket(Stack, 'rDeliveryBucket').bucketArn,
-        roleArn: new Role(Stack, 'rKdfRole', {
-          assumedBy: new ServicePrincipal('firehose.amazonaws.com'),
-        }).roleArn,
-      },
-    });
-  }
+		// Noncompliant: The CfnDeliveryStream does not set `deliveryStreamEncFryptionConfigurationInput`
+		new CfnDeliveryStream(Stack, 'rKdf', {
+			s3DestinationConfiguration: {
+				bucketArn: new Bucket(Stack, 'rDeliveryBucket').bucketArn,
+				roleArn: new Role(Stack, 'rKdfRole', {
+				assumedBy: new ServicePrincipal('firehose.amazonaws.com'),
+				}).roleArn,
+			},
+		});
+	}
 }// {/fact}

@@ -8,14 +8,14 @@ import { Duration } from 'aws-cdk-lib';
 
 
 export class CdkStarterStack extends cdk.Stack {
-  public readonly kinesisStream: Stream;
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps, encrypt: boolean) {
-    super(scope, id, props);
+  	public readonly kinesisStream: Stream;
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps, encrypt: boolean) {
+		super(scope, id, props);
 
-    // Noncompliant: The Stream sets `encryption` to UNENCRYPTED.
-    new Stream(stack, 'rKds', {
-      encryption: StreamEncryption.UNENCRYPTED,
-    });
-  }
+		// Noncompliant: The Stream sets `encryption` to UNENCRYPTED.
+		new Stream(stack, 'rKds', {
+			encryption: StreamEncryption.UNENCRYPTED,
+		});
+	}
 }   
 // {/fact}

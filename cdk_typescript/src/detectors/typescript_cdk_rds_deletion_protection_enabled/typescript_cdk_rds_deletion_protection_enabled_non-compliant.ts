@@ -13,17 +13,17 @@ import * as cdk from 'aws-cdk-lib';
 import { Stack } from "aws-cdk-lib/core";
 
 export class CdkStarterStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
-    const shouldEnableDeletionProtection = false;
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
+		const shouldEnableDeletionProtection = false;
 
-    // Noncompliant: `deletionProtection` in `DatabaseCluster` is disabled.
-    new DatabaseCluster(Stack, "rDbCluster", {
-      engine: DatabaseClusterEngine.auroraMysql({
-        version: AuroraMysqlEngineVersion.VER_5_7_12,
-      }),
-      instanceProps: { vpc:new Vpc(Stack, "rnew Vpc") },
-    });
-  }
+		// Noncompliant: `deletionProtection` in `DatabaseCluster` is disabled.
+		new DatabaseCluster(Stack, "rDbCluster", {
+			engine: DatabaseClusterEngine.auroraMysql({
+				version: AuroraMysqlEngineVersion.VER_5_7_12,
+			}),
+			instanceProps: { vpc:new Vpc(Stack, "rnew Vpc") },
+		});
+	}
 }
 // {/fact}

@@ -8,13 +8,13 @@ import * as cdk from 'aws-cdk-lib';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 
 export class CdkStarterStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
-    // Noncompliant: Bucket has public access which is security sensitive.
-    const publicBucket1 = new s3.Bucket(this, 'bucket')
-    console.log('something unrelated')
-    publicBucket1.grantPublicAccess()
+	constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
+		// Noncompliant: Bucket has public access which is security sensitive.
+		const publicBucket1 = new s3.Bucket(this, 'bucket')
+		console.log('something unrelated')
+		publicBucket1.grantPublicAccess()
 
-  }
+	}
 }
 // {/fact}

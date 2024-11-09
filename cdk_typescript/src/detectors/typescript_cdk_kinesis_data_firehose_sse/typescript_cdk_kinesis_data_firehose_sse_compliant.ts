@@ -10,20 +10,20 @@ import { Stack } from "aws-cdk-lib/core";
 import * as cdk from 'aws-cdk-lib';
 
 export class CdkStarterStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
 
-    // Compliant: The CfnDeliveryStream sets `deliveryStreamEncryptionConfigurationInput`.
-    new CfnDeliveryStream(Stack, 'rKdf', {
-      s3DestinationConfiguration: {
-        bucketArn: new Bucket(Stack, 'rDeliveryBucket').bucketArn,
-        roleArn: new Role(Stack, 'rKdfRole', {
-          assumedBy: new ServicePrincipal('firehose.amazonaws.com'),
-        }).roleArn,
-      },
-      deliveryStreamEncryptionConfigurationInput: {
-        keyType: 'AWS_OWNED_CMK',
-      },
-    });
-  }
+		// Compliant: The CfnDeliveryStream sets `deliveryStreamEncryptionConfigurationInput`.
+		new CfnDeliveryStream(Stack, 'rKdf', {
+			s3DestinationConfiguration: {
+				bucketArn: new Bucket(Stack, 'rDeliveryBucket').bucketArn,
+				roleArn: new Role(Stack, 'rKdfRole', {
+				assumedBy: new ServicePrincipal('firehose.amazonaws.com'),
+				}).roleArn,
+			},
+			deliveryStreamEncryptionConfigurationInput: {
+				keyType: 'AWS_OWNED_CMK',
+			},
+		});
+	}
 }// {/fact}

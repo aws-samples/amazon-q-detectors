@@ -6,16 +6,16 @@ import * as cdk from 'aws-cdk-lib';
 import { CfnCluster } from 'aws-cdk-lib/aws-dax';
 
 export class Stack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+	constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
 
-    // Noncompliant: The CfnCluster instantiation does not set `sseSpecification` property.
-    new CfnCluster(stack, 'rDax', {
-      iamRoleArn: new Role(stack, 'rDAXRole', {
-        assumedBy: new ServicePrincipal('dax.amazonaws.com'),
-      }).roleArn,
-      nodeType: 't3.small',
-      replicationFactor: 3,
-    });
-  }
+		// Noncompliant: The CfnCluster instantiation does not set `sseSpecification` property.
+		new CfnCluster(stack, 'rDax', {
+			iamRoleArn: new Role(stack, 'rDAXRole', {
+				assumedBy: new ServicePrincipal('dax.amazonaws.com'),
+			}).roleArn,
+			nodeType: 't3.small',
+			replicationFactor: 3,
+		});
+	}
 }// {/fact}

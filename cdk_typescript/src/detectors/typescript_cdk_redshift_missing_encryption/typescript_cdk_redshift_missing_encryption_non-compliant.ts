@@ -7,17 +7,17 @@ import * as cdk from 'aws-cdk-lib';
 import { Stack } from 'aws-cdk-lib/core';
 
 export class CdkStarterStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
-    
-    // Noncompliant: Encryption at rest is disabled.
-    new CfnCluster(Stack, 'rRedshiftCluster', {
-      masterUsername: 'use_a_secret_here',
-      masterUserPassword: 'use_a_secret_here',
-      clusterType: 'single-node',
-      dbName: 'bar',
-      nodeType: 'ds2.xlarge',
-    });
-  }
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
+		
+		// Noncompliant: Encryption at rest is disabled.
+		new CfnCluster(Stack, 'rRedshiftCluster', {
+			masterUsername: 'use_a_secret_here',
+			masterUserPassword: 'use_a_secret_here',
+			clusterType: 'single-node',
+			dbName: 'bar',
+			nodeType: 'ds2.xlarge',
+		});
+	}
 }
 // {/fact}

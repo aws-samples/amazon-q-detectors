@@ -12,13 +12,13 @@ export class CdkStarterStack extends cdk.Stack {
     
 		// Compliant: The CfnDBCluster instantiation sets `enableCloudwatchLogsExports`, enabling authenticate, createIndex, and dropCollection Log Exports.
 		new CfnDBCluster(Stack, 'rDatabaseCluster', {
-		masterUsername: SecretValue.secretsManager('foo').toString(),
-		masterUserPassword: SecretValue.secretsManager('bar').toString(),
-		enableCloudwatchLogsExports: [
-			'authenticate',
-			'createIndex',
-			'dropCollection',
-		],
+			masterUsername: SecretValue.secretsManager('foo').toString(),
+			masterUserPassword: SecretValue.secretsManager('bar').toString(),
+			enableCloudwatchLogsExports: [
+				'authenticate',
+				'createIndex',
+				'dropCollection',
+			],
 		});
 	}
 }// {/fact}

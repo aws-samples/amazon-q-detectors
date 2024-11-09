@@ -12,17 +12,17 @@ import {
 } from 'aws-cdk-lib/aws-rds';
 
 export class CdkStarterStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
-    // Compliant: The DatabaseCluster instantiation sets a custom port value of 42, overriding the default port.
-    const vpc = new Vpc(Stack, 'rVpc');
-    new DatabaseCluster(Stack, 'rDbCluster', {
-      engine: DatabaseClusterEngine.auroraMysql({
-        version: AuroraMysqlEngineVersion.VER_5_7_12,
-      }),
-      instanceProps: { vpc: vpc },
-      port: 42,
-    });
-  }
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
+		// Compliant: The DatabaseCluster instantiation sets a custom port value of 42, overriding the default port.
+		const vpc = new Vpc(Stack, 'rVpc');
+		new DatabaseCluster(Stack, 'rDbCluster', {
+			engine: DatabaseClusterEngine.auroraMysql({
+				version: AuroraMysqlEngineVersion.VER_5_7_12,
+			}),
+			instanceProps: { vpc: vpc },
+			port: 42,
+		});
+	}
 }
 // {/fact}

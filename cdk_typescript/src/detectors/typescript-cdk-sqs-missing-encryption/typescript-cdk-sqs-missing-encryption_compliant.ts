@@ -7,12 +7,12 @@ import * as cdk from '@aws-cdk/core';
 import * as sqs from '@aws-cdk/aws-sqs';
 
 export class Stack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
-    // Compliant: Queue is encrypted using `QueueEncryption.KMS_MANAGED`.
-    const encryptedQueue = new sqs.Queue(this, 'encryptedQueue', {
-      encryption: sqs.QueueEncryption.KMS_MANAGED
-    })
-  }
+	constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
+		// Compliant: Queue is encrypted using `QueueEncryption.KMS_MANAGED`.
+		const encryptedQueue = new sqs.Queue(this, 'encryptedQueue', {
+			encryption: sqs.QueueEncryption.KMS_MANAGED
+		})
+	}
 }
 // {/fact}

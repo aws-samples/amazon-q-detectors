@@ -18,12 +18,12 @@ export class CdkStarterStack extends cdk.Stack {
     
 		// Noncompliant: The DatabaseCluster instantiation does not set `enableCloudwatchLogsExports`.
 		new DatabaseCluster(Stack, 'rDatabaseCluster', {
-		instanceType: InstanceType.of(InstanceClass.R5, InstanceSize.LARGE),
-		vpc: new Vpc(Stack, 'rVpc'),
-		masterUser: {
-			username: SecretValue.secretsManager('foo').toString(),
-			password: SecretValue.secretsManager('bar'),
-		},
+			instanceType: InstanceType.of(InstanceClass.R5, InstanceSize.LARGE),
+			vpc: new Vpc(Stack, 'rVpc'),
+			masterUser: {
+				username: SecretValue.secretsManager('foo').toString(),
+				password: SecretValue.secretsManager('bar'),
+			},
 		});
 	}
 }// {/fact}

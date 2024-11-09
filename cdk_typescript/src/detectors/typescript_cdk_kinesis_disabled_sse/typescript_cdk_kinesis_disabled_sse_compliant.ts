@@ -7,11 +7,11 @@ import { StreamEncryption, Stream, StreamMode } from 'aws-cdk-lib/aws-kinesis';
 
 
 export class CdkStarterStack extends cdk.Stack {
-  public readonly kinesisStream: Stream;
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps, encrypt: boolean) {
-    super(scope, id, props);
-    // Compliant: The Stream instantiation sets `encryption` to KMS.
-    new Stream(stack, 'rKds', { encryption: StreamEncryption.KMS });
-  }
+	public readonly kinesisStream: Stream;
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps, encrypt: boolean) {
+		super(scope, id, props);
+		// Compliant: The Stream instantiation sets `encryption` to KMS.
+		new Stream(stack, 'rKds', { encryption: StreamEncryption.KMS });
+	}
 }
 // {/fact}

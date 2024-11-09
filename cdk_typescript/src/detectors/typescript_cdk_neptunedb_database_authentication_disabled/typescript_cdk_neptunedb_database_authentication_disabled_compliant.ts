@@ -7,13 +7,13 @@ import { Stack } from "aws-cdk-lib/core";
 import { CfnDBCluster } from "aws-cdk-lib/aws-neptune";
 
 export class CdkStarterStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
 
-    // Compliant: The CfnDBCluster instantiation sets `iamAuthEnabled` to `true`.
-    new CfnDBCluster(Stack, "rDatabaseCluster", {
-      iamAuthEnabled: true,
-    });
-  }
+		// Compliant: The CfnDBCluster instantiation sets `iamAuthEnabled` to `true`.
+		new CfnDBCluster(Stack, "rDatabaseCluster", {
+			iamAuthEnabled: true,
+		});
+	}
 }
 // {/fact}

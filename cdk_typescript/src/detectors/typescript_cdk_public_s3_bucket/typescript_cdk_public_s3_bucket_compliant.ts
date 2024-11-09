@@ -8,12 +8,12 @@ import * as cdk from 'aws-cdk-lib';
 import * as rename_s3  from 'aws-cdk-lib/aws-s3';
 
 export class CdkStarterStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+	constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
 
-    // Compliant: Bucket has public access disabled.
-    const nonPublicBucketRenamed = new rename_s3.Bucket(this, 'bucket')
+		// Compliant: Bucket has public access disabled.
+		const nonPublicBucketRenamed = new rename_s3.Bucket(this, 'bucket')
 
-  }
+	}
 }
 // {/fact}

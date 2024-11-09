@@ -13,11 +13,11 @@ export class CdkStarterStack extends cdk.Stack {
 
 		// Noncompliant: Disabled access logging by setting `accessLoggingPolicy` to `false` for Classic Load Balancers.
 		new elb.LoadBalancer(Stack, 'rELB', {
-		vpc: new Vpc(Stack, 'rVPC'),
-		accessLoggingPolicy: {
-			s3BucketName: 'foo',
-			enabled: false,
-		},
+			vpc: new Vpc(Stack, 'rVPC'),
+			accessLoggingPolicy: {
+				s3BucketName: 'foo',
+				enabled: false,
+			},
 		});
 	}
 }// {/fact}

@@ -11,14 +11,14 @@ import {
 import { Stack } from "aws-cdk-lib/core";
 
 export class CdkStarterStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
 
-    // Compliant: Cluster instantiation sets `endpointAccess` to `EndpointAccess.PRIVATE`.
-    new Cluster(Stack, "rCustomEKS", {
-      version: KubernetesVersion.V1_14,
-      endpointAccess: EndpointAccess.PRIVATE,
-    });
-  }
+		// Compliant: Cluster instantiation sets `endpointAccess` to `EndpointAccess.PRIVATE`.
+		new Cluster(Stack, "rCustomEKS", {
+			version: KubernetesVersion.V1_14,
+			endpointAccess: EndpointAccess.PRIVATE,
+		});
+	}
 }
 // {/fact}
