@@ -1,5 +1,5 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-// SPDX-License-Identifier: MIT-2.0
+// SPDX-License-Identifier: MIT-0
 
 // {fact rule=typescript-limit-on-request-content-length@v1.0 defects=1}
 import express from 'express';
