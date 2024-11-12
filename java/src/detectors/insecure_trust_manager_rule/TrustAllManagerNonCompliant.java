@@ -17,7 +17,7 @@ public abstract class TrustAllManagerNonCompliant implements X509TrustManager {
 
     // Noncompliant: X509TrustManager implementation with empty checkServerTrusted method, bypassing certificate validation and trusting any server.
     @Override
-    public void nonCompliant(X509Certificate[] x509Certificates, String s) throws CertificateException {
+    public void checkServerTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
 
     }
     private KeyStore loadKeyStore() throws KeyStoreException, IOException, NoSuchAlgorithmException, CertificateException {
