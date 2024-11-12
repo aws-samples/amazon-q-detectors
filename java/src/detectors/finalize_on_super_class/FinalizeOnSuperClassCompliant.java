@@ -18,7 +18,7 @@ public class FinalizeOnSuperClassCompliant {
         private BufferedReader feedReader;
         @Override
         // Compliant: Overridden finalize method calls super.finalize(), ensuring proper cleanup of superclass resources.
-        protected void compliant() throws IOException {
+        protected void finalize() throws IOException {
             try {
                 feedReader.close();
             }

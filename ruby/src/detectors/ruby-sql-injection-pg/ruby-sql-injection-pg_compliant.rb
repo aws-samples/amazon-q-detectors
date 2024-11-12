@@ -30,7 +30,7 @@ class UsersController < ApplicationController
             host: 'localhost'
           )
 
-        # Complaint: Proper parameterization has been followed.
+        # Compliant: Proper parameterization has been followed.
         result = conn.exec_params('SELECT * FROM users WHERE username = $1' , [username])
   
       ensure

@@ -15,7 +15,7 @@ public class FinalizeOnSuperClassNoncompliant {
         private BufferedReader feedReader;
         // Noncompliant: Overridden finalize method doesn't call super.finalize(), potentially leaving superclass resources uncleaned.
         @Override
-        protected void nonCompliant() throws IOException {
+        protected void finalize() throws IOException {
             feedReader.close();
         }
     }
