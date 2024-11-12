@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
         username = username.gsub(/[\n\r]/, '[newline]')
 
-        # Complaint: New lines have been handled in the external input.
+        # Compliant: New lines have been handled in the external input.
         @logger.info "User created: #{username}"
     end
 end
