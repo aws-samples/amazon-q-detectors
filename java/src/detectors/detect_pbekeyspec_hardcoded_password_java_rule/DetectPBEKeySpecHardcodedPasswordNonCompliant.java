@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-// {fact rule=java-detect-pbekeyspec-hardcoded-password@v1.0 defect=1}
+// {fact rule=java-detect-pbekeyspec-hardcoded-password@v1.0 defects=1}
 import javax.crypto.spec.PBEKeySpec;
 import java.security.SecureRandom;
 import java.security.NoSuchAlgorithmException;

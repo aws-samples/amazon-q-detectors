@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-// {fact rule=java-do-not-catch-and-throw-exception@v1.0 defect=1}
+// {fact rule=java-do-not-catch-and-throw-exception@v1.0 defects=1}
 import com.amazonaws.AmazonServiceException;
 import lombok.extern.slf4j.Slf4j;
 import javax.servlet.ServletException;

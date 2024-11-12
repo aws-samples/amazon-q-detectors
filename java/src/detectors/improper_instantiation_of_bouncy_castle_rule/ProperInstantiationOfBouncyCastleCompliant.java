@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-// {fact rule=java-improper-instantiation-of-bouncy-castle@v1.0 defect=0}
+// {fact rule=java-improper-instantiation-of-bouncy-castle@v1.0 defects=0}
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import java.security.*;
 
