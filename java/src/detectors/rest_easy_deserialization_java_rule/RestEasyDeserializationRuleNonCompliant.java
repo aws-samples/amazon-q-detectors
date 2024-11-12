@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-// {fact rule=java-rest-easy-deserialization@v1.0 defect=1}
+// {fact rule=java-rest-easy-deserialization@v1.0 defects=1}
 import java.util.*;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;

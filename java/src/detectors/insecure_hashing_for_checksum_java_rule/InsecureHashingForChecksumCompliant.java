@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-// {fact rule=java-insecure-hashing-for-checksum@v1.0 defect=0}
+// {fact rule=java-insecure-hashing-for-checksum@v1.0 defects=0}
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

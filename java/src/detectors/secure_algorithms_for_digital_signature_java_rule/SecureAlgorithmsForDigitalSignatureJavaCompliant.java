@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT-0
 
 
-// {fact rule=java-secure-algorithms-for-digital-signature@v1.0 defect=0}
+// {fact rule=java-secure-algorithms-for-digital-signature@v1.0 defects=0}
 import java.security.*;
 
 public class SecureAlgorithmsForDigitalSignatureJavaCompliant {

@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-// {fact rule=java-jwt-exposed-credentials@v1.0 defect=0}
+// {fact rule=java-jwt-exposed-credentials@v1.0 defects=0}
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import java.util.HashMap;
