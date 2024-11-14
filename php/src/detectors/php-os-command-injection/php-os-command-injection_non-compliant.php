@@ -6,5 +6,5 @@
 $username = $_COOKIE['username'];
 // Noncompliant: Incorporating variable into command strings.
 exec("wto -n \"$username\" -g", $ret);
-//{/fact}
+// {/fact}
 ?>

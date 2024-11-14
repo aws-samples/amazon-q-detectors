@@ -7,5 +7,5 @@
 // Noncompliant: Tainted `inputData` is used, leading to potential insecure deserialization vulnerabilities.
 $inputData = $_GET["inputData"];
 $object = unserialize($inputData);
-//{/fact}
+// {/fact}
 ?>

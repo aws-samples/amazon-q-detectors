@@ -6,5 +6,5 @@
 // Compliant: Secure way to redirect users to the current script itself without opening up the possibility of an open redirect.
 $currentScript = $_SERVER['PHP_SELF'];
 header('Location: ' . $currentScript);
-//{/fact}
+// {/fact}
 ?>

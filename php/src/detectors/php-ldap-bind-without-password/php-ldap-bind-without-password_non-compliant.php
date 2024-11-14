@@ -6,5 +6,5 @@
 // Noncompliant: Username and password is missing.
 $ldapConnection = ldap_connect("foo.com");
 ldap_bind($ldapConnection, NULL, NULL);
-// {fact}
+// {/fact}
 ?>

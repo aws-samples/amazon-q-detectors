@@ -2,7 +2,7 @@
 //  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //  SPDX-License-Identifier: MIT-0
 
-//{fact rule=php-laravel-cookie-same-site@v1.0 defects=0}
+// {fact rule=php-laravel-cookie-same-site@v1.0 defects=0}
 return [
 
     'driver' => env('SESSION_DRIVER', 'file'),
@@ -24,5 +24,5 @@ return [
     'same_site' => 'lax',
 
 ];
-//{/fact}
+// {/fact}
 ?>

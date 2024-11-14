@@ -6,5 +6,5 @@
 // {fact rule=php-using-pseudorandom-number@v1.0 defects=0}
 // Compliant: Securely generate random number.
 $secureRandomNumber = random_bytes(16);
-//{/fact}
+// {/fact}
 ?>

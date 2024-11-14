@@ -2,7 +2,7 @@
 //  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //  SPDX-License-Identifier: MIT-0
 
-//{fact rule=php-tainted-url-host@v1.0 defects=1}
+// {fact rule=php-tainted-url-host@v1.0 defects=1}
 function makeRequest($url) {
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -16,5 +16,5 @@ function nonCompliant() {
     $info = makeRequest($url);
     return $info;
 }
-//{/fact}
+// {/fact}
 ?>
