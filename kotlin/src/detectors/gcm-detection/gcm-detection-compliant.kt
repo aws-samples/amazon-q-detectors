@@ -1,13 +1,14 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-// {fact rule=reusing-nonce-key-in-encryption@v1.0 defects=0}
+// {fact rule=kotlin-gcm-detection@v1.0 defects=0}
 import javax.crypto.Cipher
 import javax.crypto.spec.SecretKeySpec
 import javax.crypto.spec.GCMParameterSpec
 import java.util.Base64
 
 class InsecureEncryptorCompliant(private val theKey: SecretKeySpec) {
+
     companion object {
         private const val BAD_IV = "This is a bad IV"
         private const val GCM_TAG_LENGTH = 16
