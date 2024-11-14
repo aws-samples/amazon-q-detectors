@@ -13,7 +13,7 @@ int noncompliant(const std::string& username, const std::string& password) {
 
     sqlite3_stmt* stmt;
     if (sqlite3_prepare_v2(db, query.c_str(), -1, &stmt, nullptr) == SQLITE_OK) {
-        // Noncompliant : Construction of query for external input.
+        // Noncompliant: Construction of query for external input.
         if (sqlite3_step(stmt) == SQLITE_ROW) {
             std::cout << "Authentication successful.\n";
             return 1;
