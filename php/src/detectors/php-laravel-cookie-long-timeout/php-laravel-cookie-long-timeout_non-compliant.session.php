@@ -2,7 +2,7 @@
 //  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //  SPDX-License-Identifier: MIT-0
 
-//{fact rule=php-laravel-cookie-long-timeout@v1.0 defects=1}
+// {fact rule=php-laravel-cookie-long-timeout@v1.0 defects=1}
 function nonCompliant(): ConfigRepository
 {
     return new ConfigRepository([
@@ -17,5 +17,5 @@ function nonCompliant(): ConfigRepository
         ],
     ]);
 }
-//{/fact}
+// {/fact}
 ?>

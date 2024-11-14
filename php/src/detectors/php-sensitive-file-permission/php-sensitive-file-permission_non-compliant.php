@@ -6,5 +6,5 @@
 $fileSystem = new Filesystem();
 // Noncompliant: `0777` as it gives full read, write, and execute permissions to all users, which can be a security risk.
 $fileSystem->chmod("foo", 0777);
-//{/fact}
+// {/fact}
 ?>

@@ -8,5 +8,5 @@ setFilePermissionsCompliant("foo", 0750);
 function setFilePermissionsCompliant($filePath, $permissions) {
     chmod($filePath, $permissions);
 }
-//{/fact}
+// {/fact}
 ?>

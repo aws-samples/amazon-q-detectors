@@ -2,7 +2,7 @@
 //  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //  SPDX-License-Identifier: MIT-0
 
-//{fact rule=php-laravel-dangerous-model-construction@v1.0 defects=1}
+// {fact rule=php-laravel-dangerous-model-construction@v1.0 defects=1}
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 class FlightRecord extends Model
@@ -12,5 +12,5 @@ class FlightRecord extends Model
     protected $guarded = []; 
 
 }
-//{/fact}
+// {/fact}
 ?>

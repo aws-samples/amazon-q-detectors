@@ -2,7 +2,7 @@
 //  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //  SPDX-License-Identifier: MIT-0
 
-//{fact rule=php-symfony-non-literal-redirect@v1.0 defects=1}
+// {fact rule=php-symfony-non-literal-redirect@v1.0 defects=1}
 use Symfony\Component\HttpFoundation\RedirectResponse;
 class WebAppController
 {
@@ -13,5 +13,5 @@ class WebAppController
         return $this->redirect($foo);
     }
 }
-//{/fact}
+// {/fact}
 ?>

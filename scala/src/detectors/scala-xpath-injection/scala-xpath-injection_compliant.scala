@@ -33,4 +33,4 @@ class XPathInjectionCompliant {
   }
 
 }
-//{/fact}
+// {/fact}

@@ -7,5 +7,5 @@ session_start();
 $userInput = $_GET['input']; 
 // Noncompliant: The tainted session variable is used in a session.
 $_SESSION[$userInput] = true;
-//{/fact}
+// {/fact}
 ?>

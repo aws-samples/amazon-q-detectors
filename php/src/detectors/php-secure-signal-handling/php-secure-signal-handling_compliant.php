@@ -10,5 +10,5 @@ function compliant($param)  {
         pcntl_signal($processId, 9);
     }
 }
-//{/fact}
+// {/fact}
 ?>

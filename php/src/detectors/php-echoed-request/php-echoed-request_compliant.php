@@ -8,5 +8,5 @@ function compliant() {
     // Compliant: `htmlentities` provides a compliant way to display user input safely.
     print("Hello: " . htmlentities($userName)); 
 }
-//{/fact}
+// {/fact}
 ?>

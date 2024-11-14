@@ -13,5 +13,5 @@ function nonCompliant($unsafeInput)
         ->where('email = ' . $unsafeInput)
     ;
 }
-//{/fact}
+// {/fact}
 ?>
