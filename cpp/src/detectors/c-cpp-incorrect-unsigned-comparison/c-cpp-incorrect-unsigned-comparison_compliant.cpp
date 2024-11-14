@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=c-cpp-incorrect-unsigned-comparison@v1.0 defects=0}
+#include <cstddef>
 
 int compliant() {
     unsigned short uvar;
