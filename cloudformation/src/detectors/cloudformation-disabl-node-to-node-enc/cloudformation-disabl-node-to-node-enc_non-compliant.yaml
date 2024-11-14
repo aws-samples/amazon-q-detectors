@@ -1,0 +1,22 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-disabl-node-to-node-enc@v1.0 defects=1}
+Resources:
+  ElasticsearchDomain:
+    Type: 'AWS::Elasticsearch::Domain'
+    DependsOn:
+      - ESRoleCreator
+    Properties:
+      # Noncompliant: Disabled `NodeToNodeEncryptionOptions` for AWS Elasticsearch.
+      DomainName: !Sub '${ProjectName}-domain'
+      ElasticsearchVersion: 6.2
+      ElasticsearchClusterConfig:
+        DedicatedMasterEnabled: 'false'
+        InstanceCount: '1'
+        ZoneAwarenessEnabled: 'false'
+        InstanceType: t2.small.elasticsearch
+      VPCOptions:
+        SubnetIds:
+          - Ref: bookstoreSubnet1
+# {/fact}

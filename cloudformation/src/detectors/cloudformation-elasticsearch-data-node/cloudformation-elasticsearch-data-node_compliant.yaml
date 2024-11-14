@@ -1,0 +1,13 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-elasticsearch-data-node@v1.0 defects=0}
+Resources:
+  ElasticsearchDomain:
+    Type: "AWS::Elasticsearch::Domain"
+    Properties:
+      ElasticsearchClusterConfig:
+        ZoneAwarenessEnabled: true
+        # Compliant: Elasticsearch domains not configured with at least three data nodes.
+        InstanceCount: 3
+# {/fact}

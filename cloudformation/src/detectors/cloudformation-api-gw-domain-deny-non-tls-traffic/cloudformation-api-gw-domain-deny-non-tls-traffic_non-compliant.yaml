@@ -1,0 +1,11 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-api-gw-domain-deny-non-tls-traffic@v1.0 defects=1}
+Resources:
+  myDomainName:
+    Type: 'AWS::ApiGateway::DomainName'
+    Properties:
+      # Noncompliant: API GW Domain Name Resources allows non-TLS traffic.
+      DomainName: api.mydomain.com
+# {/fact}

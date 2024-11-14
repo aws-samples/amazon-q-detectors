@@ -1,0 +1,19 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-cloud-trail-watch-logs@v1.0 defects=0}
+Resources:
+  ExampleTrail:
+    Type: "AWS::CloudTrail::Trail"
+    Properties:
+      # Compliant: AWS CloudTrail trails are configured to send logs to Amazon CloudWatch logs.
+      CloudWatchLogsLogGroupArn: "myCloudWatchLogsArn"
+      S3BucketName: !Ref BucketName
+      S3KeyPrefix: "Uluru"
+      IsLogging: true
+      TrailName: !Ref TrailName
+      EnableLogFileValidation: true
+      IncludeGlobalServiceEvents: true
+      IsMultiRegionTrail: true
+      KMSKeyId: alias/MyAliasName
+# {/fact}

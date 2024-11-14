@@ -1,0 +1,15 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-api-gw-resource-check@v1.0 defects=0}
+Resources:
+  myDomainName:
+    Type: 'AWS::ApiGateway::DomainName'
+    Properties:
+      DomainName: api.mydomain.com
+      SecurityPolicy: TLS_1_2
+      # Compliant: `EndpointConfiguration` contain `REGIONAL`, `PRIVATE`, and/or `EDGE`.
+      EndpointConfiguration:
+        Types:
+          - "REGIONAL"
+# {/fact}

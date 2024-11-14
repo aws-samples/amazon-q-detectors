@@ -1,0 +1,29 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-dynamodb-autoscaling-enabled@v1.0 defects=0}
+Resources:
+  JobConfigTable:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: source_name
+          AttributeType: S
+      KeySchema:
+        - AttributeName: source_name
+          KeyType: HASH
+      # Compliant: DynamoDB sets `BillingMode` to `PAY_PER_REQUEST`, allowing flexible capacity management.
+      BillingMode: PAY_PER_REQUEST
+      TableName: !Ref ConfigTableName
+      StreamSpecification:
+        StreamViewType: NEW_IMAGE
+      Tags:
+        - Key: Name
+          Value: AWSLogAggregator
+        - Key: StackId
+          Value: !Sub '${AWS::StackName}'
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      SSESpecification:
+        SSEEnabled: true
+# {/fact}

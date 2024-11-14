@@ -1,0 +1,13 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-elasticseach-primary-node@v1.0 defects=0}
+Resources:
+  ElasticsearchDomain:
+    Type: "AWS::Elasticsearch::Domain"
+    Properties:
+      # Compliant: Elasticsearch domains are configured with at least three dedicated primary nodes.
+      ElasticsearchClusterConfig:
+        DedicatedMasterEnabled: true
+        DedicatedMasterCount: 3
+# {/fact}

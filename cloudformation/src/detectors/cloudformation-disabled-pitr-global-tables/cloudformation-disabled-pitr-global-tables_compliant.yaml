@@ -1,0 +1,41 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-disabled-pitr-global-tables@v1.0 defects=0}
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  MyGlobalTable:
+    Type: 'AWS::DynamoDB::GlobalTable'
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: PK
+          AttributeType: S
+        - AttributeName: SK
+          AttributeType: S
+        - AttributeName: GSI1PK
+          AttributeType: S
+        - AttributeName: GSI1SK
+          AttributeType: S
+      BillingMode: PAY_PER_REQUEST
+      GlobalSecondaryIndexes:
+        - IndexName: GSI1
+          KeySchema:
+            - AttributeName: GSI1PK
+              KeyType: HASH
+            - AttributeName: GSI1SK
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+      KeySchema:
+        - AttributeName: PK
+          KeyType: HASH
+        - AttributeName: SK
+          KeyType: RANGE
+      TableName: MyGT
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
+      # Compliant: Dynamodb point in time recovery is enabled for global tables.
+      Replicas:
+        - PointInTimeRecoverySpecification: 
+            PointInTimeRecoveryEnabled: true
+# {/fact}
