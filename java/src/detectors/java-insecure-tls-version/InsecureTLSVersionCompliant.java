@@ -5,7 +5,7 @@
 import javax.net.ssl.SSLContext;
 import java.security.NoSuchAlgorithmException;
 
-class Insecure_TLS_Version_Compliant  {
+class InsecureTLSVersionCompliant  {
     // Compliant: Uses the secure TLSv1.3 protocol, which is the latest and most secure version of TLS.
     public void compliant() throws NoSuchAlgorithmException {
         SSLContext sslcontext = SSLContext.getInstance("TLSv1.3");

@@ -5,7 +5,7 @@
 import org.apache.commons.net.ftp.FTPClient;
 
 class ClearTextProtocolNoncompliant {
-    // Noncompliant: FTPClient uses clear text protocol, which is insecure for transmitting sensitive data.
+    // Noncompliant: `FTPClient` uses clear text protocol, which is insecure for transmitting sensitive data.
     void nonCompliant() {
         FTPClient ftp = new FTPClient();
     }

@@ -10,7 +10,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import java.io.IOException;
 
 class DeprecatedClassJavaRuleCompliant {
-    // Compliant: Uses HttpClientBuilder to create a non-deprecated HttpClient instance for making HTTP requests.
+    // Compliant: Uses `HttpClientBuilder` to create a non-deprecated `HttpClient` instance for making HTTP requests.
     public void compliant() throws IOException {
         HttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet("http://google.com");

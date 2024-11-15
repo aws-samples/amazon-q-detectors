@@ -11,8 +11,8 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import java.io.IOException;
 
 class DeprecatedClassJavaRuleNoncompliant {
-    // Noncompliant: Uses deprecated DefaultHttpClient class, which has been replaced by newer, more secure alternatives.
-    public void noncompliant() throws IOException {
+    // Noncompliant: Uses deprecated `DefaultHttpClient` class, which has been replaced by newer, more secure alternatives.
+    public void nonCompliant() throws IOException {
         HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet("http://google.com");
         HttpResponse response = client.execute(request);

@@ -12,7 +12,7 @@ import java.nio.file.Files;
 import java.util.Map;
 
 public class UnsafeYamlDeserializationCompliant {
-    // Compliant: Uses SafeConstructor with LoaderOptions for YAML deserialization, preventing arbitrary code execution.
+    // Compliant: Uses `SafeConstructor` with `LoaderOptions` for YAML deserialization, preventing arbitrary code execution.
     public void compliant(final String yamlContents) {
         LoaderOptions loadOptions = new LoaderOptions();
         final Yaml yaml = new Yaml(new SafeConstructor(loadOptions));

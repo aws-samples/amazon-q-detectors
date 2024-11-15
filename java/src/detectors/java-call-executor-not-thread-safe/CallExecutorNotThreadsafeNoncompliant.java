@@ -8,7 +8,7 @@ import com.evanlennick.retry4j.config.RetryConfig;
 
 public class CallExecutorNotThreadsafeNoncompliant {
     private  CallExecutor callExecutor;
-    // Noncompliant: CallExecutor is not thread-safe and should not be shared across multiple threads.
+    // Noncompliant: `CallExecutor` is not thread-safe and should not be shared across multiple threads.
     public void nonCompliant(final RetryConfig retryConfig) {
         callExecutor = new CallExecutorBuilder()
             .config(retryConfig)
@@ -16,4 +16,3 @@ public class CallExecutorNotThreadsafeNoncompliant {
     }
 }
 // {/fact}
-

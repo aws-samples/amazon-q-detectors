@@ -6,7 +6,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 
 public class JWTNoneAlgorithmAuthCompliant {
-    // Compliant: Uses a secure HMAC256 algorithm for JWT signing, ensuring token integrity and authenticity.
+    // Compliant: Uses a secure `HMAC256` algorithm for JWT signing, ensuring token integrity and authenticity.
     public static String compliant(){
         Algorithm algorithm = Algorithm.HMAC256("secret");
 
@@ -15,7 +15,6 @@ public class JWTNoneAlgorithmAuthCompliant {
             .withClaim("username", "TestUser@domain.com")
             .withClaim("password", "TestUser@123")
             .sign(algorithm);
-
         return generatedToken;
     }
 }

@@ -10,7 +10,7 @@ import java.net.URL;
 
 public class ServerSideRequestForgeryNoncompliant {
     // Noncompliant: Directly uses user-supplied URL without validation, potentially allowing SSRF attacks.
-    public void noncompliant(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void nonCompliant(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         URL url = new URL(req.getParameter("url"));
         HttpURLConnection httpConnection = (HttpURLConnection) url.openConnection();
     }

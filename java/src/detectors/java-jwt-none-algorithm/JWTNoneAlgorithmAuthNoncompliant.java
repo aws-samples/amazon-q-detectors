@@ -5,8 +5,8 @@ import com.auth0.jwt.algorithms.Algorithm;
 
 // {fact rule=java-jwt-none-algorithm@v1.0 defects=1}
 public class JWTNoneAlgorithmAuthNoncompliant {
-    // Noncompliant: Uses the insecure 'none' algorithm for JWT, which allows token forgery and bypasses signature verification.
-    public static String noncompliant(){
+    // Noncompliant: Uses the insecure `none` algorithm for JWT, which allows token forgery and bypasses signature verification.
+    public static String nonCompliant(){
         Algorithm algorithm = Algorithm.none();
 
         String generatedToken = JWT.create()

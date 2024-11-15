@@ -5,13 +5,11 @@
 import javax.net.ssl.SSLContext;
 import java.security.NoSuchAlgorithmException;
 
-class Insecure_TLS_VersionNoncompliant  {
+class InsecureTLSVersionNoncompliant  {
 
     // Noncompliant: Uses the deprecated and insecure SSL protocol instead of a more secure TLS version.
-    public void noncompliant() throws NoSuchAlgorithmException {
+    public void nonCompliant() throws NoSuchAlgorithmException {
         SSLContext sslcontext = SSLContext.getInstance("SSL");
-
     }
-
  }
 // {/fact}

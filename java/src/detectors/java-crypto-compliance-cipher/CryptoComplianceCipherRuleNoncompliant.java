@@ -6,7 +6,7 @@ import javax.crypto.Cipher;
 
 class CryptoComplianceCipherRuleNoncompliant {
 
-    // Noncompliant: Uses an insecure cipher algorithm (DES) which is vulnerable to various attacks.
+    // Noncompliant: Uses an insecure cipher algorithm DES which is vulnerable to various attacks.
     public void nonCompliant() throws Exception {
         final Cipher c = Cipher.getInstance("des");
         c.doFinal();

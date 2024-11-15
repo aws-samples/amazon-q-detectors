@@ -6,7 +6,7 @@ import org.yaml.snakeyaml.Yaml;
 
 public class UnsafeYamlDeserializationNoncompliant {
     // Noncompliant: Uses unsafe YAML deserialization without restrictions, potentially allowing arbitrary code execution.
-    public void noncompliant(final String yamlContents) {
+    public void nonCompliant(final String yamlContents) {
         final Yaml yaml = new Yaml(); 
         final Object yamlObject = yaml.load(yamlContents);
     }

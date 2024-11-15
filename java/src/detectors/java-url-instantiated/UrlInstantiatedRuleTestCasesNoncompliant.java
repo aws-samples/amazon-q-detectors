@@ -9,7 +9,7 @@ import java.net.URL;
 
 public class UrlInstantiatedRuleTestCasesNoncompliant {
     // Noncompliant: Uses HTTP instead of HTTPS for URL instantiation, potentially exposing data to interception.
-    public void compliant() {
+    public void nonCompliant() {
         try {
             URL url = new URL("http://www.example.com/");
             HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();

@@ -5,8 +5,8 @@
 import java.util.concurrent.CompletableFuture;
 
 public class MisconfiguredConcurrencyNoncompliant {
-    // Noncompliant: Uses CompletableFuture's get() method without a timeout, potentially causing indefinite blocking.
-    public void noncompliant() throws Exception {
+    // Noncompliant: Uses CompletableFuture's `get()` method without a timeout, potentially causing indefinite blocking.
+    public void nonCompliant() throws Exception {
         CompletableFuture<String> completableFuture
                 = CompletableFuture.supplyAsync(() -> "Hello");
 
@@ -16,3 +16,4 @@ public class MisconfiguredConcurrencyNoncompliant {
     }
 }
 // {/fact}
+

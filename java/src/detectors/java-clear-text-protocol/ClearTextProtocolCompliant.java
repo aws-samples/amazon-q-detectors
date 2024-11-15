@@ -5,11 +5,10 @@
 import org.apache.commons.net.ftp.FTPSClient;
 
 class ClearTextProtocolCompliant {
-    // Compliant: FTPSClient uses a secure protocol (FTPS) instead of clear text FTP.
+    // Compliant: `FTPSClient` uses a secure protocol (FTPS) instead of clear text FTP.
     void compliant() {
         new FTPSClient();
     }
 
 }
 // {/fact}
-
