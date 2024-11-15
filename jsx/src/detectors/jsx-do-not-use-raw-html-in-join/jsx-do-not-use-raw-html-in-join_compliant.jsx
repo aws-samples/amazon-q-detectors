@@ -5,8 +5,8 @@
 function compliant(data1, data2) {
     const escapeHtml = str => str.replace(/[&<>"'`=\/]/g, char =>
         ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;', '`': '&#96;', '=': '&#61;', '/': '&#47;' }[char])
-    );
+    )
     // Compliant: Raw HTML is not used in `join()`.
-    const x = [escapeHtml(data1), escapeHtml(data2)].join();
+    const x = [escapeHtml(data1), escapeHtml(data2)].join()
 }
 // {/fact}

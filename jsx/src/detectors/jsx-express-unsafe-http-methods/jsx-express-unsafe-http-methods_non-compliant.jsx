@@ -9,6 +9,6 @@ function noncompliant() {
     // Noncompliant: `app.all()` allows unrestricted access to all HTTP methods without proper method-specific controls.
     app.all("/someurl", function (request, response) {   
         response.send("...")
-    });
+    })
 }
 // {/fact}

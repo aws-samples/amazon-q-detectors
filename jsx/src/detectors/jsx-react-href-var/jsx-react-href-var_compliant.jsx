@@ -8,6 +8,6 @@ function compliant() {
     <div>  
       <a href={item.value}>click</a>
     </div>
-  ));
+  ))
 }
 // {/fact}

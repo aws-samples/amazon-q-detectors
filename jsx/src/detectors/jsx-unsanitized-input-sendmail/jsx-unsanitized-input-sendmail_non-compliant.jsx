@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=jsx-unsanitized-input-sendmail@v1.0 defects=1}
-const express = require("express");
-const app = express();
-const axios = require('axios');
-("use strict");
-var nodemailer = require("nodemailer");
-var smtpTransport = require('nodemailer-smtp-transport');
+const express = require("express")
+const app = express()
+const axios = require('axios')
+("use strict")
+var nodemailer = require("nodemailer")
+var smtpTransport = require('nodemailer-smtp-transport')
 
 var transporter = nodemailer.createTransport({
   service: "gmail",
@@ -15,7 +15,7 @@ var transporter = nodemailer.createTransport({
     user: "youremail@gmail.com",
     pass: "yourpassword",
   },
-});
+})
 
 function noncompliant() {
   app.get("/query", function (req, res) {
@@ -25,7 +25,7 @@ function noncompliant() {
       to: "your_receiver",
       subject: "your_subject",
       html: req.params.html_msg,
-    });
-  });
+    })
+  })
 }
 // {/fact}

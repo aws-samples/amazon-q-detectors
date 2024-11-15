@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=jsx-avoid-disabling-vue-sanitization@v1.0 defects=1}
-const Vue = require("vue");
+const Vue = require("vue")
 
 function noncompliant() {
     Vue.component('custom-element', {
@@ -12,6 +12,6 @@ function noncompliant() {
                 innerHTML: "<h1>Hey " + name + "</h1>" 
             }
         }, "click here2")
-    });
+    })
 }
 // {/fact}

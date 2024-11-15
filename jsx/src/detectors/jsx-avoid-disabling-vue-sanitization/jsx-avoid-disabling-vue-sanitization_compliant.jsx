@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=jsx-avoid-disabling-vue-sanitization@v1.0 defects=0}
-const Vue = require("vue");
-const DOMPurify = require("dompurify");
+const Vue = require("vue")
+const DOMPurify = require("dompurify")
 
 function compliant(name) {
     Vue.component('custom-element', {
@@ -13,6 +13,6 @@ function compliant(name) {
                 innerHTML: DOMPurify.sanitize("<h1>Hey " + name + "</h1>")
             }
         }, "click here2")
-    });
+    })
 }
 // {/fact}
