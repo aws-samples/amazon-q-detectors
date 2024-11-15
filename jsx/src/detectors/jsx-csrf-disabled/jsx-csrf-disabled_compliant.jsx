@@ -4,7 +4,6 @@
 // {fact rule=jsx-csrf-disabled@v1.0 defects=0}
 let csrf = require('csurf')
 let express = require('express')
-let csrfProtection = csrf({cookie: { domain: "subdomains.example.com", path: "/trusted/path"}})
 let app = express()
 
 function compliant() {
