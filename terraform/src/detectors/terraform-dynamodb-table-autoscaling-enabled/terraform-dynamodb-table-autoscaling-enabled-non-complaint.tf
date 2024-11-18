@@ -1,7 +1,7 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
 
-# {fact rule=terraform-dynamodb-table-autoscaling-enabled@v1.0 defects=0}
+# {fact rule=terraform-dynamodb-table-autoscaling-enabled@v1.0 defects=1}
 resource "aws_dynamodb_table" "example" {
   name           = "example-table"
   billing_mode   = "PROVISIONED"
