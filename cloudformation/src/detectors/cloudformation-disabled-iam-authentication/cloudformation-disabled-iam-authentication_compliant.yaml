@@ -7,6 +7,6 @@ Resources:
     Type: AWS::RDS::DBInstance
     Properties:
       Engine: mysql
-      # Complaint: RDS database has IAM authentication enabled.
+      # Compliant: RDS database has IAM authentication enabled.
       EnableIAMDatabaseAuthentication: true
 # {/fact}
