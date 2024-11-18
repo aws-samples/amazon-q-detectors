@@ -1,0 +1,13 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-cloudfront-custom-ssl-certificate@v1.0 defects=1}
+Resources:
+  CloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      # Noncompliant: CloudFront Distribution Resource is associated with Viewer Certificate configuration not with an `AcmCertificateArn`.
+      DistributionConfig:
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: true
+# {/fact}

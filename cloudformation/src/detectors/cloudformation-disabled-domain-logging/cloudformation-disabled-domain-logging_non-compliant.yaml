@@ -1,0 +1,29 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-disabled-domain-logging@v1.0 defects=1}
+Resources:
+  ElasticsearchDomain:
+    Type: "AWS::Elasticsearch::Domain"
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      # Noncompliant: Disabled domain logging for AWS Elasticsearch.
+      AccessPolicies:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: { AWS: !Sub "${AWS::AccountId}" }
+            Action: "es:*"
+            Resource: !Sub "arn:${AWS::Partition}:es:${AWS::Region}:${AWS::AccountId}:domain/*/*"
+      EBSOptions:
+        EBSEnabled: true
+        VolumeSize: 50
+        VolumeType: "gp2"
+      ElasticsearchClusterConfig:
+        DedicatedMasterEnabled: false
+        InstanceCount: 1
+        InstanceType: r5.large.elasticsearch
+        ZoneAwarenessEnabled: false
+      ElasticsearchVersion: "6.5"
+# {/fact}

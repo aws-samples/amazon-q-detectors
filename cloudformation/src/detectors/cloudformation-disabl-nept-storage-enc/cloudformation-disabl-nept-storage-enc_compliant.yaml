@@ -1,0 +1,21 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-disabl-nept-storage-enc@v1.0 defects=0}
+Resources:
+  bookstoreNeptuneCluster:
+    Type: "AWS::Neptune::DBCluster"
+    Properties:
+      IamAuthEnabled: false
+      DBSubnetGroupName:
+        Ref: bookstoreNeptuneSubnetGroup
+      # Compliant: Enabled storage encryption in neptune storage.
+      StorageEncrypted: true
+      VpcSecurityGroupIds:
+        [ !GetAtt bookstoreNeptuneSecurityGroup.GroupId ]
+  bookstoreNeptuneDB:
+    Type: "AWS::Neptune::DBInstance"
+    Properties:
+      DBClusterIdentifier: !Ref bookstoreNeptuneCluster
+      DBInstanceClass: "db.r4.large"
+# {/fact}

@@ -1,0 +1,12 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-disabled-iam-authentication@v1.0 defects=1}
+Resources:
+  DB:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      Engine: mysql
+      # Noncomplaint: RDS database have IAM authentication disabled.
+      EnableIAMDatabaseAuthentication: false
+# {/fact}

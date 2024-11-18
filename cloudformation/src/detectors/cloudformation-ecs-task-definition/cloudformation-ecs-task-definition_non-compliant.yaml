@@ -1,0 +1,17 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-ecs-task-definition@v1.0 defects=1}
+Resources:
+  TaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      NetworkMode: host
+      # Noncompliant: Amazon ECS task definitions using host networking mode have container definitions, expliclty opt-in to privileged mode by setting `Privileged` to `false`.
+      ContainerDefinitions:
+      - Name: ContainerA
+        User: root
+        Privileged: false
+      - Name: ContainerB
+        User: root
+# {/fact}
