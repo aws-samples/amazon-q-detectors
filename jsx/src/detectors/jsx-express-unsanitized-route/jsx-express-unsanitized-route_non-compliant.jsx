@@ -17,7 +17,7 @@ function noncompliant() {
                 <p><input value="Login" type="submit" /></p>
             </form>
             `
-            // Non-compliant: User input is not sanitized, leading to potential XSS.
+            // Noncompliant: User input is not sanitized, leading to potential XSS.
             res.send(str1)
         })
 }
