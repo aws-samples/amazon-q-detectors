@@ -18,6 +18,6 @@ resource "aws_codebuild_project" "example" {
       stream_name = "example-log-stream"
     }
   }
-  # Noncomplaint: CodeBuild projects are not encrypted.
+  # Noncompliant: CodeBuild projects are not encrypted.
 }
 # {/fact}

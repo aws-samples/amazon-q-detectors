@@ -6,7 +6,7 @@ resource "aws_athena_workgroup" "example" {
   name = "example-workgroup"
 
   configuration {
-    # Noncomplaint: The Athena workgroup does not prevent unencryption.
+    # Noncompliant: The Athena workgroup does not prevent unencryption.
     enforce_workgroup_configuration    = false
     result_configuration {
       output_location = "s3://example-bucket/athena-results"

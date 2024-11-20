@@ -19,7 +19,7 @@ resource "aws_codebuild_project" "example" {
       stream_name = "build-logs"
     }
   }
-  # Complaint: CodeBuild projects are encrypted.
+  # Compliant: CodeBuild projects are encrypted.
   encryption_key = "arn:aws:kms:region:account:key/example-key-id"
 }
 # {/fact}
