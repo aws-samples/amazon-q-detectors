@@ -6,5 +6,5 @@
 // Compliant: Username and password provided.
 $ldapConnection = ldap_connect("foo.com");
 ldap_bind($ldapConnection, "user@example.com", "securePassword123");
-//{fact}
+// {/fact}
 ?>

@@ -1,0 +1,40 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-codebuild-envvar-awscred@v1.0 defects=0}
+Resources:
+  MyCodeBuildProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Artifacts:
+        Type: CODEPIPELINE
+      # Compliant: Environment variables does not contain credentials in `PLAINTEXT`.
+      Environment:
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: aws/codebuild/standard:5.0
+        ImagePullCredentialsType: CODEBUILD
+        PrivilegedMode: false
+        Type: LINUX_CONTAINER
+      ServiceRole:
+        Fn::GetAtt:
+          - MyPipelineBuildSynthRole
+          - Arn
+      Source:
+        BuildSpec: |
+          version: 0.2
+          phases:
+            install:
+              commands:
+                - npm install
+            build:
+              commands:
+                - npm test
+          artifacts:
+            files:
+              - '**/*'
+        Type: CODEPIPELINE
+      EncryptionKey:
+        Fn::GetAtt:
+          - MyPipelineArtefactEncryptionKey
+          - Arn
+# {/fact}

@@ -8,6 +8,6 @@ $sessionPrefix = 'prefix';
 $userInput = $_GET['input'];
 // Compliant: The session prefix is used to prevent tainted session input.
 $_SESSION[$sessionPrefix . $userInput] = true;
-//{/fact}
+// {/fact}
 
 ?>

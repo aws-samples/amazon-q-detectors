@@ -14,5 +14,5 @@ function compliant($userInput)
         ->setParameter(0, $userInput)
     ;
 }
-//{/fact}
+// {/fact}
 ?>

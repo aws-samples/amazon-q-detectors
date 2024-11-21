@@ -2,7 +2,7 @@
 //  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //  SPDX-License-Identifier: MIT-0
 
-//{fact rule=php-openssl-decrypt-validate@v1.0 defects=1}
+// {fact rule=php-openssl-decrypt-validate@v1.0 defects=1}
 class OpenSslTest {
     public static function nonCompliant($ciphertext, $key) {
         $decodedKey = html_entity_decode($key);
@@ -15,5 +15,5 @@ class OpenSslTest {
         return $decryptedData;
     }
 }
-//{/fact}
+// {/fact}
 ?>

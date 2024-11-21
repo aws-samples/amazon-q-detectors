@@ -8,5 +8,5 @@ function nonCompliant($param)  {
     // Noncompliant: Kills the process without validation.
     pcntl_signal($processId, 9);
 }
-//{/fact}
+// {/fact}
 ?>

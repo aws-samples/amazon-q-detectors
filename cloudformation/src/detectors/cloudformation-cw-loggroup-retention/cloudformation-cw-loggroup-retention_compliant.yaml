@@ -1,0 +1,11 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-cw-loggroup-retention@v1.0 defects=0}
+Resources:
+  ExampleLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      # Compliant: Retention period for a Log Group is configured.
+      RetentionInDays: 7
+# {/fact}

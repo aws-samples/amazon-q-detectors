@@ -30,4 +30,4 @@ class ZipUnzipCompliant {
     zipPath.isChildOf(trustedDirectory)
   }
 }
-//{/fact}
+// {/fact}

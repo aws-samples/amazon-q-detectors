@@ -1,0 +1,22 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-disabled-enforce-https@v1.0 defects=1}
+Resources:
+  ElasticsearchAWSLogs:
+    Type: 'AWS::Elasticsearch::Domain'
+    DependsOn:
+      - VPCStack
+      - ElasticsearchServiceLinkedRole
+    Properties:
+      # Noncompliant: AWS Elasticsearch domain is not configured with HTTPS.
+      DomainName: !Ref ESDomainName
+      ElasticsearchVersion: !FindInMap
+        - ElasticSearch
+        - Parameters
+        - Version
+      EncryptionAtRestOptions:
+        Enabled: true
+      NodeToNodeEncryptionOptions:
+        Enabled: true
+# {/fact}

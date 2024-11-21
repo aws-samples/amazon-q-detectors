@@ -10,5 +10,5 @@ if(realpath($path) !== BASE_PATH . $user_input_compliant) {
   die("Invalid path");
 }
 $json = file_get_contents($path); 
-//{/fact}
+// {/fact}
 ?>

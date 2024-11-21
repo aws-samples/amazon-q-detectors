@@ -1,0 +1,24 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-cloudtrail-s3-dataevents@v1.0 defects=1}
+Resources:
+  ExampleTrail:
+    Type: "AWS::CloudTrail::Trail"
+    Properties:
+      S3BucketName: !Ref BucketName
+      S3KeyPrefix: "Uluru"
+      IsLogging: true
+      TrailName: !Ref TrailName
+      EnableLogFileValidation: false
+      IncludeGlobalServiceEvents: true
+      IsMultiRegionTrail: true
+      KMSKeyId: alias/MyAliasName
+      # Noncompliant: CloudTrail Trail does not have data events being logged.
+      EventSelectors:
+        - DataResources:
+          - Type: 'AWS::DynamoDB::Table'
+            Values: ['arn:aws:dynamodb']
+          IncludeManagementEvents: true
+          ReadWriteType: 'All'
+# {/fact}

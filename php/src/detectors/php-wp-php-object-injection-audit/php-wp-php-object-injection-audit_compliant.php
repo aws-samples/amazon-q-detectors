@@ -7,5 +7,5 @@
 // Compliant: Only unserialize trusted and validated data to prevent potential security risks
 $trustedData = 'O:1:"a":1:{s:5:"value";s:3:"100";}';
 $object = unserialize($trustedData);
-//{/fact}
+// {/fact}
 ?>

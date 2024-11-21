@@ -6,5 +6,5 @@
 // {fact rule=php-using-pseudorandom-number@v1.0 defects=1}
 // Noncompliant: Insecure way of generating random number.
 $insecureRandomNumber = mt_rand();
-//{/fact}
+// {/fact}
 ?>

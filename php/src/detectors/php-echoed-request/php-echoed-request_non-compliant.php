@@ -8,5 +8,5 @@ function nonCompliant() {
     // Noncompliant: `$userInput` statement is non-compliant as it can leave the application vulnerable to cross-site scripting attacks.
     echo "Hello: " . $userInput; 
 }
-//{/fact}
+// {/fact}
 ?>
