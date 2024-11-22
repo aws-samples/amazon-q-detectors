@@ -11,7 +11,7 @@ Resources:
       StorageCapacity: 1200
       SubnetIds: [!ImportValue MySubnet01]
       SecurityGroupIds: [!ImportValue LustreIngressSecurityGroupId]
-      # Non-compliant: FSx File Systems resources do not have LustreConfiguration set with `AutomatedBackupRetentionDays`.
+      # Noncompliant: FSx File Systems resources do not have LustreConfiguration set with `AutomatedBackupRetentionDays`.
       LustreConfiguration:
         DeploymentType: PERSISTENT_2
 # {/fact}
