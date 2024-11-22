@@ -1,0 +1,17 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-redshift-backup-enabled@v1.0 defects=1}
+Resources:
+  TestCluster:
+    Type: AWS::Redshift::Cluster
+    Properties:
+      ClusterType: multi-node
+      DBName: dev
+      MasterUsername:
+      MasterUserPassword:
+      NodeType:
+      NumberOfNodes: 2
+      # Noncompliant: Amazon Redshift automated snapshot is disabled for clusters.
+      AutomatedSnapshotRetentionPeriod: 0
+# {/fact}

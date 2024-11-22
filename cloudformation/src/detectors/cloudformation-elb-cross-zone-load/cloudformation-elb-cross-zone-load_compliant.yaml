@@ -1,0 +1,11 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-elb-cross-zone-load@v1.0 defects=0}
+Resources:
+  Elb:
+    Type: AWS::ElasticLoadBalancing::LoadBalancer
+    Properties:
+      # Compliant: `CrossZone` load balancing is enabled for the Classic Load Balancer.
+      CrossZone: true
+# {/fact}

@@ -1,0 +1,25 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-autoscaling-launch-config@v1.0 defects=0}
+Resources:
+  myLaunchConfig:
+    Type: AWS::AutoScaling::LaunchConfiguration
+    Properties:
+      ImageId: !Ref LatestAmiId
+      # Compliant: EC2 Auto Scaling launch configurations are configured.
+      AssociatePublicIpAddress: false
+      SecurityGroups:
+        - !Ref myEC2SecurityGroup
+      InstanceType:
+        !Ref InstanceType
+      BlockDeviceMappings:
+        - DeviceName: /dev/sda1
+          Ebs:
+            VolumeSize: '30'
+            VolumeType: gp3
+        - DeviceName: /dev/sdm
+          Ebs:
+            VolumeSize: '100'
+            DeleteOnTermination: false
+# {/fact}

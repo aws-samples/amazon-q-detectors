@@ -1,0 +1,18 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-rds-auto-versn-up-enabled@v1.0 defects=1}
+Resources:
+  ExampleRDS:
+    Type: "AWS::RDS::DBInstance"
+    Properties:
+      DBInstanceClass: !Ref DBInstanceType
+      SourceDBInstanceIdentifier: !Ref SourceDBInstanceIdentifier
+      SourceRegion: !Ref SourceRegion
+      KmsKeyId: !Ref MyKey
+      MonitoringInterval: 0
+      DeletionProtection: false
+      MultiAZ: false
+      # Noncompliant: RDS instances does not have automatic minor version upgrade enabled.
+      AutoMinorVersionUpgrade: false
+# {/fact}

@@ -1,0 +1,14 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-lambda-function-access@v1.0 defects=0}
+Resources:
+  ExampleLambdaPermission: 
+    Type: "AWS::Lambda::Permission"
+    Properties: 
+      # Compliant: AWS Lambda function policy is attached to the Lambda resource prohibits public access.
+      Action: lambda:InvokeFunction
+      FunctionName: test-function
+      Principal: sns.amazonaws.com
+      SourceArn: !GetAtt sns-topic.Arn
+# {/fact}

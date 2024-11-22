@@ -1,0 +1,13 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-elb-deletion-protection@v1.0 defects=0}
+Resources:
+      ElbV2:
+        Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+        Properties:
+          # Compliant: ELB is protected from accidental deletion.
+          LoadBalancerAttributes:
+            - Key: deletion_protection.enabled
+              Value: true
+# {/fact}

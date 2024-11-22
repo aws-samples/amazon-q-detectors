@@ -1,0 +1,15 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-s3-default-encryption-kms@v1.0 defects=0}
+Resources:
+  ExampleS3:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: my-bucket
+      #Compliant: Amazon S3 bucket is encrypted with AWS KMS key.
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+# {/fact}

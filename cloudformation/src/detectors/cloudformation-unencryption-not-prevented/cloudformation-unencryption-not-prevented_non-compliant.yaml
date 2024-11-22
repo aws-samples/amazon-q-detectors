@@ -1,0 +1,26 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-unencryption-not-prevented@v1.0 defects=1}
+Resources:
+  GBAthenaWorkGroupForAmazonFederateMigrationQueries:
+    Type: AWS::Athena::WorkGroup
+    Condition: IsAmazonFederatedOrgPresent
+    Properties:
+      Description: "This workgroup is used for querying Amazon Federate migration related queries."
+      Name: GBAmazonFederateMigration
+      RecursiveDeleteOption: true
+      State: ENABLED
+      # Noncompliant: `WorkGroupConfiguration` does not prevent client disabling encryption.
+      WorkGroupConfiguration:
+        EnforceWorkGroupConfiguration: false
+        ResultConfiguration:
+          OutputLocation:
+            Fn::Join:
+              - ""
+              - - "s3://"
+                - Ref: GBAthenaQueryResultsS3Bucket
+                - "/"
+    DependsOn:
+      - "GBAthenaQueryResultsS3Bucket"
+# {/fact}

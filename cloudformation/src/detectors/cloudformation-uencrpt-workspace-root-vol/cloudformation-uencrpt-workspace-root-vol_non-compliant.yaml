@@ -1,0 +1,13 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-uencrpt-workspace-root-vol@v1.0 defects=1}
+Resources:
+  FailDefault:
+    Type: AWS::WorkSpaces::Workspace
+    Properties:
+      # Noncompliant: Workspace root volumes are not encrypted.
+      UserName: test
+      BundleId: wsb-abc123456
+      DirectoryId: d-abc123456
+# {/fact}

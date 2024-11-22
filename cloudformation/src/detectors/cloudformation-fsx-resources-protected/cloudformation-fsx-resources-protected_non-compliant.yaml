@@ -1,0 +1,17 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-fsx-resources-protected@v1.0 defects=1}
+Resources:
+  FileSystem:
+    Type: AWS::FSx::FileSystem
+    Properties:
+      FileSystemType: "LUSTRE"
+      FileSystemTypeVersion: "2.12"
+      StorageCapacity: 1200
+      SubnetIds: [!ImportValue MySubnet01]
+      SecurityGroupIds: [!ImportValue LustreIngressSecurityGroupId]
+      # Non-compliant: FSx File Systems resources do not have LustreConfiguration set with `AutomatedBackupRetentionDays`.
+      LustreConfiguration:
+        DeploymentType: PERSISTENT_2
+# {/fact}

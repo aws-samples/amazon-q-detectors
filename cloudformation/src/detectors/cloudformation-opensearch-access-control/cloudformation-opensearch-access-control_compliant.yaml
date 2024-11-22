@@ -1,0 +1,12 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-opensearch-access-control@v1.0 defects=0}
+Resources:
+  OpenSearchDomain:
+    Type: AWS::OpenSearchService::Domain
+    Properties:
+      # Compliant: OpenSearchService domains are configured with fine-grained access control enabled.
+      AdvancedSecurityOptions:
+        Enabled: true
+# {/fact}

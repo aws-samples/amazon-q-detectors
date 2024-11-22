@@ -1,0 +1,16 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-no-unrestricted-route-to-igw@v1.0 defects=0}
+Resources:
+  ExampleRoute:
+    Type: AWS::EC2::Route
+    DependsOn: GatewayToInternetAndCarrierNetwork
+    Properties:
+      RouteTableId:
+        Ref: myRouteTable
+      # Compliant: Routes to an Internet Gateway have a restricted destination CIDR block.
+      DestinationCidrBlock: 192.168.0.0/16
+      GatewayId:
+        Ref: myCarrierGateway
+# {/fact}

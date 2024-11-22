@@ -1,0 +1,17 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-s3-ignr-pubacls-false@v1.0 defects=0}
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
+      # Compliant: S3 bucket has ignore public ACLs enabled.
+      PublicAccessBlockConfiguration:
+        IgnorePublicAcls: true
+    DeletionPolicy: Retain
+# {/fact}

@@ -1,0 +1,11 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-elasticsearch-in-vpc@v1.0 defects=1}
+Resources:
+  ElasticsearchDomain:
+    Type: AWS::Elasticsearch::Domain
+    Properties:
+      # Noncompliant: Elasticsearch cluster is not securely deployed within a VPC.
+      DomainName: test
+# {/fact}

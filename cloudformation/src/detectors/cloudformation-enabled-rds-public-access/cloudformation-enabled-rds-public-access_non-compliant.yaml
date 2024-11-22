@@ -1,0 +1,24 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-enabled-rds-public-access@v1.0 defects=1}
+Resources:
+  RDSInstance:
+    Type: 'AWS::RDS::DBInstance'
+    Properties:
+      AllowMajorVersionUpgrade: !Ref AllowMajorVersionUpgrade
+      AutoMinorVersionUpgrade: !Ref AutoMinorVersionUpgrade
+      DBInstanceClass: !Ref DBInstanceClass
+      DBClusterIdentifier: !Ref RDSDBCluster
+      Engine: !Ref Engine
+      DBSubnetGroupName: !Ref DatabaseSubnetGroup
+      # Noncompliant: AWS RDS database instance is publicly accessible.
+      PubliclyAccessible: true
+      MultiAZ: !Ref MultiAZ
+      Tags:
+        - Key: Name
+          Value: !Sub
+            - '${AWS::StackName}-${Name}'
+            - Name: !Ref DBName
+    DependsOn: RDSDBCluster
+# {/fact}

@@ -1,0 +1,21 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-uencrpt-code-build@v1.0 defects=0}
+Resources:
+  EnvoyValidationTestsExecutionArm64Project:
+    Type: AWS::CodeBuild::Project
+    Condition: IsUsWest2
+    Properties:
+      Name: !Sub "envoy-validation-tests-aarch64-${AWS::Region}-${AWS::AccountId}"
+      Description: "Runs the Envoy validation tests against the aarch64 image"
+      Artifacts:
+        Type: S3
+        Name: "/"
+        Location: !Ref BuildArtifactsS3Bucket
+        NamespaceType: NONE
+        Packaging: NONE
+        OverrideArtifactName: true
+        # Compliant: CodeBuild project encryption is enabled.
+        EncryptionDisabled: false
+# {/fact}
