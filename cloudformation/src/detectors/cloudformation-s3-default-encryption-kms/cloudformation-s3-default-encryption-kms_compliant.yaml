@@ -7,7 +7,7 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: my-bucket
-      #Compliant: Amazon S3 bucket is encrypted with AWS KMS key.
+      # Compliant: Amazon S3 bucket is encrypted with AWS KMS key.
       BucketEncryption:
         ServerSideEncryptionConfiguration:
           - ServerSideEncryptionByDefault:

@@ -6,7 +6,7 @@ Resources:
   MyTopic:
     Type: AWS::SNS::Topic
     Properties:
-      #Noncompliant: AWS SNS topic has SSE disabled.
+      # Noncompliant: AWS SNS topic has SSE disabled.
       TopicName: my-topic
       DisplayName: My SNS Topic
       Subscription:

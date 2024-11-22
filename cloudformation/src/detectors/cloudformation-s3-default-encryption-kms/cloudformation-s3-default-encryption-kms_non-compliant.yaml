@@ -6,6 +6,6 @@ Resources:
   ExampleS3:
     Type: AWS::S3::Bucket
     Properties:
-      #Noncompliant: Amazon S3 bucket is not encrypted with AWS KMS key.
+      # Noncompliant: Amazon S3 bucket is not encrypted with AWS KMS key.
       BucketName: my-bucket
 # {/fact}

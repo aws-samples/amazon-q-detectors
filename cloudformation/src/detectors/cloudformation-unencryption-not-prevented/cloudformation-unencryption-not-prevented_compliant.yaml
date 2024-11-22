@@ -11,7 +11,7 @@ Resources:
       Name: GBAmazonFederateMigration
       RecursiveDeleteOption: true
       State: ENABLED
-      #Compliant: `WorkGroupConfiguration` prevents client disabling encryption.
+      # Compliant: `WorkGroupConfiguration` prevents client disabling encryption.
       WorkGroupConfiguration:
         EnforceWorkGroupConfiguration: true
         ResultConfiguration:

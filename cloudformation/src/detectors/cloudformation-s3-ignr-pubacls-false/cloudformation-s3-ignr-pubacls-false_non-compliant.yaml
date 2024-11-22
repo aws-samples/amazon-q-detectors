@@ -6,7 +6,7 @@ Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      #Noncompliant: S3 bucket has ignore public ACLs disabled.
+      # Noncompliant: S3 bucket has ignore public ACLs disabled.
       AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html

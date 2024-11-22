@@ -14,6 +14,6 @@ Resources:
       Tags:
         - Key: Environment
           Value: production
-      #Compliant: AWS SNS topic has SSE enabled.
+      # Compliant: AWS SNS topic has SSE enabled.
       KmsMasterKeyId: "kms_id"
 # {/fact}

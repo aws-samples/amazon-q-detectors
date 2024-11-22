@@ -8,6 +8,6 @@ Resources:
     UpdateReplacePolicy: Delete
     DeletionPolicy: Delete
     Properties:
-      #Noncompliant: Timestream database is not encrypted with KMS CMK.
+      # Noncompliant: Timestream database is not encrypted with KMS CMK.
       DatabaseName: SensorData
 # {/fact}

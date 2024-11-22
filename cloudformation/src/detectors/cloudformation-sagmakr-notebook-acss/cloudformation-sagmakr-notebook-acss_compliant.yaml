@@ -9,6 +9,6 @@ Resources:
       InstanceType: "ml.t2.large"
       RoleArn: !GetAtt ExecutionRole.Arn
       SubnetId: subnet-abcd1234
-      # Compliant: Amazon SageMaker Notebook instance have direct internet access disabled.
+      # Compliant: Amazon SageMaker Notebook instance has direct internet access disabled.
       DirectInternetAccess: Disabled
 # {/fact}
