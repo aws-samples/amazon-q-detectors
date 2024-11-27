@@ -14,7 +14,7 @@ app.config.update(
 )
 
 @app.route('/', methods=['GET', 'POST'])
-def conformant_1():
+def compliant():
     extensions = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
     file = request.files['file']
     # Compliant: The uploaded file must have one of the allowed extensions.

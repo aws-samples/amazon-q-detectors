@@ -5,7 +5,7 @@
 import hashlib
 import tempfile
 
-def file_checksum_compliant5(stream, checksum=None):
+def compliant(stream, checksum=None):
     # Compliant: Using `SHA-384` is considered secure.
     sha384 = hashlib.sha384()
     with tempfile.TemporaryFile() as temp:

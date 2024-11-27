@@ -7,7 +7,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 @app.route("/someurl")
-def flask_conformant():
+def compliant():
     file_data = request.args["file_data"]
     # Compliant: User input is sanitized before passing to `write()`.
     sanitized_data = html.escape(file_data)

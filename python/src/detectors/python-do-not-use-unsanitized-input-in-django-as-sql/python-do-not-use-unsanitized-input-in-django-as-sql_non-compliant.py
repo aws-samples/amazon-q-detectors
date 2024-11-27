@@ -6,7 +6,7 @@ from django.db.models import Func, Value, F
 from django.http import request
 
 class ConcatName(Func):
-    def non_conformant(self, compiler, connection):
+    def non_compliant(self, compiler, connection):
         names_dict = request.POST.get('names_dict')
         sanitized_dict = {k: connection.ops.quote_name(connection.ops.quote_name(v)) for k, v in names_dict.items()}
         # Noncompliant: Django custom expressions are constructed from unsanitized user input.

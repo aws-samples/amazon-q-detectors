@@ -4,7 +4,7 @@
 # {fact rule=python-hashlib-naive-hashing-not-suitable-for-secrets@v1.0 defects=0}
 from argon2 import PasswordHasher
 
-def secret_hashing_compliant_case2(api_key):
+def compliant(api_key):
     # Compliant: More secure hash function is being used.
     ph = PasswordHasher()
     hash = ph.hash(api_key)

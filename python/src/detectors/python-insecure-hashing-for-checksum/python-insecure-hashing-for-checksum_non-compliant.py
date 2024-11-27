@@ -5,7 +5,7 @@
 import hashlib
 import tempfile
 
-def noncompliant():
+def non_compliant():
     with open("filename.png", "rb") as f:
         # Noncompliant: Using `md5` algorithm is considered insecure for generating file checksum.
         file_hash = hashlib.md5()

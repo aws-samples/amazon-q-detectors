@@ -7,7 +7,7 @@ from cryptography.hazmat.primitives.ciphers import Cipher
 from cryptography.hazmat.primitives.ciphers import algorithms
 
 def compliant():
-    # Compliant: `CBC` mode for cipher creation.
+    # Compliant: `CBC` mode is secure.
     cipher = Cipher(algorithms.AES(key), CBC())
     encryptor = cipher.encryptor()
 # {/fact}

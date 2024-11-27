@@ -8,7 +8,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
-def non_conformant_1():
+def non_compliant():
     file = request.files['file']
     # Noncompliant: The uploaded file can have any extension.
     file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))

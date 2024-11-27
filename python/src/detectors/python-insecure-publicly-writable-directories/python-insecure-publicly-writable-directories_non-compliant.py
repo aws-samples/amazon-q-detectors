@@ -7,8 +7,8 @@ import os
 
 def non_compliant():
     try:
+        # Noncompliant: Insecure file creation in global directory.
         file = open("/tmp/temp.txt", "w+")
-        # Perform operations with the file
     finally:
         file.close()
 # {/fact}

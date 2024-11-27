@@ -6,7 +6,7 @@ from flask import render_template, request, redirect, url_for, make_response, ap
 import bleach
 
 @app.route('/setCookie')
-def non_compliant():
+def compliant():
     value = request.args["val"]
     response = make_response(render_template('index.html'))
     # Compliant: Sanitized input is being used to create a `Cookie`.

@@ -10,6 +10,6 @@ from cryptography.hazmat.primitives.ciphers.modes import ECB
 def non_compliant():
     key = os.urandom(32)
     iv = os.urandom(16)
-    # Noncompliant: `ECB` mode is used for cipher creation.
+    # Noncompliant: `ECB` mode is insecure.
     cipher = Cipher(algorithms.AES(key), ECB(iv))
 # {/fact}

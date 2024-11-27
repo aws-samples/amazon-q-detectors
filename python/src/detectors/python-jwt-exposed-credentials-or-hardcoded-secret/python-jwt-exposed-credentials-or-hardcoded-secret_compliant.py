@@ -5,7 +5,7 @@
 import os
 import jwt
 
-def non_compliant(secret, value, hdr):
+def compliant(secret, value, hdr):
     secret = os.getenv('JWT_SECRET_KEY')
     if not secret:
         raise ValueError("JWT secret key not configured")

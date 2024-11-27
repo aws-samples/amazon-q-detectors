@@ -8,7 +8,7 @@ from flask import request
 app = Flask(__name__)
 
 @app.route('/hello')
-def non_conformant():
+def non_compliant():
     name = request.args.get('name')
     # Noncompliant: `Flask.route` is returning a formatted string with unsanitized user input.
     return '<h1>Hello, %s</h1>' % name 

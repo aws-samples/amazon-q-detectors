@@ -4,7 +4,7 @@
 # {fact rule=python-do-not-use-unsanitized-input-in-django-as-sql@v1.0 defects=0}
 from django.http import request
 import bleach
-
+from django.db import models
 from django.db.models import Value
 
 class Position(models.Func):
@@ -14,7 +14,7 @@ class Position(models.Func):
     def __init__(self, expression, substring):
         super().__init__(expression, Value(substring))
 
-    def non_conformant(self, compiler, connection):
+    def compliant(self, compiler, connection):
         names_dict = request.POST.get('names_dict')
         # Compliant: Django custom expressions are constructed from sanitized user input.
         sanitized_names_dict = {k: bleach.clean(v) for k, v in names_dict.items()}
