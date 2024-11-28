@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-// {fact rule=java-hash-algo-compliance-check-for-pbkdf2@v1.0 defect=1}
+// {fact rule=java-hash-algo-compliance-check-for-pbkdf2@v1.0 defects=1}
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.*;

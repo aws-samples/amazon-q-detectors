@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-// {fact rule=java-cross-site-scripting@v1.0 defect=1}
+// {fact rule=java-cross-site-scripting@v1.0 defects=1}
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

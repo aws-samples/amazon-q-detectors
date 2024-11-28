@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-// {fact rule=java-weak-password-encoder@v1.0 defect=0}
+// {fact rule=java-weak-password-encoder@v1.0 defects=0}
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 public class WeakPasswordEncoderJavaRuleCompliant {

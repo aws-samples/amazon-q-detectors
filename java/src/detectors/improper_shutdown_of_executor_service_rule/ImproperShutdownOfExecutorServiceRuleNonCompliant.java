@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-// {fact rule=java-improper-shutdown-of-executor-service@v1.0 defect=1}
+// {fact rule=java-improper-shutdown-of-executor-service@v1.0 defects=1}
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import java.util.concurrent.*;

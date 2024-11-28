@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-// {fact rule=java-avoid-message-digest-for-password-hashing@v1.0 defect=1}
+// {fact rule=java-avoid-message-digest-for-password-hashing@v1.0 defects=1}
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
