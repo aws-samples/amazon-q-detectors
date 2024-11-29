@@ -13,7 +13,7 @@ public class ImproperShutdownOfExecutorServiceRuleNonCompliant {
         this.sharedExecutorService = sharedExecutorService;
     }
 
-    // NonCompliant : ExecutorService may not shut down properly in case of an exception.
+    // Noncompliant : ExecutorService may not shut down properly in case of an exception.
     void nonCompliant() throws Exception {
         final ExecutorService executorService = Executors.newFixedThreadPool(10);
         try {

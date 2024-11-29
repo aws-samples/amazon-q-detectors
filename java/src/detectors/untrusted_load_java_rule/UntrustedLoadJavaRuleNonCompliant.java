@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import org.springframework.web.bind.annotation.RequestParam;
 public class UntrustedLoadJavaRuleNonCompliant {
-    // NonCompliant: ObjectInputStream not validated
+    // Noncompliant: ObjectInputStream not validated
     public void nonCompliant(@RequestParam String param) throws Exception {
         try (FileInputStream fis = new FileInputStream(param);
              ObjectInputStream ois = new ObjectInputStream(fis)) {

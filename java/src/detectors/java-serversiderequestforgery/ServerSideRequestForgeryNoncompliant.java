@@ -15,3 +15,4 @@ public class ServerSideRequestForgeryNoncompliant {
         HttpURLConnection httpConnection = (HttpURLConnection) url.openConnection();
     }
 }
+// {/fact}

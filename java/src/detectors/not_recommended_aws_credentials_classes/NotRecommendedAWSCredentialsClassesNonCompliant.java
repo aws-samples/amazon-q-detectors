@@ -4,7 +4,7 @@
 // {fact rule=java-not-recommended-aws-credentials-classes@v1.0 defects=1}
 import com.amazonaws.auth.BasicAWSCredentials;
 class NotRecommendedAWSCredentialsClassesNonCompliant {
-    // NonCompliant: Using not recommended classes for AWS Credentials.
+    // Noncompliant: Using not recommended classes for AWS Credentials.
     void nonCompliant() {
         System.out.println(new BasicAWSCredentials("my-access-key", "my-secret-key"));
     }

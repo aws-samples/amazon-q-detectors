@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 
 class AvoidMessageDigestForPasswordHashingNonCompliant{
     String PASSWORD = "Pass@123";
-    //NonCompliant : `java.security.MessageDigest` used for password hashing.
+    //Noncompliant : `java.security.MessageDigest` used for password hashing.
     public void nonCompliant() throws NoSuchAlgorithmException {
         MessageDigest md5 = MessageDigest.getInstance("MD5");
         byte[] bytes = md5.digest(PASSWORD.getBytes());

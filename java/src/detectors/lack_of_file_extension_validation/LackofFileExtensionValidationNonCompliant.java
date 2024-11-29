@@ -11,7 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
 public class LackofFileExtensionValidationNonCompliant {
-    // NonCompliant: No Validation applied for uploaded file.
+    // Noncompliant: No Validation applied for uploaded file.
     public void nonCompliant(HttpServletRequest request , HttpServletResponse response) {
         try {
             Part filePart = request.getPart("fileToUpload");

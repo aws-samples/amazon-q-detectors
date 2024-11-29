@@ -26,3 +26,4 @@ class AvoidMessageDigestForPasswordHashingCompliant {
         return Base64.getEncoder().encodeToString(hashedBytes);
     }
 }
+// {/fact}

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/view")
 public class CrossSiteScriptingJavaRuleNonCompliant extends HttpServlet{
-    //NonCompliant: Unsanitized input is passed to writer
+    //Noncompliant: Unsanitized input is passed to writer
     public void nonCompliant(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         response.setContentType("text/html");
