@@ -5,7 +5,7 @@
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 public class WeakPasswordEncoderJavaRuleCompliant {
-    // Compliant : Strong password encoder is used.
+    // Compliant: Strong password encoder is used.
     public void compliant(String password) {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodedPassword = passwordEncoder.encode(password);

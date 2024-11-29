@@ -6,7 +6,7 @@ import javax.mail.PasswordAuthentication;
 
 public class HardCodedEmailCredUseNoncompliant {
 
-    // Noncompliant : Uses hardcoded strings as email credentials
+    // Noncompliant: Uses hardcoded strings as email credentials
     public void nonompliant() {
         PasswordAuthentication authentication =
                 new PasswordAuthentication("TestUser@xyz.com", "pass123");

@@ -9,7 +9,7 @@ import javax.crypto.spec.*;
 import java.security.*;
 import java.security.spec.InvalidKeySpecException;
 public class HashAlgoComplianceCheckForPBKDF2JavaRuleCompliant {
-    // Compliant : Strong Algorithm `SHA3-256` is used.
+    // Compliant: Strong Algorithm `SHA3-256` is used.
     String compliant() throws NoSuchAlgorithmException, InvalidKeySpecException {
         String password = System.getenv("password");
         final SecretKeyFactory secretKeyFactory = SecretKeyFactory.getInstance("PBKDF2WITHHMACSHA3-256"); //conformant

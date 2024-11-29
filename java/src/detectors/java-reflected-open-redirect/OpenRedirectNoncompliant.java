@@ -9,7 +9,7 @@ import javax.mail.PasswordAuthentication;
 
 public class OpenRedirectNoncompliant {
 
-    // Noncompliant : Vulnerable to open redirect attacks due to unvalidated user input in the redirect URL.
+    // Noncompliant: Vulnerable to open redirect attacks due to unvalidated user input in the redirect URL.
     public void nonompliant(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         String url = req.getParameter("redirectUrl");
         resp.sendRedirect(url);

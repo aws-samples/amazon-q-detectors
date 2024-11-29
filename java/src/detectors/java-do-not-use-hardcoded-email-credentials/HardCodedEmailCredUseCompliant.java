@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class HardCodedEmailCredUseCompliant {
 
-    // Compliant : Uses properties to retrieve email credentials, avoiding hardcoded values and improving security and maintainability.
+    // Compliant: Uses properties to retrieve email credentials, avoiding hardcoded values and improving security and maintainability.
     public void Compliant() {
         Properties mailProperties = mailProperties = new Properties();
         PasswordAuthentication authentication =

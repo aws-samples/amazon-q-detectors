@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class CookieHttpOnlyNoncompliant {
 
-    // Noncompliant : By default, the `HttpOnly` flag is not set to true.
+    // Noncompliant: By default, the `HttpOnly` flag is not set to true.
     public void Noncompliant(HttpServletRequest req, HttpServletResponse resp) {
         Cookie c = new Cookie("name", "not-null");
         resp.addCookie(c);

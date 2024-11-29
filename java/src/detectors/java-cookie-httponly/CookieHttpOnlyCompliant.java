@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class CookieHttpOnlyCompliant {
 
-    // Compliant : `HttpOnly` flag is set to true.
+    // Compliant: `HttpOnly` flag is set to true.
     public void Compliant(HttpServletRequest req, HttpServletResponse res) {
         Cookie c = new Cookie("name", "not-null");
         c.setHttpOnly(true);
