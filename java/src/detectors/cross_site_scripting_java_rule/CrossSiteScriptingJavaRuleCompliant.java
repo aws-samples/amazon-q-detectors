@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/view")
 public class CrossSiteScriptingJavaRuleCompliant extends HttpServlet {
-    // Compliant: Sanitized input is passed to writer
+    // Compliant: Sanitized input is passed to writer.
     protected void compliant(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PolicyFactory sanitizer = Sanitizers.FORMATTING.and(Sanitizers.BLOCKS);

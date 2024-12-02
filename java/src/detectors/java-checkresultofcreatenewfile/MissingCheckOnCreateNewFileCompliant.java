@@ -11,7 +11,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 class MissingCheckOnCreateNewFileCompliant {
 
-    // Compliant: handles the case when createNewFile fails.
+    // Compliant: Handles the case when createNewFile fails.
     public Optional<File> createFileCompliant(File outputFolder, final String fileName) throws IOException {
         File file = new File(outputFolder, fileName);
         if (!file.createNewFile()) {

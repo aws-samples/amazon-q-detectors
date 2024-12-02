@@ -5,7 +5,7 @@
 
 public class MissingPositionCheckBeforeSubstringNoncompliant {
 
-    // Noncompliant: Lack of Substring Validation.
+    // Noncompliant: Lack of substring validation.
     public void checkSubStringNoncompliant(String sampleString) {
         final String sampleSubstring = "sample";
         final int index = sampleString.lastIndexOf(sampleSubstring);

@@ -4,6 +4,7 @@
 // {fact rule=java-improper-shutdown-of-executor-service@v1.0 defects=0}
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
 public class ImproperShutdownOfExecutorServiceRuleCompliant {
 
     // Compliant: ExecutorService has been shut down properly.
@@ -13,4 +14,3 @@ public class ImproperShutdownOfExecutorServiceRuleCompliant {
     }
 }
 // {/fact}
-

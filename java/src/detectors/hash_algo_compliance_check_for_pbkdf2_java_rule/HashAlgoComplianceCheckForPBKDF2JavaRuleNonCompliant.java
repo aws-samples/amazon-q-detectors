@@ -7,7 +7,9 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.*;
 import java.security.*;
 import java.security.spec.InvalidKeySpecException;
+
 public class HashAlgoComplianceCheckForPBKDF2JavaRuleNonCompliant {
+
     // Noncompliant: Weak Algorithm `SHA1` is used .
     void nonCompliant() throws NoSuchAlgorithmException, InvalidKeySpecException {
         String password = System.getenv("password");

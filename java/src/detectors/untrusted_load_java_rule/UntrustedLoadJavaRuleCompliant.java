@@ -11,7 +11,8 @@ import java.util.Map;
 import org.apache.commons.io.serialization.ValidatingObjectInputStream;
 import org.springframework.web.bind.annotation.RequestParam;
 public class UntrustedLoadJavaRuleCompliant {
-    //Compliant: Input Stream is validated before deserializing
+
+    // Compliant: Input Stream is validated before deserializing.
     Map<String, String> compliant(@RequestParam String data)
     {
         byte[] byteData = Base64.getDecoder().decode(data);

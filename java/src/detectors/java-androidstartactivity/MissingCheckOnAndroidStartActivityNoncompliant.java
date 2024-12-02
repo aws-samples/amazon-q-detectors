@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 
 class MissingCheckOnAndroidStartActivityNoncompliant {
+
     // Noncompliant: There might be no application on the device to receive the implicit intent.
     public void startActivityNonCompliant(Context context, Intent shareIntent) {
         context.startActivity(shareIntent);

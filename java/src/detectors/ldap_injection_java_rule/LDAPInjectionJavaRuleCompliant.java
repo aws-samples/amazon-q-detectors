@@ -9,7 +9,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.web.bind.annotation.RequestParam;
 
 public class LDAPInjectionJavaRuleCompliant {
-    // Compliant: Sanitized input is being used in LDAP statement
+    // Compliant: Sanitized input is being used in LDAP statement.
     public void compliant(@RequestParam String input) throws NamingException {
         String sanitizedInput = StringEscapeUtils.escapeHtml4(input);
         DirContext context = new InitialDirContext(new Hashtable<>());

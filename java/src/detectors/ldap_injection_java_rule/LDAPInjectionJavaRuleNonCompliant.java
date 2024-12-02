@@ -7,7 +7,8 @@ import javax.naming.directory.*;
 import java.util.Hashtable;
 import org.springframework.web.bind.annotation.RequestParam;
 public class LDAPInjectionJavaRuleNonCompliant {
-    // Noncompliant: Unsanitized input passed to LDAP statement
+    
+    // Noncompliant: Unsanitized input passed to LDAP statement.
     public void nonCompliant(@RequestParam String input) throws NamingException {
         DirContext context = new InitialDirContext(new Hashtable<>());
         BasicAttributes matchingAttributes = new BasicAttributes();
