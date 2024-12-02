@@ -1,0 +1,18 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-sns-topic-uses-cmk@v1.0 defects=1}
+Resources:
+  MyTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      # Noncompliant: AWS SNS topic has SSE disabled.
+      TopicName: my-topic
+      DisplayName: My SNS Topic
+      Subscription:
+        - Endpoint: your-email@example.com
+          Protocol: email
+      Tags:
+        - Key: Environment
+          Value: production
+# {/fact}

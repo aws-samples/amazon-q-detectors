@@ -1,0 +1,14 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-sagmakr-notebook-acss@v1.0 defects=0}
+Resources:
+  BasicNotebookInstance:
+    Type: "AWS::SageMaker::NotebookInstance"
+    Properties:
+      InstanceType: "ml.t2.large"
+      RoleArn: !GetAtt ExecutionRole.Arn
+      SubnetId: subnet-abcd1234
+      # Compliant: Amazon SageMaker Notebook instance has direct internet access disabled.
+      DirectInternetAccess: Disabled
+# {/fact}

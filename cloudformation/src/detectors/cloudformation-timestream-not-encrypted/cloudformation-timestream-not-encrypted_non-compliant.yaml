@@ -1,0 +1,13 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-timestream-not-encrypted@v1.0 defects=1}
+Resources:
+  TimestreamDatabase:
+    Type: AWS::Timestream::Database
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Properties:
+      # Noncompliant: Timestream database is not encrypted with KMS CMK.
+      DatabaseName: SensorData
+# {/fact}

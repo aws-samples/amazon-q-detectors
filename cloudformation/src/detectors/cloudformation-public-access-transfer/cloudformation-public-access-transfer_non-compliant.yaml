@@ -1,0 +1,26 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-public-access-transfer@v1.0 defects=1}
+Resources:
+  TransferServer:
+    Type: AWS::Transfer::Server
+    Properties:
+      # Noncompliant: AWS Transfer Server is publicly exposed.
+      EndpointType: PUBLIC
+      IdentityProviderDetails:
+        InvocationRole:
+          Fn::GetAtt: TransferIdentityProviderRole.Arn
+        Url:
+          Fn::Join:
+            - ''
+            - - https://
+              - Ref: CustomIdentityProviderApi
+              - .execute-api.
+              - Ref: AWS::Region
+              - .amazonaws.com/
+              - Ref: ApiStage
+      IdentityProviderType: API_GATEWAY
+      LoggingRole:
+        Fn::GetAtt: CloudWatchLoggingRole.Arn
+# {/fact}
