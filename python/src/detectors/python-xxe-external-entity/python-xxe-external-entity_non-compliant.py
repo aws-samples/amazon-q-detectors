@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.post("/upload")
 def non_compliant():
     xml_src = request.get_data()
-    # Noncompliant: Using `lxml.etree.fromstring` can be vulnerable to an XXE attack.
+    # Noncompliant: Using `lxml.etree.fromstring` can be vulnerable to XXE attack.
     doc = etree.fromstring(xml_src)
     return etree.tostring(doc)
 # {/fact}

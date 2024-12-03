@@ -3,9 +3,6 @@
 
 # {fact rule=python-zip-slip@v1.0 defects=0}
 import zipfile
-from flask import Flask, request
-
-app = Flask(__name__)
 
 def compliant(archive_name):
     zf = zipfile.ZipFile(archive_name)

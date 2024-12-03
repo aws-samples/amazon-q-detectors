@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.post("/upload")
 def compliant():
     xml_src = request.get_data()
-    # Noncompliant: Using `defusedxml.lxml.fromstring` prevents to an XXE attack.
+    # Compliant: Using `defusedxml.lxml.fromstring` helps prevent XXE injection.
     doc = fromstring(xml_src) 
     return lxml.etree.tostring(doc)
 # {/fact}
