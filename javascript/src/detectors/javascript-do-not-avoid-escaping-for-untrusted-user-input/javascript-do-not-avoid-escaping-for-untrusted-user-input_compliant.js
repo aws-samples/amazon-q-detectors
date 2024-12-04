@@ -19,8 +19,6 @@ function compliant() {
     return fetch("link")
         .then(response => response.json())
         // Compliant: Uses `Handlebars.escapeExpression()` to properly sanitize untrusted data before sending to client, preventing XSS vulnerabilities.
-
-
         .then(data => Handlebars.escapeExpression(data))
         .catch(error => {
             console.error("Error in compliant function:", error);
