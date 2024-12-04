@@ -15,7 +15,7 @@ int noncompliant() {
 
     OpenSSL_add_all_algorithms();
 
-    // Noncompliant: SSL_get_verify_result() has not been called to verify the peer certificate, after the following SSL_get_peer_certificate() call.
+    // Noncompliant: SSL_get_verify_result() has not been called after the following SSL_get_peer_certificate() call.
     cert = SSL_get_peer_certificate(ssl);
     if (cert == NULL) {
         printf("No certificate was presented by the peer.\n");
