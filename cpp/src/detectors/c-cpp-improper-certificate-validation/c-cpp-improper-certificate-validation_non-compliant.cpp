@@ -14,39 +14,6 @@ int noncompliant() {
     const char *hostname = "www.example.com";
 
     OpenSSL_add_all_algorithms();
-    SSL_load_error_strings();
-    SSL_library_init();
-
-    ctx = SSL_CTX_new(TLS_client_method());
-    if (ctx == NULL) {
-        fprintf(stderr, "Error creating SSL context\n");
-        ERR_print_errors_fp(stderr);
-        return 1;
-    }
-
-    ssl = SSL_new(ctx);
-    if (ssl == NULL) {
-        fprintf(stderr, "Error creating SSL object\n");
-        ERR_print_errors_fp(stderr);
-        SSL_CTX_free(ctx);
-        return 1;
-    }
-
-    if (SSL_set_tlsext_host_name(ssl, hostname) != 1) {
-        fprintf(stderr, "Error setting SNI\n");
-        ERR_print_errors_fp(stderr);
-        SSL_free(ssl);
-        SSL_CTX_free(ctx);
-        return 1;
-    }
-
-    if (SSL_connect(ssl) <= 0) {
-        fprintf(stderr, "Error establishing SSL connection\n");
-        ERR_print_errors_fp(stderr);
-        SSL_free(ssl);
-        SSL_CTX_free(ctx);
-        return 1;
-    }
 
     // Noncompliant: SSL_get_verify_result() has not been called to verify the peer certificate, after the following SSL_get_peer_certificate() call.
     cert = SSL_get_peer_certificate(ssl);

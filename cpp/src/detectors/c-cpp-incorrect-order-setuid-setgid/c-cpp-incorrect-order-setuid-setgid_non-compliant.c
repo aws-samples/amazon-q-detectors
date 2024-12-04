@@ -8,8 +8,7 @@
 void noncompliant() {
     std::cout << "Initial Real UID: " << getuid() << ", Initial Real GID: " << getgid() << std::endl;
 
-    // Noncompliant: Calling `setuid(getuid())` before `setgid(getgid())` may cause the process
-    // to lose permissions needed to set the `GID`, potentially leading to incomplete privilege dropping.
+    // Noncompliant: Setting `UID` before `GID` can lead to incomplete privilege dropping.
     setuid(getuid());
     setgid(getgid());
 
