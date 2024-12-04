@@ -5,6 +5,6 @@
 import urllib.request
 
 def compliant():
-    # Compliant: URL is using an secure `HTTPS` protocol connection.
+    # Compliant: URL is using a secure `HTTPS` protocol connection.
     urllib.request.Request('https://www.abc/zyx')
 # {/fact}
