@@ -12,7 +12,6 @@ app.use(cookieParser());
 const csrfProtection = csrf();
 app.use(csrfProtection);
 
-
 app.get('/test', function (req, res) {
     // Compliant: Hardcoded trusted origin prevents CORS security risks.
     res.set('access-control-allow-origin', 'trustedwebsite.com')

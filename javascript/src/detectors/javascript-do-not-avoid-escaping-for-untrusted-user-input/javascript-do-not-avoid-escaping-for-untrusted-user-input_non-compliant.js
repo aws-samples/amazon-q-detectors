@@ -15,7 +15,7 @@ app.use(cookieParser());
 const csrfProtection = csrf();
 app.use(csrfProtection);
 
-function compliant() {
+function nonCompliant() {
     return fetch("link")
         .then(response => response.json())
         // Noncompliant: Using `Handlebars.SafeString()` with untrusted user input without escaping can lead to XSS vulnerabilities.
