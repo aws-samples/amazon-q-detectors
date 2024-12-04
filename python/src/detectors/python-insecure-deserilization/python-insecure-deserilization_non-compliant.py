@@ -6,6 +6,6 @@ import yaml
 
 def non_compliant():
     var = input()
-    # Noncompliant: Untrusted user inputs is in the `yaml.load_all`.
+    # Noncompliant: Untrusted user input is passed in `yaml.load_all`.
     yaml.load_all(var)
 # {/fact}
