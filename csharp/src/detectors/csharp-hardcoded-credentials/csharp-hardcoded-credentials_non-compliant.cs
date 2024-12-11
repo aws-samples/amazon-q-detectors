@@ -23,5 +23,4 @@ namespace Credentials.NonCompliant
         }
     }
 }
-
 // {/fact}

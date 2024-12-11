@@ -23,5 +23,4 @@ namespace JwtTokenValidation.Compliant
         }
     }
 }
-
 // {/fact}

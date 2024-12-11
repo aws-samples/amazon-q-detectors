@@ -17,5 +17,4 @@ namespace Cryptography.NonCompliant
         }
     }
 }
-
 // {/fact}

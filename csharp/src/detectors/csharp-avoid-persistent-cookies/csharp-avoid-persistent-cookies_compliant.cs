@@ -33,5 +33,4 @@ namespace AvoidPersistentCookies.Compliant
         }
     }
 }
-
 // {/fact}
