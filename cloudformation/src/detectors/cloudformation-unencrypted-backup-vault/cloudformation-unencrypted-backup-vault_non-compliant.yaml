@@ -1,0 +1,13 @@
+
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# {fact rule=cloudformation-unencrypted-backup-vault@v1.0 defects=1}
+Resources:  
+  BackupVault:
+    Type: AWS::Backup::BackupVault
+    Properties:
+      BackupVaultName: !Sub ${BackupPlanName}-Vault
+      # Noncompliant: Backup Vault is not encrypted at rest using KMS CMK.
+      BackupVaultTags: { BackupInterval : !Ref BackupVaultTagValue }
+# {/fact}
