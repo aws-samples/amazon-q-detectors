@@ -12,4 +12,3 @@ class CdkStarter(cdk.Stack):
         # Compliant: Bucket has public access disabled.
         nonPublicBucketDirect=Bucket(self, 'bucket')
 # {/fact}
- 

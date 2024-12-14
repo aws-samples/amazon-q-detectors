@@ -13,4 +13,3 @@ class CdkStarter(cdk.Stack):
         publicBucket=s3.Bucket(self, 'bucket')
         publicBucket.grant_public_access()
 # {/fact}
- 
