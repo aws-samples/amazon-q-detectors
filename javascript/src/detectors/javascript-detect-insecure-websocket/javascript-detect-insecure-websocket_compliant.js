@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=javascript-detect-insecure-websocket@v1.0 defects=0}
-// Set httpOnly: true here since we don't want to focus on this vulnerability for this rule.
+// Use of the ws:// scheme for WebSocket connections, which is iinsecure.
 let socket = new WebSocket("wss://javascript.org/article/websocket/demo/hello");
 socket.onopen = function(e) {
     alert("[open] Connection established");
