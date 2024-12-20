@@ -22,6 +22,10 @@ class CdkStarter(cdk.Stack):
                 enable_logging=True,
                 s3_key_prefix='redshift-logs/'
             ),
-            encrypted=True
+            encrypted=True,
+            allow_version_upgrade=True,
+            publicly_accessible=False,
+            enable_user_activity_logging=True,
+            require_ssl=True
         )
 # {/fact}

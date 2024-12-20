@@ -19,7 +19,6 @@ class CdkStarter(cdk.Stack):
                     namespce ='aws:elasticbeanstalk:managedactions',
                     option_name= 'PreferredStartTime',
                     value = 'Tue:09:00',
-                
                     namespce ='aws:elasticbeanstalk:managedactions:platformupdate',
                     option_name= 'UpdateLevel',
                     value = 'minor'

@@ -11,10 +11,10 @@ class CdkStarter(cdk.Stack):
 
         # Noncompliant: Omits logging configuration, reducing visibility and auditability of the cluster.
         CfnCluster(self, 'rRedshiftCluster',
-			master_username='use_a_secret_here',
-			master_user_password='use_a_secret_here',
-			cluster_type='single-node',
-			db_name='bar',
-			node_type='ds2.xlarge'
+            master_username='use_a_secret_here',
+            master_user_password='use_a_secret_here',
+            cluster_type='single-node',
+            db_name='bar',
+            node_type='ds2.xlarge'
 	    )
 # {/fact}

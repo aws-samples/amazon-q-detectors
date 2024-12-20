@@ -11,6 +11,13 @@ class CdkStarter(cdk.Stack):
 
         # Noncompliant: Does not specify `UpdateLevel`, potentially allowing disruptive updates that could affect application stability.
         CfnEnvironment(self, 'rBeanstalk', 
-            application_name = 'foo'
+            application_name = 'foo',
+            option_settings = [
+            CfnEnvironment.OptionSettingProperty(
+                namespce ='aws:elasticbeanstalk:managedactions',
+                option_name= 'ManagedActionsEnabled',
+                value = 'false'
+            ) 
+            ]
         )
 #{/fact}

@@ -11,5 +11,5 @@ class CdkStarter(cdk.Stack):
         super(scope, id)
 
         # Compliant: EFS is created with encryption enabled, ensuring data security at rest.
-        FileSystem(Stack, 'rEFS', vpc=ec2.Vpc(self, "rVpc"))
+        FileSystem(Stack, 'rEFS', vpc=ec2.Vpc(self, "rVpc"), encrypted=True)
 # {/fact}

@@ -23,10 +23,15 @@ class CdkStarter(cdk.Stack):
                     topic=negTopic
                 ),
                 NotificationConfiguration(
-                    scaling_event=[
-                        ScalingEvent.INSTANCE_TERMINATE,
-                        ScalingEvent.INSTANCE_TERMINATE_ERROR,
-                    ],
+                    scaling_events=[
+                        ScalingEvent.INSTANCE_LAUNCH,           # New instance started
+                        ScalingEvent.INSTANCE_LAUNCH_ERROR,     # Failed to start an instance
+                        ScalingEvent.INSTANCE_TERMINATE,        # Instance terminated
+                        ScalingEvent.INSTANCE_TERMINATE_ERROR,  # Failed to terminate an instance
+                        ScalingEvent.TEST_NOTIFICATION,         # Test notification (can be useful for testing)
+                        ScalingEvent.SCALE_IN_EVENT,            # Notify when the ASG scales in (reduces instances)
+                        ScalingEvent.SCALE_OUT_EVENT            # Notify when the ASG scales out (adds instances).
+                    ], 
                     topic=negTopic
                 )  
             ]

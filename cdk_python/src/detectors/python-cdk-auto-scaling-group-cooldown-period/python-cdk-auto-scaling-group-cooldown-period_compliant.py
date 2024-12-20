@@ -16,6 +16,6 @@ class CdkStarter(cdk.Stack):
             vpc=Vpc(self, 'rVpc'),
             instance_type=InstanceType(InstanceClass.T3),
             machine_image=MachineImage.latestAmazonLinux(),
-            cooldown=Duration.seconds(42)
+            cooldown=Duration.minutes(10)
         )
 # {/fact}
