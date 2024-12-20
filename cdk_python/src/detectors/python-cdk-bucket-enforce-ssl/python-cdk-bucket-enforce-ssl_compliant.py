@@ -11,6 +11,6 @@ class CdkStarterStack(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
         super(scope, id)
         
-	    # Compliant: The S3 Bucket instantiation sets `enforce_ssl` to `True`.
+        # Compliant: The S3 Bucket instantiation sets `enforce_ssl` to `True`.
         goodBucket = s3.Bucket(self, "s3-bucket", enforce_ssl=True)
 # {/fact}

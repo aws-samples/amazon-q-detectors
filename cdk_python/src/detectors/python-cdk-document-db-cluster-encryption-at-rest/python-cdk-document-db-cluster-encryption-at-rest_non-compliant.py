@@ -11,7 +11,7 @@ class CdkStarterStack(cdk.Stack):
         super(scope, id)
 
         vpc = Vpc(self, "MyVpc")
-
-	      # Noncompliant: Disables storage encryption, potentially exposing sensitive data.
+        
+        # Noncompliant: Disables storage encryption, potentially exposing sensitive data.
         DatabaseCluster(self,'rDatabaseCluster', instance_type= InstanceType.of(InstanceClass.MEMORY5, InstanceSize.LARGE), vpc = vpc, master_user= "foo", master_user_password=core.SecretValue.secrets_manager("bar"), storage_encrypted = False)
 # {/fact}
