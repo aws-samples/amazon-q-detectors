@@ -4,7 +4,7 @@
 // {fact rule=javascript-jwt-exposed-credential@v1.0 defects=1}
 const jwt = require('jsonwebtoken');
 
-// Noncompliant: Password is being incorrectly sent as a part of the payload.
+// Noncompliant: Sensitive data like 'password' is being sent in the payload.
 const payload = {
     userId: '123456',
     username: 'john_doe',

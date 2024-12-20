@@ -7,14 +7,14 @@ const kinesis = new AWS.Kinesis({ apiVersion: '2013-12-02', region: 'us-west-2' 
 
 async function nonCompliant() {
     const params = {
-        StreamName: 'your-stream-name', // Replace with your Kinesis stream name
+        StreamName: 'your-stream-name',
         Records: [
             {
-                Data: JSON.stringify({ key: 'value1' }), // The actual data (must be a Buffer, String, or Uint8Array)
-                PartitionKey: 'partitionKey1' // Partition key for distributing records
+                Data: JSON.stringify({ key: 'value1' }),
+                PartitionKey: 'partitionKey1'
             },
             {
-                Data: JSON.stringify({ key: 'value2' }), // Another record
+                Data: JSON.stringify({ key: 'value2' }),
                 PartitionKey: 'partitionKey2'
             },
             {

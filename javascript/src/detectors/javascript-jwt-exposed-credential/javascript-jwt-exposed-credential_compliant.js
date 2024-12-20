@@ -4,7 +4,7 @@
 // {fact rule=javascript-jwt-exposed-credential@v1.0 defects=0}
 const jwt = require('jsonwebtoken');
 
-// Compliant: JWT secret key is securely stored in environment variable, not hardcoded.
+// Compliant: Sensitive data like 'password' is not being sent in the payload.
 const payload = {
     userId: '123456',
     username: 'john_doe',
