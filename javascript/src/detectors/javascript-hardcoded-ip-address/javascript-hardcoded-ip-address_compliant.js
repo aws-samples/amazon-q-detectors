@@ -11,7 +11,7 @@ dotenv.config();
 const client = new net.Socket();
 
 function compliant() {
-    // Conformant: Retrieve IP address from environment variable
+    // Compliant: Retrieve IP address from environment variable
     const serverIp = process.env.SERVER_IP;
 
     if (!serverIp || !ip.isV4Format(serverIp)) {
