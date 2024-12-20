@@ -65,9 +65,9 @@ public class SQSLongPollingOnQueueCompliant {
                     e1.printStackTrace();
                 }
             }
+            // Compliant: Set the wait time in seconds on the ReceiveMessageRequest object to enable long polling.
             ReceiveMessageRequest receive_request = new ReceiveMessageRequest()
                                                             .withQueueUrl(queue_url)
-            // Compliant: Set the wait time in seconds on the ReceiveMessageRequest object to enable long polling.
                                                             .withWaitTimeSeconds(20); 
             sqs.receiveMessage(receive_request);
 
