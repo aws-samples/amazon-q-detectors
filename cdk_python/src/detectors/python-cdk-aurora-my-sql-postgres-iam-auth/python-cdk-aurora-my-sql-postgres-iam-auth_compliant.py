@@ -15,7 +15,7 @@ class CdkStarterStack(cdk.Stack):
 
         # Compliant: Uses IAM authentication for database access, enhancing security.
         DatabaseCluster(self, 'rDbCluster',
-	          engine= DatabaseClusterEngine.aurora_mysql(version=AuroraMysqlEngineVersion.VER_3_01_0),
-	          iam_authentication= True
-	      )
+            engine= DatabaseClusterEngine.aurora_mysql(version=AuroraMysqlEngineVersion.VER_3_01_0),
+            iam_authentication= True
+        )
 # {/fact}

@@ -11,6 +11,6 @@ class CdkStarterStack(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
         super(scope, id)
 
-	    # Noncompliant: Lacks `CONNECT_SSM`, exposing the instance to less secure connection methods.
+        # Noncompliant: Lacks `CONNECT_SSM`, exposing the instance to less secure connection methods.
         CfnEnvironmentEC2(Stack, 'rC9Env', instance_type= InstanceType.of( InstanceClass.T2, InstanceSize.MICRO ))
 # {/fact}

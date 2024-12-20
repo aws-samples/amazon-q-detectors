@@ -8,10 +8,10 @@ from aws_cdk.aws_docdb import DatabaseCluster, core
 
 class CdkStarterStack(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
-      super(scope, id)
+        super(scope, id)
 
-      vpc = Vpc(self, "MyVpc")
+        vpc = Vpc(self, "MyVpc")
 
-	    # Noncompliant: Disables storage encryption, potentially exposing sensitive data.
-      DatabaseCluster(self,'rDatabaseCluster', instance_type= InstanceType.of(InstanceClass.MEMORY5, InstanceSize.LARGE), vpc = vpc, master_user= "foo", master_user_password=core.SecretValue.secrets_manager("bar"), storage_encrypted = False)
+	      # Noncompliant: Disables storage encryption, potentially exposing sensitive data.
+        DatabaseCluster(self,'rDatabaseCluster', instance_type= InstanceType.of(InstanceClass.MEMORY5, InstanceSize.LARGE), vpc = vpc, master_user= "foo", master_user_password=core.SecretValue.secrets_manager("bar"), storage_encrypted = False)
 # {/fact}

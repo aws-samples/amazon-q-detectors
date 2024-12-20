@@ -15,7 +15,7 @@ class CdkStarterStack(cdk.Stack):
 
 	    # Noncompliant: Disables IAM authentication, relying on less secure authentication methods.
         DatabaseCluster(self, 'rDbCluster',
-	          engine= DatabaseClusterEngine.aurora_mysql(version=AuroraMysqlEngineVersion.VER_3_01_0),
-	          iam_authentication=False
-	      )
+            engine= DatabaseClusterEngine.aurora_mysql(version=AuroraMysqlEngineVersion.VER_3_01_0),
+            iam_authentication=False
+        )
 # {/fact}

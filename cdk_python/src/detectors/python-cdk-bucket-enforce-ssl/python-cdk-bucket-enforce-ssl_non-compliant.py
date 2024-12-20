@@ -8,9 +8,9 @@ from aws_cdk import (
 )
 
 class CdkStarterStack(cdk.Stack):
-	def __init__(self, scope: cdk.App, id: str):
-		super(scope, id)
-		
-		# Noncompliant: The S3 Bucket instantiation does not set `enforce_ssl` to `True`.
-		badBucket = s3.Bucket(self, "s3-bucket-bad", enforce_ssl=False)
+    def __init__(self, scope: cdk.App, id: str):
+        super(scope, id)
+
+        # Noncompliant: The S3 Bucket instantiation does not set `enforce_ssl` to `True`.
+        badBucket = s3.Bucket(self, "s3-bucket-bad", enforce_ssl=False)
 # {/fact}

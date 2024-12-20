@@ -10,6 +10,6 @@ class CdkStarterStack(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
         super(scope, id)
 
-	    # Noncompliant: RestApi instantiation does not set the `authorization_type`, disabling authorization.
+        # Noncompliant: RestApi instantiation does not set the `authorization_type`, disabling authorization.
         RestApi(Stack, 'rRestApi').root.add_method('ANY')
 # {/fact}
