@@ -11,7 +11,7 @@ class CdkStarter(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
         super(scope, id)
 
-        # Compliant: Sets a proper cooldown to avoid rapid scaling.
+        # Compliant: It is recommended to set a `cooldown` period of 5 minutes or above.
         AutoScalingGroup(self, 'rAsg',
             vpc=Vpc(self, 'rVpc'),
             instance_type=InstanceType(InstanceClass.T3),
