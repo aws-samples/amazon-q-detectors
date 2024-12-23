@@ -5,7 +5,7 @@
 const cars = ["Saab", "Volvo", "BMW", NaN];
 
 for (let i = 0; i < cars.length; i++) {
-    // Noncompliant : `isNaN()` is not used.
+    // Noncompliant: `isNaN()` is not used.
     if (cars[i] === NaN) {  
         console.log("Noncompliant : NaN found");
     }
