@@ -7,21 +7,6 @@ const express = require('express');
 const isRevoked = require('./isRevoked');
 const jwt = require('express-jwt');
 
-app2.route('/someURL/:id').get((req, res) => {
-    // Compliant: JWT token is not revoked.
-    let id_ = escape(req.params.id);
-    let str1 = `
-        <p>${id_}</p>
-        <form method="POST" style="margin: 60px auto; width: 140px;">
-            <p><input name="username" type="text" /></p>
-            <p><input name="password" type="password" /></p>
-            <p><input value="Login" type="submit" /></p>
-        </form>
-    `
-    res.send(str1);
-})
-
-
 // Compliant: `isRevoked` attribute is present to check if the token has been revoked.
 app.get(
     '/some_url',

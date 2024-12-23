@@ -5,7 +5,7 @@
 
 function nonCompliant(username, password) {
     localStorage.setItem("USERNAME", username);
-    //Noncompliant: Sensitive data being stored in `localStorage`.
+    // Noncompliant: Sensitive data being stored in `localStorage`.
     localStorage.setItem("PASSWORD", password);     
 }
 // {/fact}
