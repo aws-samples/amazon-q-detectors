@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-class SpringUnvalidatedRedirect_NonConformant {
+class SpringUnvalidatedRedirect_NonCompliant {
 
     String strRedirectUrl;
 

@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 public class JavaCacheDataLossFromRedisCompliant{
     private static final Logger log = LoggerFactory.getLogger(JavaCacheDataLossFromRedisCompliant.class);
 
-    private void compliant1() {
+    private void compliant() {
         RedisAdvancedClusterAsyncCommands<String, ?> async = getRedisAsyncCommands();
         async.multi();
         // Compliant: Flushall executed within a transaction.

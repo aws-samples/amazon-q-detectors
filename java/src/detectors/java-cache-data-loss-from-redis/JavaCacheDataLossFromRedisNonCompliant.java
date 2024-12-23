@@ -6,7 +6,7 @@ import io.lettuce.core.cluster.api.async.RedisAdvancedClusterAsyncCommands;
 
 public class JavaCacheDataLossFromRedisNonCompliant{
 
-    private void nonCompliant1() {
+    private void nonCompliant() {
         RedisAdvancedClusterAsyncCommands<String, ?> async = getRedisAsyncCommands();
         // Noncompliant: Flushall executed without transaction.
         async.flushall(); // Flushes all data in the Redis cluster, risking data loss

@@ -6,9 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-class SpringUnvalidatedRedirect_Conformant {
+class SpringUnvalidatedRedirect_Compliant {
 
-    @RequestMapping(value = "/conformingRedirect", method = RequestMethod.GET)
+    @RequestMapping(value = "/redirect", method = RequestMethod.GET)
     // Compliant: Uses a hardcoded redirect URL that cannot be manipulated by user input, preventing open redirect vulnerabilities.
     public String conformant() {
         return getConformingRedirectUrl();
