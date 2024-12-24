@@ -14,7 +14,6 @@ app.use(cookieParser());
 const csrfProtection = csrf();
 app.use(csrfProtection);
 
-// Noncompliant version
 app.get('/start-browser', async (req: Request, res: Response): Promise<void> => {
     try {
         const port = 9222;

@@ -25,7 +25,7 @@ const nonCompliant = (): void => {
             changeOrigin: true,
             onProxyReq,
             onProxyRes,
-            // Noncompliant: xfwd's defaults value is true.
+            // Noncompliant: Setting true for xfwd is insecure.
             xfwd: true
         });
     };

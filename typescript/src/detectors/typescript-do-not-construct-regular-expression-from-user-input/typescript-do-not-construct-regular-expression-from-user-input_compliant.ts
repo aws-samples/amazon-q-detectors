@@ -5,7 +5,7 @@
 import escapeStringRegexp from 'escape-string-regexp';
 import fetch from 'node-fetch';
 
-function conformant()
+function complaint()
 {
     fetch("some link")
         // Compliant: Creating RegExp from validated user input. 
