@@ -13,7 +13,7 @@ class SpringUnvalidatedRedirect_NonCompliant {
 
     String strRedirectUrl;
 
-    @RequestMapping(value = "/redirect1", method = RequestMethod.GET)
+    @RequestMapping(value = "/noncompliant", method = RequestMethod.GET)
     // Noncompliant: Directly uses unvalidated user input for redirection, which could allow attackers to redirect users to malicious websites through URL parameter manipulation.
     public String redirect1(@RequestParam("url") String url) {
         return "redirect:" + url;

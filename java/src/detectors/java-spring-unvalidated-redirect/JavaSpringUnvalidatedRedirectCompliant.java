@@ -25,7 +25,7 @@ public class RedirectController {
         }
     }
 
-    @GetMapping("/compliant")
+    @RequestMapping(value = "/compliant", method = RequestMethod.GET)
     public String compliant(@RequestParam(name = "destination", required = false) String destination) {
 
         String redirectDestination;
