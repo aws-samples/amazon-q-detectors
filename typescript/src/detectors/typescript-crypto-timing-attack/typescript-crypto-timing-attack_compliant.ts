@@ -12,7 +12,7 @@ let password: string;
 export default app;
 
 app.get('/', function (req: Request, res: Response) {
-    // Noncompliant: Using `compare` helps to prevent to timing attack.
+    // Compliant: Using `compare` helps to prevent to timing attack.
     if (compare(password, process.env.ENV_VARIABLE)) {
         console.log("Password matched");
     }
