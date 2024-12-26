@@ -65,9 +65,9 @@ public class SQSLongPollingOnQueueNonCompliant {
                     e1.printStackTrace();
                 }
             }
-            // Noncompliant: Enable long polling to minimize empty responses and reduce false negatives in ReceiveMessage requests.
+            // Noncompliant: Using short polling (default behavior) in `ReceiveMessageRequest` can lead to higher costs and reduced efficiency.
             ReceiveMessageRequest receive_request = new ReceiveMessageRequest()
-                                                            .withQueueUrl(queue_url)                                                
+                                                            .withQueueUrl(queue_url);
             sqs.receiveMessage(receive_request);
 
         }
