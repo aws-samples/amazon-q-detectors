@@ -4,18 +4,40 @@
 // {fact rule=java-spring-unvalidated-redirect@v1.0 defects=0}
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-class SpringUnvalidatedRedirect_Compliant {
+public class RedirectController {
 
-    @RequestMapping(value = "/redirect", method = RequestMethod.GET)
-    // Compliant: Uses a hardcoded redirect URL that cannot be manipulated by user input, preventing open redirect vulnerabilities.
-    public String conformant() {
-        return getConformingRedirectUrl();
+    private enum RedirectDestination {
+        HOME("/home"),
+        DASHBOARD("/dashboard"),
+        PROFILE("/profile");
+
+        private final String url;
+
+        RedirectDestination(String url) {
+            this.url = url;
+        }
+
+        public String getUrl() {
+            return url;
+        }
     }
 
-    private String getConformingRedirectUrl() {
-        return "redirect:/";
+    @GetMapping("/compliant")
+    public String compliant(@RequestParam(name = "destination", required = false) String destination) {
+
+        String redirectDestination;
+        try {
+            // Compliant: User input is validated against a known list of values before using it in a redirect.
+            RedirectDestination redirectDestinationEnum = RedirectDestination.valueOf(destination.toUpperCase(Locale.US));
+            redirectDestination = redirectDestinationEnum.getUrl();
+        } catch (IllegalArgumentException | NullPointerException e) {
+            redirectDestination = "/error";
+        }
+
+        return "redirect:" + redirectDestination;
     }
 }
 // {/fact}
