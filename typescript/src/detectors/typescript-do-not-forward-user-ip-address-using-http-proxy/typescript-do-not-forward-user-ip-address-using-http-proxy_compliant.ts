@@ -9,7 +9,7 @@ const app = express();
 
 app.use(
     createProxyMiddleware("/api", {
-        // Compliant: xfwd's defaults value is false.
+        // Compliant: The `xfwd` option is not explicitly set, and its default value is `false`, preventing forwarding of client IP addresses.
         target: 'http://localhost:8081/',
         changeOrigin: true,
     })

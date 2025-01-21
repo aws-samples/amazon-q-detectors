@@ -25,7 +25,7 @@ const nonCompliant = (): void => {
             changeOrigin: true,
             onProxyReq,
             onProxyRes,
-            // Noncompliant: Setting true for xfwd is insecure.
+            // Noncompliant: Forwarding client IP addresses using the `xfwd` option may expose sensitive user information.
             xfwd: true
         });
     };
