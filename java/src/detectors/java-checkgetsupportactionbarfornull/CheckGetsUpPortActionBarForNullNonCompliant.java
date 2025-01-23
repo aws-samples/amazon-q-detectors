@@ -3,7 +3,6 @@
 
 // {fact rule=java-checkgetsupportactionbarfornull@v1.0 defects=1}
 import android.os.Bundle;
-import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
 import com.google.android.gms.common.api.GoogleApiClient;
