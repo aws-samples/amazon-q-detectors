@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class OgnlInjectionCompliant {
     public void compliant(HttpServletRequest request, OgnlReflectionProvider reflectionProvider, Class type) throws IntrospectionException, ReflectionException {
         String input = request.getParameter("input");
-        // Compliant: Sanitize the input before using it helps prevent to remote code execution.
+        // Compliant: Sanitize the input before using it helps prevent remote code execution.
         if (isValidMethodName(input)) {
             reflectionProvider.getGetMethod(type, input);
         }

@@ -15,7 +15,7 @@ public class InsecureJWTParsingCompliant {
         try {
             String plainTextSigningKey = decryptedKeyCache.getUnchecked(kinesisAnalyticsAuthToken.getSecret());
             Key key = Keys.hmacShaKeyFor(plainTextSigningKey.getBytes(StandardCharsets.UTF_8));
-            // Compliant: Using the `parseClaimsJws` method helps prevents downgrade attacks.
+            // Compliant: Using the `parseClaimsJws` method helps prevent downgrade attacks.
             Jwts.parserBuilder()
                     .setSigningKey(key)
                     .build()
