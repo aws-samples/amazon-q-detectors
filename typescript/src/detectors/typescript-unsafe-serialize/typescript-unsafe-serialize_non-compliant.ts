@@ -20,7 +20,7 @@ interface QueryRequest extends Request {
 
 app.get("/query", (req: QueryRequest, res: Response) => {
     const userInput = req.params.userinput;
-    // Non-compliant: Using `{unsafe: true}` option in `serialize()` with user input allows potentially dangerous code execution during deserialization.
+    // Noncompliant: Using `{unsafe: true}` option in `serialize()` with user input allows potentially dangerous code execution during deserialization.
     const result = serialize({ foo: userInput }, {unsafe: true, space: 2});
     res.setHeader('Content-Type', 'application/json');
     res.json({ result: result });
