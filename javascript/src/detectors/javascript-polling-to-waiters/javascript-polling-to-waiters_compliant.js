@@ -22,7 +22,7 @@ function compliant(bucketName, cb) {
             Bucket: bucketName
         };
 
-        // Complaint: Verify bucket created before performing other operations on bucket
+        // Compliant: Verify bucket created before performing other operations on bucket
         s3.waitFor('bucketExists', paramsWait, function (err, data) {
             if (err) {
                 console.log(err, err.stack);
