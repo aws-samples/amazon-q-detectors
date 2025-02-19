@@ -7,7 +7,7 @@ import express, { Express, Request, Response, Router } from 'express';
 const app: Express = express();
 const router: Router = express.Router();
 
-// Noncompliant: HTTP routes using the `all()` method in Express
+// Noncompliant: HTTP routes using the `all()` method in Express.
 app.all("/welcome", function (request: Request, response: Response) {
     response.send("Welcome!!");
 });
