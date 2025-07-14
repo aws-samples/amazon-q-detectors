@@ -2,16 +2,39 @@
 # SPDX-License-Identifier: MIT-0
 
 # {fact rule=ruby-unvalidated-url-redirect@v1.0 defects=0}
-class UsersController < ApplicationController
-    def compliant
-        user_status = params[:user_validated]
-
-        if user_status == "VALID"
-            # Compliant: URL is validated before redirection.
-            redirect_to "https://example.com" 
-        else
-            render plain: "User validation failed."
-        end
+class UsersController < ActionController::Base
+  def compliant
+    user_id = params[:user_id]
+    key = params[:key]
+    
+    # Process user login
+    user = User.find(user_id)
+    if user&.authenticate(params[:password])
+      session[:user_id] = user.id
+      flash[:notice] = "Login successful"
+      
+      # Compliant: Validating redirect parameter against specific allowed values
+      if key == "dashboard"
+        redirect_to "/dashboard"
+      elsif key == "profile"
+        redirect_to "/profile"
+      else
+        redirect_to "/default"
+      end
+    else
+      flash[:error] = "Invalid credentials"
+      redirect_to login_path
     end
+  end
+  
+  def route8
+    key = params[:key]
+    if key == "foo"
+      # Compliant: Only allowing specific, validated redirect values
+      redirect_to key
+    else
+      redirect_to "/default"
+    end
+  end
 end
 # {/fact}
