@@ -1,31 +1,26 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-package crypto
-
 // {fact rule=go-weak-crypto@v1.0 defects=1}
+package main
+
 import (
 	"crypto/md5"
-	"fmt"
 	"io"
-	"os"
+	"net/http"
 )
 
-func insecureHashingNoncompliant() {
-	file, err := os.Open("example.txt")
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer file.Close()
+func noncompliant(w http.ResponseWriter, r *http.Request) {
+	password := r.FormValue("password")
 
-	// Noncompliant: Using `MD5`, which is considered insecure due to collision vulnerabilities.
-	hash := md5.New()
-	if _, err := io.Copy(hash, file); err != nil {
-		fmt.Println("Error hashing file:", err)
-		return
-	}
+	// Noncompliant: `MD5` is cryptographically weak and vulnerable to collisions.
+	h := md5.New()
+	io.WriteString(h, password)
+	passwordHash := h.Sum(nil)
+	
+	setPassword(passwordHash)
+}
 
-	fmt.Printf("MD5 checksum: %x\n", hash.Sum(nil))
+func setPassword(hash []byte) {
 }
 // {/fact}
