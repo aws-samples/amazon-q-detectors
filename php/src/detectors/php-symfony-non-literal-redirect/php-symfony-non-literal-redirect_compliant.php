@@ -1,6 +1,6 @@
 <?php
-//  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-//  SPDX-License-Identifier: MIT-0
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-symfony-non-literal-redirect@v1.0 defects=0}
 use Symfony\Component\HttpFoundation\RedirectResponse;
