@@ -1,6 +1,6 @@
 <?php
-//  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-//  SPDX-License-Identifier: MIT-0
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-path-traversal@v1.0 defects=0}
 // Compliant: Uses `realpath()` to validate the final path, preventing directory traversal attacks by ensuring the expected path.
