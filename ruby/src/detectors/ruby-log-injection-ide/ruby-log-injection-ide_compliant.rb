@@ -17,7 +17,6 @@ class AuthController < ApplicationController
   private
   
   def sanitize_for_log(input)
-    # Remove newlines and control characters that could be used for log injection
     input.to_s.gsub(/[\r\n\t]/, '_').strip
   end
 end

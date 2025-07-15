@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
   
   def noncompliant
-    # Sensitive action without CSRF protection
     user_id = params[:user_id]
     User.find(user_id).destroy
     redirect_to users_path

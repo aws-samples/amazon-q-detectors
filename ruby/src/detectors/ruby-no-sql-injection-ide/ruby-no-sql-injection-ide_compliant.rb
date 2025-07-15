@@ -11,7 +11,7 @@ def compliant
   client = Mongo::Client.new(['127.0.0.1:27017'], database: 'myapp')
   users = client[:users]
   
-  # Compliant: Using BSON::Document to safely structure MongoDB queries.
+  # Compliant: Using `BSON::Document` to safely structure MongoDB queries.
   user = users.find({"username" => BSON::Document.new(username: username), 
                      "password" => BSON::Document.new(password: password)}).first
   

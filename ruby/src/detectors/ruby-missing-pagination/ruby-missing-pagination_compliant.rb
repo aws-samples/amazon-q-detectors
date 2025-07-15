@@ -7,7 +7,7 @@ require 'aws-sdk-s3'
 def compliant
   s3 = Aws::S3::Client.new
   
-  # Compliant: Using each method to handle pagination automatically
+  # Compliant: Using each method to handle pagination automatically.
   s3.list_objects(bucket: 'my-bucket').each do |response|
     response.contents.each do |object|
       puts object.key
