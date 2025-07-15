@@ -7,7 +7,7 @@ require 'aws-sdk-s3'
 def noncompliant
   s3 = Aws::S3::Client.new
   
-  # Noncompliant: Using list_objects without pagination can miss results beyond first 1000 objects
+  # Noncompliant: Using `list_objects` without pagination can miss results beyond first 1000 objects.
   response = s3.list_objects(bucket: 'my-bucket')
   
   response.contents.each do |object|

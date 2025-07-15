@@ -7,7 +7,7 @@ require 'shellwords'
 class FileController < ApplicationController
   def compliant
     filename = params[:filename]
-    # Compliant: Using Shellwords.escape to sanitize user input before shell execution.
+    # Compliant: Using `Shellwords.escape` to sanitize user input before shell execution.
     safe_filename = Shellwords.escape(filename)
     result = `ls -la #{safe_filename}`
     render plain: result

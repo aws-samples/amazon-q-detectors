@@ -6,7 +6,7 @@ class UserController < ApplicationController
   def noncompliant
     user_url = params[:url]
     
-    # Noncompliant: Using user input directly in link_to can lead to XSS attacks
+    # Noncompliant: Using user input directly in link_to can lead to XSS attacks.
     link_to "Click here", user_url
   end
 end

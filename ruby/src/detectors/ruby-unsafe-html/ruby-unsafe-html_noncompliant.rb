@@ -7,7 +7,7 @@ require 'action_view'
 class UsersController < ApplicationController
   def noncompliant
     username = params[:username]
-    # Noncompliant: Using html_safe with unsanitized user input exposes the application to XSS attacks.
+    # Noncompliant: Using `html_safe` with unsanitized user input exposes the application to XSS attacks.
     content = "<div>Welcome, #{username}</div>".html_safe
     render inline: content
   end

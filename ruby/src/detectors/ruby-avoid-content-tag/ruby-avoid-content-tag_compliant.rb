@@ -6,7 +6,7 @@ class UserController < ApplicationController
   def compliant
     user_input = params[:comment]
     
-    # Compliant: Using safe HTML generation without content_tag
+    # Compliant: Using safe HTML generation without `content_tag`.
     tag.div(h(user_input), class: "comment")
   end
 end

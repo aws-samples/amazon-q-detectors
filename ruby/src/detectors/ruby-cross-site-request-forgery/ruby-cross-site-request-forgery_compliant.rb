@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def compliant
-    # Sensitive action with CSRF protection enabled
     user_id = params[:user_id]
     User.find(user_id).destroy
     redirect_to users_path

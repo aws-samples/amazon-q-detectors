@@ -7,7 +7,7 @@ require 'erb'
 class MessagesController < ApplicationController
   def compliant
     user_message = params[:message]
-    # Compliant: Using ERB::Util.html_escape to sanitize user input before rendering.
+    # Compliant: Using `ERB::Util.html_escape` to sanitize user input before rendering.
     safe_message = ERB::Util.html_escape(user_message)
     render inline: "<div class='message'>#{safe_message}</div>"
   end

@@ -16,7 +16,6 @@ class UsersController < ApplicationController
         init_logger
 
         username = params[:username]
-
         username = username.gsub(/[\n\r]/, '[newline]')
 
         # Compliant: New lines have been handled in the external input.

@@ -6,7 +6,7 @@ class UserController < ApplicationController
   def compliant
     user_url = params[:url]
     
-    # Compliant: Using hardcoded URL instead of user input
+    # Compliant: Using hardcoded URL instead of user input.
     link_to "Click here", "/safe/path"
   end
 end

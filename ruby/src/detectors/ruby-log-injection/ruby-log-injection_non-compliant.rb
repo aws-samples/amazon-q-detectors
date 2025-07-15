@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 
     def noncompliant 
         init_logger
-
         username = params[:username]
 
         # Noncompliant: Unsanitized user input is logged without proper sanitization.

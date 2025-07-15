@@ -4,7 +4,7 @@
 # {fact rule=ruby-mass-assignment-vuln@v1.0 defects=1}
 class UsersController < ApplicationController
     def noncompliant 
-        # Noncompliant: Mass assignment vulnerability.
+        # Noncompliant: Directly assigning all user-provided parameters to the model without filtering.
         @user = User.new(params[:user])
         if @user.save
             render json: { message: 'User created successfully', user: @user }
