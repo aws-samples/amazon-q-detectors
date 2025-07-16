@@ -5,7 +5,7 @@
 require 'jwt'
 
 def noncompliant(hmac_secret)
-    # Noncompliant: User 'password', which is sensitive data being passed in the 'JWT'.
+    # Noncompliant: User `password`, which is sensitive data being passed in the JWT.
     payload = { data: 'data', password: 12345 }
     token = JWT.encode payload, hmac_secret, 'HS256'
 end
