@@ -7,7 +7,7 @@ import java.util.Hashtable
 import javax.naming.Context
 import javax.naming.directory.DirContext
 
-// Noncompliant: Permiting anonymous users to execute LDAP statements.
+// Noncompliant: Permitting anonymous users to execute LDAP statements.
 fun anonymous_ldap_bind_noncompliant(env: Hashtable<String, Any>) {
     env.put(Context.SECURITY_AUTHENTICATION, "none")
     val ctx: DirContext = InitialDirContext(env)
