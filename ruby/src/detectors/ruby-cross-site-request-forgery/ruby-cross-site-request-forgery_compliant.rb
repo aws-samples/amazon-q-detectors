@@ -3,7 +3,7 @@
 
 # {fact rule=ruby-cross-site-request-forgery@v1.0 defects=0}
 class ApplicationController < ActionController::Base
-  # Compliant: CSRF protection is enabled by default to prevent CSRF attacks.
+  # Compliant: `CSRF` protection is enabled by default to prevent CSRF attacks.
   protect_from_forgery with: :exception
   
   def compliant

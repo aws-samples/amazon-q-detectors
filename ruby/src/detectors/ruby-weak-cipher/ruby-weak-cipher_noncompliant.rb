@@ -8,7 +8,7 @@ class EncryptionService
   def noncompliant
     data = "sensitive information"
     key = "my_secret_key_123"
-    # Noncompliant: Using weak DES cipher which is vulnerable to attacks.
+    # Noncompliant: Using weak `DES` cipher which is vulnerable to attacks.
     cipher = OpenSSL::Cipher.new('DES')
     cipher.encrypt
     cipher.key = key

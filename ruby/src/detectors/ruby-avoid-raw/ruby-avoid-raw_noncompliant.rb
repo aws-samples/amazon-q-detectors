@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   
   def noncompliant
     user_content = params[:content]
-    # Noncompliant: Using raw() with user input can lead to XSS vulnerabilities.
+    # Noncompliant: Using `raw()` with user input can lead to XSS vulnerabilities.
     @post_content = raw(user_content)
     render :show
   end

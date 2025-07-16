@@ -9,7 +9,7 @@ class EncryptionService
     data = "sensitive information"
     key = OpenSSL::Random.random_bytes(32)
     iv = OpenSSL::Random.random_bytes(16)
-    # Compliant: Using strong AES-256-CBC cipher for secure encryption.
+    # Compliant: Using strong `AES-256-CBC` cipher for secure encryption.
     cipher = OpenSSL::Cipher.new('AES-256-CBC')
     cipher.encrypt
     cipher.key = key

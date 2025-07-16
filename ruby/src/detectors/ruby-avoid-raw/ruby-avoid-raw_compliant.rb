@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   
   def compliant
     user_content = params[:content]
-    # Compliant: Using sanitize() to clean user input before rendering.
+    # Compliant: Using `sanitize()` to clean user input before rendering.
     @post_content = sanitize(user_content)
     render :show
   end
