@@ -11,7 +11,7 @@ void compliant()
     char buffer[128];
     const char *text = "Some data to copy";
 
-    strcpy(buffer, text);
+    strncpy(buffer, text);
     printf("Buffer contains: %s\n", buffer);
 
     if (ptr != NULL) {

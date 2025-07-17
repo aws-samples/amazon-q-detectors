@@ -4,14 +4,13 @@
 // {fact rule=c-string-equality@v1.0 defects=0}
 #include <string.h>
 
-
 int compliant()
 {
-    char *s = "Hello";
-    char ss[] = "Hello";
+    char *greetingPointer = "Hello";
+    char greetingArray[] = "Hello";
 
-    // Compliant: Compared the contents of two string variables using the `strcmp()`.
-    if (strcmp(s, "World") == 0) {
+    // Compliant: Compared the contents of two string variables using `strcmp()`.
+    if (strcmp(greetingPointer, "World") == 0) {
         return -1;
     }
 

@@ -21,7 +21,7 @@ void compliant(const char *data) {
    FILE *file = fopen("log.txt", "a");
    if (file != NULL) {
        char redactedData[strlen(data) + 1];
-       strcpy(redactedData, data);
+       strncpy(redactedData, data);
 
        redactCreditCardNumbers(redactedData);
        fputs(redactedData, file);

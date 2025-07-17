@@ -31,10 +31,4 @@ void compliant() {
         printf("No delimiter found, entire string: %s\n", static_str);
     }
 }
-
-int main() {
-    compliant();
-    return 0;
-}
-
 // {/fact}

@@ -8,11 +8,11 @@
 
 int noncompliant()
 {
-    char *s = "Hello";
-    char ss[] = "Hello";
+    char *greetingPointer = "Hello";
+    char greetingArray[] = "Hello";
 
     // Noncompliant: Using `==` performs character comparison, which could be leveraged to affect program security.
-    if (s == "World") {
+    if (greetingPointer == "World") {
         return -1;
     }
     return 0;

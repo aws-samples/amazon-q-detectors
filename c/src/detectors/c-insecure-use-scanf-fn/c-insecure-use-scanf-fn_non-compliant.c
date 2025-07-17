@@ -5,8 +5,12 @@
 #include <stdio.h>
 
 void noncompliant() {
-    char str[120];
-    // Noncompliant: Usage of `scanf()` can lead to 'buffer overflow' vulnerabilities.
-    scanf("%s", str);
+    char small_buffer[8];
+    
+    printf("Enter a long string: ");
+    // Noncompliant: `scanf()` without bounds checking can overflow small buffers.
+    scanf("%s", small_buffer);
+    
+    printf("You entered: %s\n", small_buffer);
 }
 // {/fact}

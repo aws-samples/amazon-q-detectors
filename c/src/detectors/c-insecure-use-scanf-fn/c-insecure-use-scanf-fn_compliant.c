@@ -3,14 +3,16 @@
 
 // {fact rule=c-insecure-use-scanf-fn@v1.0 defects=0}
 #include <stdio.h>
+#include <string.h>
 
 void compliant() {
-    char buf[8];
-
-    // Compliant: `fgets` is a safer alternative
-    if (fgets(buf, sizeof(buf), stdin)) {
-        buf[sizeof(buf) - 1] = '\0';
-        printf("Entered: %s\n", buf);
+    char buffer[8];
+    
+    printf("Enter a string: ");
+    // Compliant: `fgets()` with size limit prevents buffer overflow.
+    if (fgets(buffer, sizeof(buffer), stdin)) {
+        buffer[strcspn(buffer, "\n")] = '\0';
+        printf("You entered: %s\n", buffer);
     } else {
         printf("Error reading input.\n");
     }

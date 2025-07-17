@@ -8,9 +8,8 @@
 int noncompliant() {
     // Noncompliant: Avoid using `sscanf()` for number conversions.
     const char *float_str = "3.1415";
-    int read;
     float var;
-    read = sscanf(float_str, "%f", &var);
+    int read = sscanf(float_str, "%f", &var);
     return 0;
 }
 // {/fact}

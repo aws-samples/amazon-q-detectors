@@ -18,10 +18,4 @@ void noncompliant() {
         printf("First token: %s\n", token);
     }
 }
-
-int main() {
-    noncompliant();
-    return 0;
-}
-
 // {/fact}
