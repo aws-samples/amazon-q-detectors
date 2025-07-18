@@ -3,10 +3,9 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-laravel-sql-injection@v1.0 defects=1}
-
 use Illuminate\Support\Facades\DB;
 
-function noncompliant() {
+function nonCompliant() {
     $userId = $_GET['id'];
     
     // Noncompliant: Using user input directly in unprepared query.

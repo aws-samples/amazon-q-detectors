@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-laravel-cookie-secure-set@v1.0 defects=0}
-
-// Compliant: Cookie secure flag set to true ensures HTTPS-only transmission.
+// Compliant: Cookie secure flag set to `true` ensures HTTPS-only transmission.
 return [
     'driver' => env('SESSION_DRIVER', 'file'),
     'lifetime' => env('SESSION_LIFETIME', 120),

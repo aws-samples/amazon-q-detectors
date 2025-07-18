@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-phpinfo-use@v1.0 defects=1}
-
-function showSystemInfo() {
+function nonCompliant() {
     // Noncompliant: Using `phpinfo()` exposes sensitive system information.
     phpinfo();
 }

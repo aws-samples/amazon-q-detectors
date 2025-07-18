@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-laravel-eloquent-sql-injection-ide@v1.0 defects=0}
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 

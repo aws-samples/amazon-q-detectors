@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-hardcoded-credentials-basic-ide@v1.0 defects=0}
-
 class DatabaseConnection {
     // Compliant: Reading credentials from environment variables.
     private $host;
@@ -18,7 +17,7 @@ class DatabaseConnection {
         $this->database = $_ENV['DB_DATABASE'];
     }
     
-    public function connect() {
+    public function compliant() {
         return new mysqli($this->host, $this->username, $this->password, $this->database);
     }
 }

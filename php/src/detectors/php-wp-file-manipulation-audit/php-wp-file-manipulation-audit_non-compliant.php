@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-wp-file-manipulation-audit@v1.0 defects=1}
-
-function noncompliant() {
+function nonCompliant() {
     $filename = $_GET['file'];
     
     // Noncompliant: Using file manipulation function without validation.

@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-cross-site-scripting-ide@v1.0 defects=0}
-
-function displayUserInput() {
+function compliant() {
     $username = $_GET['username'];
     
     // Compliant: Properly sanitizing user input before output.

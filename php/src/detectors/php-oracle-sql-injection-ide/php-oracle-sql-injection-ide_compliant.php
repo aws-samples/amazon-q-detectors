@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-oracle-sql-injection-ide@v1.0 defects=0}
-
-function getUserFromOracle() {
+function compliant() {
     $userId = $_GET['id'];
     $connection = oci_connect('user', 'pass', 'localhost/XE');
     

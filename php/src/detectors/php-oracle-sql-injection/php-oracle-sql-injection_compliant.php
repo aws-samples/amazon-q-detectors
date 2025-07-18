@@ -3,12 +3,11 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-oracle-sql-injection@v1.0 defects=0}
-
 class UserRepository 
 {
     private $connection;
     
-    public function getUserById($userId) 
+    public function compliant($userId) 
     {
         // Compliant: Using parameterized query with bound variables.
         $sql = "SELECT * FROM users WHERE id = :user_id";

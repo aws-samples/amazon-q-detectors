@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-wp-sql-injection-audit@v1.0 defects=1}
-
 function get_user_posts() {
     global $wpdb;
     

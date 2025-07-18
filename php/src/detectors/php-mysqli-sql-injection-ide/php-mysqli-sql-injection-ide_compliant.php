@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-mysqli-sql-injection-ide@v1.0 defects=0}
-
-function getUserById() {
+function compliant() {
     $userId = $_GET['id'];
     $mysqli = new mysqli("localhost", "user", "pass", "database");
     

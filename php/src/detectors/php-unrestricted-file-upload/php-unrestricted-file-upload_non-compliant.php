@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-unrestricted-file-upload@v1.0 defects=1}
-
-function uploadFile() {
+function nonCompliant() {
     if (isset($_FILES['upload'])) {
         $uploadedFile = $_FILES['upload'];
         $targetPath = 'uploads/' . $uploadedFile['name'];

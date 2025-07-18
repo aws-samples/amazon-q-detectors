@@ -4,8 +4,8 @@
 
 // {fact rule=php-sensitive-file-permission@v1.0 defects=0}
 // Compliant: Used more restrictive file permissions `0750`.
-setFilePermissionsCompliant("foo", 0750);
-function setFilePermissionsCompliant($filePath, $permissions) {
+compliant("foo", 0750);
+function compliant($filePath, $permissions) {
     chmod($filePath, $permissions);
 }
 // {/fact}

@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-exec-use@v1.0 defects=1}
-
-function processFile($filename) {
+function nonCompliant($filename) {
     // Noncompliant: Using `exec()` function which can be dangerous.
     exec("ls -la " . $filename, $output);
     return $output;

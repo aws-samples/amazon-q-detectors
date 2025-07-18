@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-tainted-sql-string@v1.0 defects=1}
-
 function executeQuery() {
     $userInput = $_POST['query'];
     $pdo = new PDO('mysql:host=localhost;dbname=test', 'user', 'pass');

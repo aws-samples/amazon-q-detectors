@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-laravel-cookie-long-timeout@v1.0 defects=0}
-
 // Compliant: Sets a secure session lifetime (5 minutes).
 return [
     'lifetime' => env('SESSION_LIFETIME', 5),

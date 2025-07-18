@@ -3,11 +3,10 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-insecure-gate-definition@v1.0 defects=1}
-
 use Illuminate\Support\Facades\Gate;
 
-function noncompliant() {
-    // Noncompliant: Gate always returns true, granting access to all users.
+function nonCompliant() {
+    // Noncompliant: Gate always returns `true`, granting access to all users.
     Gate::define('edit-post', function ($user) {
         return true;
     });

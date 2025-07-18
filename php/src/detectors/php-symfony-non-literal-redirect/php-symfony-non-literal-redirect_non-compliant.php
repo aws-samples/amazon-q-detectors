@@ -6,7 +6,7 @@
 use Symfony\Component\HttpFoundation\RedirectResponse;
 class WebAppController
 {
-    public function nonCompliantRedirect(): RedirectResponse
+    public function nonCompliant(): RedirectResponse
     {
         $foo = $session->get('foo');
         // Noncompliant: Uses `redirect()` with unvalidated user input, potentially allowing open redirect vulnerabilities.

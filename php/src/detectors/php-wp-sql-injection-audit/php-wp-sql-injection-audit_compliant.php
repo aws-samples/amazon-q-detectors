@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-wp-sql-injection-audit@v1.0 defects=0}
-
 function secureFunction() {
     $userInput = $_GET['input'];
     

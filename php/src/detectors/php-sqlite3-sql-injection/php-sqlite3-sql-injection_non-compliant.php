@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-sqlite3-sql-injection@v1.0 defects=1}
-
-function noncompliant() {
+function nonCompliant() {
     $db = new SQLite3('database.db');
     $userId = $_GET['id'];
     

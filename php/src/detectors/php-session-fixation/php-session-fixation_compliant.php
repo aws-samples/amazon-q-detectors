@@ -3,10 +3,9 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-session-fixation@v1.0 defects=0}
-
 class SecurityConfig 
 {
-    public function Compliant() 
+    public function compliant() 
     {
         // Compliant: Session fixation is mitigated by regenerating the session ID on authentication.
         $container->loadFromExtension('security', array('SESSION_FIXATION_STRATEGY' => 'migrate'));

@@ -6,7 +6,7 @@
 use Symfony\Component\HttpFoundation\RedirectResponse;
 class WebAppController
 {
-    public function compliantRedirect(): RedirectResponse
+    public function compliant(): RedirectResponse
     {
         $foo = $session->get('foo');
         // Compliant: Uses `redirectToRoute()` method, which internally validates and constructs the URL, mitigating risks associated with open redirects.
