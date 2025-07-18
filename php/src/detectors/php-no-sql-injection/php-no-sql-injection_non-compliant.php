@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-no-sql-injection@v1.0 defects=1}
-
-function findUserInMongoDB() {
+function nonCompliant() {
     $userId = $_GET['userId'];
     $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
     

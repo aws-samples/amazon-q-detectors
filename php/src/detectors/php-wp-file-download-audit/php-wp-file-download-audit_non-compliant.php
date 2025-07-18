@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-wp-file-download-audit@v1.0 defects=1}
-
-function noncompliant() {
+function nonCompliant() {
     $filename = $_GET['file'];
     
     // Noncompliant: Using `file_get_contents` with user-controlled input.

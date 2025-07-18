@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-laravel-cookie-long-timeout@v1.0 defects=1}
-
 // Noncompliant: Long session lifetime increases security risk.
 return [
     'driver' => env('SESSION_DRIVER', 'file'),

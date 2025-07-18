@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-laravel-cookie-secure-set@v1.0 defects=1}
-
-// Noncompliant: Cookie secure flag set to false allows transmission over HTTP.
+// Noncompliant: Cookie secure flag set to `false` allows transmission over HTTP.
 return [
     'driver' => env('SESSION_DRIVER', 'file'),
     'lifetime' => env('SESSION_LIFETIME', 120),

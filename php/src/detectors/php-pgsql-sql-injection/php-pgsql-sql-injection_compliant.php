@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-pgsql-sql-injection@v1.0 defects=0}
-
 function compliant() {
     $conn = pg_connect("host=localhost dbname=testdb user=postgres password=password");
     $userId = $_GET['user_id'];

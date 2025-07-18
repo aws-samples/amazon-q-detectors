@@ -6,7 +6,7 @@
 
 class UserController extends CI_Controller {
     
-    public function getUser() {
+    public function compliant() {
         $userId = $this->input->get('id');
         
         // Compliant: Using CodeIgniter's query binding.

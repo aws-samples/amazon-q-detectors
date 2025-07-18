@@ -3,12 +3,11 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-oracle-sql-injection@v1.0 defects=1}
-
 class UserRepository 
 {
     private $connection;
     
-    public function getUserById($userId) 
+    public function nonCompliant($userId) 
     {
         // Noncompliant: Direct concatenation of user input.
         $sql = "SELECT * FROM users WHERE id = " . $_GET['id'];

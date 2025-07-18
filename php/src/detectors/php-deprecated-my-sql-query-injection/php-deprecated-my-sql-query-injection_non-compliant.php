@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-deprecated-my-sql-query-injection@v1.0 defects=1}
-
-function noncompliant() {
+function nonCompliant() {
     $userId = $_GET['user_id'];
     $connection = mysql_connect('localhost', 'username', 'password');
     mysql_select_db('database', $connection);

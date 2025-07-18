@@ -3,12 +3,11 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-hardcoded-credentials-libs-ide@v1.0 defects=0}
-
 use Aws\S3\S3Client;
 use GuzzleHttp\Client;
 
 class AWSService {
-    public function createS3Client() {
+    public function compliant() {
         // Compliant: Using environment variables for AWS credentials.
         $s3 = new S3Client([
             'version' => 'latest',

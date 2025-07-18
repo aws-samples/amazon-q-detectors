@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-unrestricted-file-upload@v1.0 defects=0}
-
-function uploadFile() {
+function compliant() {
     if (isset($_FILES['upload'])) {
         $uploadedFile = $_FILES['upload'];
         $allowedTypes = ['jpg', 'jpeg', 'png', 'gif'];

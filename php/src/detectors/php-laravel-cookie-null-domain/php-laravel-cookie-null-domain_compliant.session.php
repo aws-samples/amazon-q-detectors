@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-laravel-cookie-null-domain@v1.0 defects=0}
-
 // Compliant: Cookie domain set to null for same-origin restriction.
 return [
     'driver' => env('SESSION_DRIVER', 'file'),

@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=php-insecure-gate-definition@v1.0 defects=0}
-
 use Illuminate\Support\Facades\Gate;
 
 function compliant() {
