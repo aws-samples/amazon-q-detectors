@@ -16,7 +16,7 @@ void non_compliant() {
 }
 
 int main() {
-    non_compliant1();
+    non_compliant();
     return 0;
 }
 

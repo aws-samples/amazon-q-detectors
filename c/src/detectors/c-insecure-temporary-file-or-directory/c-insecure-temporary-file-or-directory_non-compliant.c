@@ -4,7 +4,7 @@
 // {fact rule=c-insecure-temporary-file-or-directory@v1.0 defects=1}
 #include <stdio.h>
 
-void noncompliant3() {
+void noncompliant() {
    // Noncompliant: Creating a temporary file with insecure permissions.
     int fd = open("/tmp/example", O_CREAT | O_RDWR, 0666); 
     if (fd == -1) {

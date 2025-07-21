@@ -3,7 +3,7 @@
 
 // {fact rule=c-insecure-temporary-file-or-directory@v1.0 defects=0}
 #include <stdio.h>
-void compliant3() {
+void compliant() {
     // Compliant: Securely create a temporary file with appropriate permissions.
     int fd = open("/tmp/example", O_CREAT | O_EXCL | O_RDWR, 0600);
     if (fd == -1) {
