@@ -7,7 +7,7 @@
 
 #define DST_BUFFER_SIZE 120
 
-int compliant1() {
+int compliant() {
     char str[DST_BUFFER_SIZE];
 
     // Compliant: Using `fgets()` function with specified size limit, preventing buffer overflow.
@@ -22,6 +22,6 @@ int compliant1() {
 
 int main() {
     printf("Enter a string (compliant version):\n");
-    return compliant1();
+    return compliant();
 }
 // {/fact}
