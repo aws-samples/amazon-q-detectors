@@ -11,7 +11,7 @@ void noncompliant()
     char buffer[128];
     const char *text = "Some data to copy";
 
-    strcpy(buffer, text);
+    strncpy(buffer, text);
     printf("Buffer contains: %s\n", buffer);
 
     // Noncompliant: A potential NULL pointer attempts to access a value through a pointer that is uninitialized.

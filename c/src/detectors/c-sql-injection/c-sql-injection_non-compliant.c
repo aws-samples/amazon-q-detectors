@@ -18,21 +18,10 @@ void nonCompliant(int argc, char** argv) {
 
     char query[200];
 
-    // Noncompliant: Directly inserting user input into SQL query, vulnerable to SQL injection.
-    sprintf(query, "SELECT * FROM users WHERE name = '%s'", argv[1]);
-
+    // Noncompliant: Unsanitized user input in SQL query can lead to SQL injection.
+    sprintf(query, "SELECT * FROM users WHERE name = '%s'", argv[1]); 
     mysql_query(connection, query);
-
     mysql_close(connection);
-}
-
-int main(int argc, char** argv) {
-    if (argc < 2) {
-        printf("Usage: %s <name>\n", argv[0]);
-        return 1;
-    }
-    nonCompliant(argc, argv);
-    return 0;
 }
 
 // {/fact}

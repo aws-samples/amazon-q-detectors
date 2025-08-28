@@ -3,19 +3,21 @@
 
 // {fact rule=c-insecure-temporary-file-or-directory@v1.0 defects=0}
 #include <stdio.h>
-
 void compliant() {
-
-    // Compliant: Usage of secure function which manages the generation of unique and secure temporary files automatically.
-    FILE *fp = tmpfile();
-
-    if (fp != NULL) {
-        printf("Temporary file created successfully.\n");
-        fputs("This is some data written to the temporary file.\n", fp);
-        fclose(fp);
+    // Compliant: Securely create a temporary file with appropriate permissions.
+    int fd = open("/tmp/example", O_CREAT | O_EXCL | O_RDWR, 0600);
+    if (fd == -1) {
+        perror("Error creating or opening file");
+        exit(EXIT_FAILURE);
     }
-    else {
-        printf("Failed to create temporary file.\n");
+    close(fd);
+    if (chmod("/tmp/example", 0600) == -1) {
+        perror("Error setting file permissions");
+        exit(EXIT_FAILURE);
+    }
+    if (unlink("/tmp/example") == -1) {
+        perror("Error removing file");
+        exit(EXIT_FAILURE);
     }
 }
 // {/fact}

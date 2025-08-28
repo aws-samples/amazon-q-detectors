@@ -11,7 +11,7 @@
 int noncompliant() {
     char str[DST_BUFFER_SIZE];
 
-    // Noncompliant: Using gets() function, which is vulnerable to buffer overflow.
+    // Noncompliant: Using `gets()` function, which is vulnerable to buffer overflow.
     gets(str);
 
     printf("You entered: %s\n", str);
@@ -22,5 +22,4 @@ int main() {
     printf("Enter a string (noncompliant version):\n");
     return noncompliant();
 }
-
 // {/fact}

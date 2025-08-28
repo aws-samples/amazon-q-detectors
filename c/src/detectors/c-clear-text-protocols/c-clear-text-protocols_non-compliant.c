@@ -2,36 +2,13 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=c-clear-text-protocols@v1.0 defects=1}
-typedef void CURL;
-typedef int CURLcode;
+#include <stdio.h>
 
-typedef int CURLoption;
-
-CURL* curl_easy_init()
+void noncompliant()
 {
-    CURL *curl;
-    return curl;
-}
-
-CURL* curl_easy_init1()
-{
-    CURL *curl;
-    return curl;
-}
-
-CURLoption CURLOPT_URL,CURLOPT_USE_SSL;
-const char CURLUSESSL_ALL;
-
-CURLcode my_curl_easy_setopt1(CURL *handle, CURLoption option, const char *url)
-{
-    CURLcode *curl;
-    return *curl;
-}
-
-int noncompliant()
-{
-    // Noncompliant: Using unencrypted protocols such as HTTP.
-    char* http_url = "http://example.com";
-    return 0;
+    // Noncompliant: Using unencrypted HTTP protocol exposes data transmission.
+    char* http_url = "http://example.com/api/data";
+    
+    printf("Connecting to: %s\n", http_url);
 }
 // {/fact}

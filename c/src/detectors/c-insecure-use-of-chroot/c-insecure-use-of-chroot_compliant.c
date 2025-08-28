@@ -17,7 +17,6 @@ void compliant() {
     if (chroot(root_dir) == -1) {
         exit(-1);
     }
-    // Drop privileges
     if (setuid(non_privileged_uid) == -1) {
         exit(-1);
     }

@@ -5,12 +5,15 @@
 #include <stdio.h>
 
 void noncompliant() {
-    // Noncompliant: Using insecure temporary files or directories can introduce vulnerabilities and lead to attacks.
-    FILE *fp = fopen("/tmp/temporary_file", "r"); 
-    if (fp != NULL) {
-        fclose(fp);
-    } else {
-        perror("Error opening file");
+   // Noncompliant: Creating a temporary file with insecure permissions.
+    int fd = open("/tmp/example", O_CREAT | O_RDWR, 0666); 
+    if (fd == -1) {
+        perror("Error creating or opening file");
+        exit(EXIT_FAILURE);
     }
+    chmod("/tmp/example", 0600); 
+    printf("File created or opened: /tmp/example\n");
+    close(fd);
+    unlink("/tmp/example");
 }
 // {/fact}
