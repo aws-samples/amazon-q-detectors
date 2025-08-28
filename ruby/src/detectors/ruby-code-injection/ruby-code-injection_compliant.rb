@@ -5,9 +5,8 @@
 class HomeController < ApplicationController
 
     def get_dynamic_code
-        # Retrieve dynamic code from a verifiable source, like the db or a predefined file.
+        "1 + 2"
     end
-
 
     def compliant 
         code = get_dynamic_code 
