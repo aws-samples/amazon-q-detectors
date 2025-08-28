@@ -10,8 +10,7 @@ import (
 )
 
 func temporaryFilesCompliant() {
-	// Compliant: File creation in shared tmp directory using `os.CreateTemp`,
-	// which securely generates a unique filename, preventing overwriting or collision.
+	// Compliant: Using `os.CreateTemp` securely generates unique filenames preventing overwrites.
 	file, err := os.CreateTemp("/tmp", "file")
 	if err != nil {
 		fmt.Println("Error occurred during file creation")

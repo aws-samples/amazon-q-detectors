@@ -1,28 +1,26 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-package path_traversal
-
 // {fact rule=go-path-traversal@v1.0 defects=0}
+package main
+
 import (
 	"net/http"
 	"path"
 	"strings"
 )
 
-func pathTraversalCompliant(certFile string, keyFile string) {
-	http.HandleFunc("/files/", func(w http.ResponseWriter, r *http.Request) {
-		requestedFile := r.URL.Path[len("/files/"):]
-		if !isValidFilePath(requestedFile) {
-			http.Error(w, "Invalid file path", http.StatusBadRequest)
-			return
-		}
-		// Compliant: Input is validated before passing to `path.Join()`
-		filePath := path.Join("files", requestedFile)
-		http.ServeFile(w, r, filePath)
-	})
-
-	http.ListenAndServeTLS("192.168.1.101:2000", certFile, keyFile, nil)
+func compliant(w http.ResponseWriter, r *http.Request) {
+	requestedFile := r.URL.Path[len("/files/"):]
+	
+	if !isValidFilePath(requestedFile) {
+		http.Error(w, "Invalid file path", http.StatusBadRequest)
+		return
+	}
+	
+	// Compliant: Input validation prevents path traversal attacks.
+	filePath := path.Join("files", requestedFile)
+	http.ServeFile(w, r, filePath)
 }
 
 func isValidFilePath(filePath string) bool {

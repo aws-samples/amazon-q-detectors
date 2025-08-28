@@ -1,31 +1,26 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-package crypto
-
 // {fact rule=go-weak-crypto@v1.0 defects=0}
+package main
+
 import (
 	"crypto/sha256"
-	"fmt"
 	"io"
-	"os"
+	"net/http"
 )
 
-func secureHashingCompliant() {
-	file, err := os.Open("example.txt")
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer file.Close()
+func compliant(w http.ResponseWriter, r *http.Request) {
+	password := r.FormValue("password")
 
-	// Compliant: Using `SHA-256`, which is a secure cryptographic hash function.
-	hash := sha256.New()
-	if _, err := io.Copy(hash, file); err != nil {
-		fmt.Println("Error hashing file:", err)
-		return
-	}
+	// Compliant: `SHA-256` is cryptographically strong and resistant to collisions.
+	h := sha256.New()
+	io.WriteString(h, password)
+	passwordHash := h.Sum(nil)
+	
+	setPassword(passwordHash)
+}
 
-	fmt.Printf("SHA-256 checksum: %x\n", hash.Sum(nil))
+func setPassword(hash []byte) {
 }
 // {/fact}

@@ -10,8 +10,7 @@ import (
 )
 
 func temporaryFilesNoncompliant() {
-	// Noncompliant: File creation in shared tmp directory without using `os.CreateTemp`,
-	// which might lead to security vulnerabilities, such as file overwrites.
+	// Noncompliant: Creating files in shared tmp directory without `os.CreateTemp` enables security vulnerabilities.
 	file, err := os.Create("/tmp/file")
 	if err != nil {
 		fmt.Println("Error occurred during file creation")

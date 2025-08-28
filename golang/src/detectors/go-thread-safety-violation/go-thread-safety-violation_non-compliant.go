@@ -15,8 +15,7 @@ func threadSafetyViolationNoncompliant() {
 	for i := 0; i < 1000; i++ {
 		wg.Add(1)
 		go func() {
-			// Noncompliant: Incrementing without synchronization.
-			// Multiple goroutines may access `counter` at the same time, leading to a race condition.
+			// Noncompliant: Incrementing without synchronization enables race conditions.
 			counter++
 			wg.Done()
 		}()
