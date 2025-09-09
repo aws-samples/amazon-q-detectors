@@ -2,21 +2,37 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=java-checkcursormovetofirstresult@v1.0 defects=0}
-import android.database.Cursor;
-import android.net.Uri;
 import android.content.Context;
-import stubs.Columns;
+import android.database.Cursor;
+import android.graphics.Color;
+import android.os.SystemClock;
+import android.support.annotation.Nullable;
+import android.util.Log;
+import com.kuxhausen.huemore.persistence.Definitions.MoodColumns;
+import com.kuxhausen.huemore.state.Mood;
+import java.util.Calendar;
 
 public class CheckCursorMoveToFirstResultCompliant {
 
-    // Compliant: Checks if `cursor.moveToFirst()` returns true before accessing data, handling empty cursor case.
-    public static String compliant(Context context, Uri uri) {
-        String[] columns = { Columns.VALUE };
-        try (Cursor cursor = context.getContentResolver().query(uri, columns, null, null, null)) {
-            if (!cursor.moveToFirst()) {
-                return null;
-            }
-            return cursor.getString(0);
+    public static @Nullable Mood compliant(String moodName, Context ctx) {
+        String[] moodColumns = {MoodColumns.COL_MOOD_VALUE};
+        String[] mWhereClause = {moodName};
+        Cursor moodCursor =
+                ctx.getContentResolver().query(Definitions.MoodColumns.MOODS_URI, moodColumns,
+                        MoodColumns.COL_MOOD_NAME + "=?", mWhereClause, null);
+        // Compliant: Checks applied before utilizing cursor.
+        if (!moodCursor.moveToFirst()) {
+            moodCursor.close();
+            return null;
+        }
+        String encodedMood = moodCursor.getString(0);
+        moodCursor.close();
+
+        try {
+            return HueUrlEncoder.decode(encodedMood).second.first;
+        } catch (InvalidEncodingException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
