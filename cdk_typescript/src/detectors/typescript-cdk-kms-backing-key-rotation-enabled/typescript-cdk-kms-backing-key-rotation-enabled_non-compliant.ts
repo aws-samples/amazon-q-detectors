@@ -9,7 +9,7 @@ import { Stack } from 'aws-cdk-lib';
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
 	super(scope, id, props);      
-	// Noncomplaint: Key rotation is not enabled, reducing security best practices.
+	// Noncompliant: Key rotation is not enabled, reducing security best practices.
 	new Key(Stack, 'rSymmetricKey');
   }
 }

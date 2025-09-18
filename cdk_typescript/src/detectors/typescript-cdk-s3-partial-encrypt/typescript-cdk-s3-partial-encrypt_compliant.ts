@@ -8,7 +8,7 @@ import {Bucket, BucketEncryption} from 'aws-cdk-lib/aws-s3';
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Complaint: Enables encryption for data security.
+    // Compliant: Enables encryption for data security.
     const goodBucketDirect = new Bucket(this, 's3-bucket', {
       encryption: BucketEncryption.S3_MANAGED
     })

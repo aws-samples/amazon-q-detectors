@@ -14,7 +14,7 @@ import { Stack } from 'aws-cdk-lib';
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Noncomplaint: Disables IAM authentication, relying on less secure authentication methods.
+    // Noncompliant: Disables IAM authentication, relying on less secure authentication methods.
     new DatabaseCluster(Stack, 'rDbCluster', {
       engine: DatabaseClusterEngine.auroraMysql({
         version: AuroraMysqlEngineVersion.VER_5_7_12,

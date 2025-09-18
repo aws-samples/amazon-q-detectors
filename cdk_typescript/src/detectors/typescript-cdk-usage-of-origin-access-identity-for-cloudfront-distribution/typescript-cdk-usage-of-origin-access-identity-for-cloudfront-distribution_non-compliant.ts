@@ -12,7 +12,7 @@ import * as cdk from 'aws-cdk-lib';
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Noncomplaint: Uses an HTTP origin, which may cause security and performance issues.
+    // Noncompliant: Uses an HTTP origin, which may cause security and performance issues.
     new Distribution(Stack, 'rDistribution', {
       defaultBehavior: {
         origin: new HttpOrigin('foo.s3-website.amazonaws.com')

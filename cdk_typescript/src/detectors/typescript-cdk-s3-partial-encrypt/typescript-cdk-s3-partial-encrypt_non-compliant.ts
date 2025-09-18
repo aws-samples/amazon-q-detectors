@@ -8,7 +8,7 @@ import { Bucket } from 'aws-cdk-lib/aws-s3';
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Noncomplaint: Lacks encryption, leaving data unprotected.
+    // Noncompliant: Lacks encryption, leaving data unprotected.
     const badBucketDirect = new Bucket(this, 's3-bucket-bad')
   }
 }

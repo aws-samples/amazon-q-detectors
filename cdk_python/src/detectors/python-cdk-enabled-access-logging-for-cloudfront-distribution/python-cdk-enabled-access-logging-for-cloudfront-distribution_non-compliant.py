@@ -10,7 +10,7 @@ class CdkStarter(cdk.Stack):
     def __init__(self, scope: cdk.App, id: str):
         super(scope, id)
     
-        # Noncomplaint: Missing `log_bucket` for logging.
+        # Noncompliant: Missing `log_bucket` for logging.
         Distribution(self, "Distribution",
             default_behavior=BehaviorOptions(
                 origin=OriginAccessIdentity(

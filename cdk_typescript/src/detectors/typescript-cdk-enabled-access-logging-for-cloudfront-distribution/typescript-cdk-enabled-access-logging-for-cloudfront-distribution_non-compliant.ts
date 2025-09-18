@@ -13,7 +13,7 @@ import * as cdk from 'aws-cdk-lib';
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Noncomplaint: Missing `logBucket` for logging.
+    // Noncompliant: Missing `logBucket` for logging.
     new Distribution(Stack, 'rDistribution', {
       defaultBehavior: {
         origin: new S3Origin(new Bucket(Stack, 'rOriginBucket'))

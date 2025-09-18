@@ -4,7 +4,7 @@
 // {fact rule=typescript-sns-no-bind-subscribe-publish@v1.0 defects=0}
 import AWS from 'aws-sdk';
 
-function complaint(res: { send: (data: any) => void }): void {
+function compliant(res: { send: (data: any) => void }): void {
     const sns: AWS.SNS = new AWS.SNS({ apiVersion: '2010-03-31' });
     const params: { Protocol: string; TopicArn: string; Endpoint: string; ReturnSubscriptionArn: boolean } = {
         Protocol: 'STRING_VALUE',

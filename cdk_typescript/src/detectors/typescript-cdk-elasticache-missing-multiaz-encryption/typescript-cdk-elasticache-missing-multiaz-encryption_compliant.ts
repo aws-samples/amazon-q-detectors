@@ -11,7 +11,7 @@ import { Stack } from "aws-cdk-lib";
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Complaint: Enables Multi-AZ deployment for high availability and failover support.
+    // Compliant: Enables Multi-AZ deployment for high availability and failover support.
     new CfnReplicationGroup(Stack, 'rRedisGroup', {
       cacheNodeType: 'cache.t3.micro',
       engine: 'redis',

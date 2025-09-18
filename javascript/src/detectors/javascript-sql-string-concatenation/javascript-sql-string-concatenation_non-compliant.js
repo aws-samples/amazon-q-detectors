@@ -26,6 +26,7 @@ app.post('/users', async (req, res) => {
         return res.status(400).send({ error: 'Username is required' });
     }
 
+    // Noncompliant: SQL injection vulnerability due to string concatenation
     try {
         const query = "INSERT INTO Users (username) VALUES ('" + username + "')";
         await sequelize.query(query);

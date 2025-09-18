@@ -8,7 +8,7 @@ const cy = require('cypress');
 function compliant() {
     let accessKey, secretKey, session;
 
-    // Complaint: AWS credentials are not hardcoded.
+    // Compliant: AWS credentials are not hardcoded.
     cy.readFile('sdkConfig.json').then(cfg_var => {
         accessKey = cfg_var.AWS_ACCESS_KEY_ID;
         secretKey = cfg_var.AWS_SECRET_ACCESS_KEY;

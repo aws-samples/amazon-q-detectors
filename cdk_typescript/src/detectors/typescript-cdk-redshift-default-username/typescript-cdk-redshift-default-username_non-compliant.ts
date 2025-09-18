@@ -9,7 +9,7 @@ import * as cdk from 'aws-cdk-lib';
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Noncomplaint: Uses a non-standard `masterUsername` (`notawsuser`), which can lead to confusion and inconsistent management.
+    // Noncompliant: Uses a non-standard `masterUsername` (`notawsuser`), which can lead to confusion and inconsistent management.
     new CfnCluster(Stack, 'rRedshiftCluster', {
       masterUsername: 'awsuser',
       masterUserPassword: 'use_a_secret_here',

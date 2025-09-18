@@ -9,7 +9,7 @@ import * as cdk from 'aws-cdk-lib';
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Complaint: Enables access logging for monitoring and security.
+    // Compliant: Enables access logging for monitoring and security.
     new CfnContainer(Stack, 'rMsContainer', {
       containerName: 'foo',
       accessLoggingEnabled: true

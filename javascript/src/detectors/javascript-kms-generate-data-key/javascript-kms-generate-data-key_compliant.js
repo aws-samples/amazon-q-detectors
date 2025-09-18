@@ -13,7 +13,7 @@ function compliant() {
         KeySpec: "AES_256"
     };
 
-    // Complaint: KMS API is not misused when generating data keys.
+    // Compliant: KMS API is not misused when generating data keys.
     kms.generateDataKey(params, function(err, data) {
         if (err) console.log(err, err.stack);
         else    console.log(data);

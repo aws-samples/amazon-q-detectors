@@ -11,7 +11,7 @@ import { Stack } from "aws-cdk-lib";
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Noncomplaint: Does not enable Multi-AZ, reducing availability and fault tolerance.
+    // Noncompliant: Does not enable Multi-AZ, reducing availability and fault tolerance.
     new CfnReplicationGroup(Stack, 'rRedisGroup', {
       cacheNodeType: 'cache.t3.micro',
       engine: 'redis',
