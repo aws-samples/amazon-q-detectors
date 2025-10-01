@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 public class MissingPaginationNonCompliant {
 
-    // Noncompliant : Fetches all objects without pagination, which can cause performance issues and potential memory overflow for large numbers of objects.
+    // Noncompliant: Fetches all objects without pagination, which can cause performance issues and potential memory overflow for large numbers of objects.
     public Set<String> nonCompliant(AmazonS3 s3Client, TransformCleanupEntry transformCleanupEntry) {
         MLModelArtifact mlModelArtifact = new MLModelArtifact(
                 transformCleanupEntry.getAccountId(),

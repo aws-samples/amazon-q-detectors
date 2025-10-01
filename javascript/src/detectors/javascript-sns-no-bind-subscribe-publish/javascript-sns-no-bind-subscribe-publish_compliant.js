@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT-0
 
 // {fact rule=javascript-sns-no-bind-subscribe-publish@v1.0 defects=0}
-function complaint() {
+function compliant() {
     let AWS = require('aws-sdk');
     let sns = new AWS.SNS({apiVersion: '2010-03-31'});
     let params = {

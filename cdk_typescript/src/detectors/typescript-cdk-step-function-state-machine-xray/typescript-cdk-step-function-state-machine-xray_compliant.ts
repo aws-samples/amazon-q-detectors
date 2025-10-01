@@ -13,7 +13,7 @@ import { Duration, Stack } from 'aws-cdk-lib';
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Complaint: Enables tracing for monitoring and debugging purposes.
+    // Compliant: Enables tracing for monitoring and debugging purposes.
     new StateMachine(Stack, 'rStateMachine', {
       definition: new Wait(Stack, 'rWait30', {
         time: WaitTime.duration(Duration.seconds(30)),

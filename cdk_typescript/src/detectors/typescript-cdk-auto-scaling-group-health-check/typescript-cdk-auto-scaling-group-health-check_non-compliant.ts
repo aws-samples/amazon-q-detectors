@@ -11,7 +11,7 @@ import { Stack } from "aws-cdk-lib";
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Noncomplaint: Uses `ELB` health check without a load balancer, causing potential misconfigurations.
+    // Noncompliant: Uses `ELB` health check without a load balancer, causing potential misconfigurations.
     new CfnAutoScalingGroup(Stack, 'rAsg', {
       minSize: '7',
       maxSize: '42',

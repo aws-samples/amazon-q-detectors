@@ -5,7 +5,7 @@
 import org.springframework.security.crypto.password.LdapShaPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 public class WeakPasswordEncoderJavaRuleNonCompliant {
-    // Noncompliant : Weak password encoder is used.
+    // Noncompliant: Weak password encoder is used.
     public void nonCompliant(String password) {
         PasswordEncoder passwordEncoder = new LdapShaPasswordEncoder();
         String encodedPassword = passwordEncoder.encode(password);

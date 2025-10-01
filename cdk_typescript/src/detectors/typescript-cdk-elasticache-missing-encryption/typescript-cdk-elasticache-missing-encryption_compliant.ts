@@ -11,7 +11,7 @@ import { Stack } from "aws-cdk-lib";
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Complaint: Transit encryption is enabled, securing data in transit.
+    // Compliant: Transit encryption is enabled, securing data in transit.
     new CfnReplicationGroup(Stack, "rRedisGroup", {
       cacheNodeType: "cache.t3.micro",
       engine: "redis",

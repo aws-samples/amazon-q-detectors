@@ -8,7 +8,7 @@ import os
 def cryptography_ChaCha20Poly1305_cipher_compliant():
     data = b"a secret message"
     aad = b"authenticated but unencrypted data"
-    # Complaint: Secure use of `ChaCha20Poly1305` `AEAD` cipher with proper key generation and nonce handling.
+    # Compliant: Secure use of `ChaCha20Poly1305` `AEAD` cipher with proper key generation and nonce handling.
     key = ChaCha20Poly1305.generate_key()
     chacha = ChaCha20Poly1305(key)
     nonce = os.urandom(12)

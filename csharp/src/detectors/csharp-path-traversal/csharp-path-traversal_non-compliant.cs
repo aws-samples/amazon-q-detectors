@@ -1,12 +1,11 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-// {fact rule=csharp-path-traversal@v1.0 defects=0}
+// {fact rule=csharp-path-traversal@v1.0 defects=1}
 using System;
 using System.IO;
 
-namespace FileOperations
-{
+namespace FileOperations {
     public class UnsafeFileAccess
     {
         public static byte[] GetFileBad(string filename)

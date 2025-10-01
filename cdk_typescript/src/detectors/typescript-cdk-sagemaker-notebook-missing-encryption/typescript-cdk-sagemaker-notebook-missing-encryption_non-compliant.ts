@@ -12,7 +12,7 @@ import * as cdk from 'aws-cdk-lib';
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Noncomplaint: Omits `kmsKeyId`, leaving data potentially unencrypted.
+    // Noncompliant: Omits `kmsKeyId`, leaving data potentially unencrypted.
     new CfnNotebookInstance(Stack, 'rNotebook', {
       instanceType: 'ml.t3.xlarge',
       roleArn: new Role(Stack, 'rNotebookRole', {

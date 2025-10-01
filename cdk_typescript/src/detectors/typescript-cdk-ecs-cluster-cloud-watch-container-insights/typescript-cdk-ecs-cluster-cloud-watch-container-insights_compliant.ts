@@ -11,7 +11,7 @@ import * as cdk from 'aws-cdk-lib';
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Complaint:  Enables container insights for better monitoring and performance tracking.
+    // Compliant:  Enables container insights for better monitoring and performance tracking.
     new Cluster(Stack, 'rCluster', { containerInsights: true });
   }
 }

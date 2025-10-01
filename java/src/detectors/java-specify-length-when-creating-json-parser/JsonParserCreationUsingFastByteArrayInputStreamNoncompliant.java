@@ -10,7 +10,7 @@ import java.io.IOException;
 public class JsonParserCreationUsingFastByteArrayInputStreamNoncompliant {
 
     // Noncompliant: Creates JsonParser without specifying length for FastByteArrayInputStream, potentially causing inefficiency.
-    void nonComplaint(final Text text) throws IOException {
+    void nonCompliant(final Text text) throws IOException {
         new JsonFactory().createJsonParser(new FastByteArrayInputStream(text.getBytes()));
     }
 }

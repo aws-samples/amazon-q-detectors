@@ -10,7 +10,7 @@ import * as cdk from 'aws-cdk-lib';
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Noncomplaint: EFS is created without encryption, exposing data to potential security risks.
+    // Noncompliant: EFS is created without encryption, exposing data to potential security risks.
     new FileSystem(Stack, 'rEFS', {
       vpc: new Vpc(Stack, 'rVpc'),
       encrypted: false

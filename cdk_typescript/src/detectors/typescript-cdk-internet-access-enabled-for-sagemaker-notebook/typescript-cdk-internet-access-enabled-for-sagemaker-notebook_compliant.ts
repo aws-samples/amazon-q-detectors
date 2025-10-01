@@ -12,7 +12,7 @@ import { Stack } from 'aws-cdk-lib';
 export class CdkStarterStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // Complaint: Disables direct internet access for security.
+    // Compliant: Disables direct internet access for security.
     new CfnNotebookInstance(Stack, 'rNotebook', {
       instanceType: 'ml.t3.xlarge',
       roleArn: new Role(Stack, 'rNotebookRole', {

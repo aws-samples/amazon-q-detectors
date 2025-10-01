@@ -5,8 +5,7 @@
 using System;
 using System.IO;
 
-namespace FileOperations
-{
+namespace FileOperations {
     public class SafeFileAccess
     {
         public static byte[] GetFileSafe(string filename)
