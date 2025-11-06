@@ -1,0 +1,25 @@
+#  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+#  SPDX-License-Identifier: Apache-2.0
+
+# {fact rule=cloudformation-ttl-specification-enabled@v1.0 defects=1}
+Resources:
+  NonComplianteTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: orders-table-non-compliant
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: orderId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: orderId
+          KeyType: HASH
+      # Noncompliant: Missing TimeToLiveSpecification
+      Tags:
+        - Key: TTLEnabled
+          Value: 'false'
+      SSESpecification:
+        SSEEnabled: true
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+# {/fact}

@@ -1,0 +1,29 @@
+#  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+#  SPDX-License-Identifier: Apache-2.0
+
+# {fact rule=cloudformation-setup-cloudwatch-alarms@v1.0 defects=0}
+Resources:
+  CompliantReadCapacityAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub '${TableName}-CompliantReadCapacity'
+      MetricName: ConsumedReadCapacityUnits
+      Namespace: AWS/DynamoDB
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 2
+      DatapointsToAlarm: 2
+      Threshold: 80
+      AlarmDescription: "Compliant alarm for read capacity monitoring"
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: TableName
+          Value: !Ref TableName
+      AlarmActions:
+        - !Ref CompliantMonitoringTopic
+      InsufficientDataActions:
+        - !Ref CompliantMonitoringTopic
+      OKActions:
+        - !Ref CompliantMonitoringTopic
+      TreatMissingData: breaching
+# {/fact}
